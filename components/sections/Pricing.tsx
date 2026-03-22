@@ -173,7 +173,7 @@ export const Pricing = () => {
                 </div>
 
                 {/* 2. OFERTA LANÇAMENTO */}
-                <div className="w-[92%] mx-auto md:max-w-4xl mb-32 border border-brand-blue/30 rounded-[2rem] md:rounded-[3.5rem] bg-slate-900 overflow-hidden relative group">
+                <div className="w-[92%] mx-auto md:w-full mb-32 border border-brand-blue/30 rounded-[2rem] md:rounded-[3.5rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="p-8 md:p-16 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
