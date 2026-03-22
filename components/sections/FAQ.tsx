@@ -78,7 +78,7 @@ export const FAQSection = () => {
         <section id="faq" className="pt-32 pb-0 bg-transparent relative w-full transition-all duration-700">
             <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none"></div>
 
-            <div className="max-w-6xl mx-auto relative z-10 px-6 pb-24">
+            <div className="max-w-6xl mx-auto relative z-10 px-4 md:px-8 lg:px-12 pb-24">
 
                 <div className="text-center mb-16">
                     <Badge icon variant="outline" className="uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 mb-4">FAQ</Badge>
