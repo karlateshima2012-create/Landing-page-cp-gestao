@@ -48,11 +48,11 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
                     <div className="hidden md:block flex-1 w-full perspective-1000">
                         <div className="relative group transition-transform duration-500 hover:rotate-y-6">
                             <div className={`absolute inset-0 ${reverse ? 'bg-brand-pink' : 'bg-brand-blue'} blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity`}></div>
-                            <div className="relative bg-slate-900/60 border border-white/10 p-2 rounded-[2rem] backdrop-blur-3xl shadow-2xl overflow-hidden aspect-video">
+                            <div className="relative bg-slate-900/60 border border-white/10 p-2 rounded-[2rem] backdrop-blur-3xl shadow-2xl overflow-hidden aspect-[4/3]">
                                 <img
                                     src={imageUrl}
                                     alt={title}
-                                    className="w-full h-full object-cover rounded-[1.8rem] opacity-90 group-hover:opacity-100 transition-opacity"
+                                    className="w-full h-full object-cover rounded-[1.8rem] opacity-100 group-hover:scale-105 transition-all duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
                             </div>
@@ -72,7 +72,7 @@ export const FeaturesShowcase = () => (
             icon={<Users className="w-8 h-8" />}
             badge="CRM COMPLETO"
             title="Tenha o controle total dos seus clientes na palma da mão"
-            imageUrl="/crm-feature.png"
+            imageUrl="/crm-feature.jpg"
             items={[
                 "Cadastre clientes com nome, telefone, endereço e histórico",
                 "Saiba a data da última compra de cada um",
@@ -89,7 +89,7 @@ export const FeaturesShowcase = () => (
             icon={<CreditCard className="w-8 h-8" />}
             badge="SISTEMA DE FIDELIDADE"
             title="Transforme clientes comuns em fãs que voltam sempre"
-            imageUrl="/loyalty-feature.png"
+            imageUrl="/loyalty-feature.jpg"
             items={[
                 "Clientes acumulam pontos a cada compra realizada",
                 "Pontos viram prêmios e descontos (você define as regras)",
@@ -105,7 +105,7 @@ export const FeaturesShowcase = () => (
             icon={<TrendingUp className="w-8 h-8" />}
             badge="RELATÓRIOS E DECISÕES"
             title="Enxergue seu negócio com clareza e tome decisões estratégicas"
-            imageUrl="/reports-feature.png"
+            imageUrl="/reports-feature.jpg"
             items={[
                 "Saiba exatamente quantos clientes estão cadastrados",
                 "Veja quantos estão ativos e quantos precisam ser reativados",
