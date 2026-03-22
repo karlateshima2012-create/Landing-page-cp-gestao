@@ -177,7 +177,7 @@ export const Pricing = () => {
             <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-32">
                 <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                    <div className="py-16 md:py-24 px-6 md:px-12 lg:px-16 relative z-10 text-center">
+                    <div className="py-16 md:py-24 px-0 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
                         <h3 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
                             Ganhe 2 Totens NFC com QR Code impressos em 3D ao contratar hoje
