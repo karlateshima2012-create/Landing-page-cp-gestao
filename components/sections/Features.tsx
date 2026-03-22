@@ -14,7 +14,7 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
     reverse?: boolean
 }) => (
     <section className={`py-20 md:py-32 ${reverse ? 'bg-slate-900 border-y border-white/5' : 'bg-slate-950'}`}>
-        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24">
             <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16 md:gap-24`}>
                 <div className="flex-1 text-center md:text-left">
                     <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-8 mx-auto md:mx-0 transition-all ${colorClass} ${glowClass} animate-float shadow-xl`}>
