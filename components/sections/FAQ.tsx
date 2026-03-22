@@ -85,7 +85,7 @@ export const FAQSection = () => {
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Dúvidas Comuns</h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 lg:gap-8">
+                <div className="grid md:grid-cols-2 gap-4 lg:gap-8 w-[90%] md:w-full mx-auto">
                     {FAQS.map(faq => (
                         <div
                             key={faq.id}

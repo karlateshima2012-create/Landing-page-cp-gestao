@@ -14,7 +14,7 @@ export const Pricing = () => {
             <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-pink/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 w-[90%] md:w-full">
                 {/* 1. Pricing Plans Header */}
                 <div className="text-center mb-12 px-4">
                     <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-yellow border-brand-yellow/50">INVESTIMENTO</Badge>
@@ -175,7 +175,7 @@ export const Pricing = () => {
 
             {/* 2. OFERTA LANÇAMENTO */}
             <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-32">
-                <div className="w-[92%] mx-auto border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
+                <div className="w-[90%] md:w-full mx-auto border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="py-16 md:py-24 px-6 md:px-16 lg:px-24 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
@@ -246,7 +246,7 @@ export const Pricing = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[92%] md:max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[90%] md:max-w-5xl mx-auto">
                     <StepCardMinimal
                         icon={<MessageCircle className="w-10 h-10" />}
                         step="PASSO 1"
