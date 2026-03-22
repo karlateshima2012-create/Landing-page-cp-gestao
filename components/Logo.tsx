@@ -1,0 +1,47 @@
+
+import React from 'react';
+
+export const Logo: React.FC<{ className?: string; light?: boolean }> = ({ className = "h-12", light = true }) => {
+  const subtitle = "TECNOLOGIA E IMPRESSÃO 3D";
+  
+  return (
+    <div className={`flex items-center gap-4 ${className}`}>
+      {/* 4 Colored Blocks Logo Mark */}
+      <div className="grid grid-cols-2 gap-[3px] w-12 h-12 flex-shrink-0">
+        {/* Top Left: Large Magenta */}
+        <div className="bg-[#E5157A] rounded-[2px]"></div>
+        
+        {/* Top Right: Mini Grid */}
+        <div className="grid grid-cols-2 gap-[2px]">
+          <div className="bg-[#FFF200] rounded-[1px]"></div> {/* Small Yellow */}
+          <div className=""></div> {/* Empty Top-Right */}
+          <div className="bg-[#38b6ff] rounded-[1px]"></div> {/* Small Blue */}
+          <div className="bg-[#E5157A] rounded-[1px]"></div> {/* Small Magenta */}
+        </div>
+        
+        {/* Bottom Left: Large Blue */}
+        <div className="bg-[#38b6ff] rounded-[2px]"></div>
+        
+        {/* Bottom Right: Large Yellow */}
+        <div className="bg-[#FFF200] rounded-[2px]"></div>
+      </div>
+      
+      {/* Text Part */}
+      <div className="flex flex-col justify-center select-none">
+        {/* Main Title */}
+        <div className={`text-[34px] font-black tracking-[-0.02em] leading-none ${light ? 'text-white' : 'text-slate-900'}`}>
+          CREATIVE PRINT
+        </div>
+        
+        {/* Subtitle - Justified to match title width */}
+        <div className={`flex justify-between items-center text-[10px] font-bold mt-1.5 ${light ? 'text-brand-gray' : 'text-slate-500'}`}>
+          {subtitle.split("").map((char, index) => (
+            <span key={index} className="flex-shrink-0">
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
