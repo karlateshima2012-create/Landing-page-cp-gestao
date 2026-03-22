@@ -2,7 +2,7 @@
 import React from 'react';
 import { Users, CreditCard, TrendingUp, Check } from 'lucide-react';
 
-const FeatureSection = ({ icon, title, description, badge, items, colorClass, glowClass, reverse = false }: {
+const FeatureSection = ({ icon, title, description, badge, items, colorClass, glowClass, imageUrl, reverse = false }: {
     icon: React.ReactNode,
     title: string,
     description?: string,
@@ -10,9 +10,10 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
     items?: string[],
     colorClass: string,
     glowClass: string,
+    imageUrl?: string,
     reverse?: boolean
 }) => (
-    <section className={`py-24 ${reverse ? 'bg-slate-950 border-y border-white/5' : 'bg-slate-950'}`}>
+    <section className={`py-24 ${reverse ? 'bg-slate-900 border-y border-white/5' : 'bg-slate-950'}`}>
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20">
             <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-16 md:gap-24`}>
                 <div className="flex-1 text-center md:text-left">
@@ -43,8 +44,21 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
                         </ul>
                     )}
                 </div>
-                {/* Image Placeholder Removed but keeping spacing/alignment */}
-                <div className="flex-1 hidden md:block"></div>
+                {imageUrl && (
+                    <div className="hidden md:block flex-1 w-full perspective-1000">
+                        <div className="relative group transition-transform duration-500 hover:rotate-y-6">
+                            <div className={`absolute inset-0 ${reverse ? 'bg-brand-pink' : 'bg-brand-blue'} blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity`}></div>
+                            <div className="relative bg-slate-900/60 border border-white/10 p-2 rounded-[2rem] backdrop-blur-3xl shadow-2xl overflow-hidden aspect-video">
+                                <img
+                                    src={imageUrl}
+                                    alt={title}
+                                    className="w-full h-full object-cover rounded-[1.8rem] opacity-90 group-hover:opacity-100 transition-opacity"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     </section>
@@ -58,6 +72,7 @@ export const FeaturesShowcase = () => (
             icon={<Users className="w-8 h-8" />}
             badge="CRM COMPLETO"
             title="Tenha o controle total dos seus clientes na palma da mão"
+            imageUrl="/crm-feature.png"
             items={[
                 "Cadastre clientes com nome, telefone, endereço e histórico",
                 "Saiba a data da última compra de cada um",
@@ -74,6 +89,7 @@ export const FeaturesShowcase = () => (
             icon={<CreditCard className="w-8 h-8" />}
             badge="SISTEMA DE FIDELIDADE"
             title="Transforme clientes comuns em fãs que voltam sempre"
+            imageUrl="/loyalty-feature.png"
             items={[
                 "Clientes acumulam pontos a cada compra realizada",
                 "Pontos viram prêmios e descontos (você define as regras)",
@@ -89,6 +105,7 @@ export const FeaturesShowcase = () => (
             icon={<TrendingUp className="w-8 h-8" />}
             badge="RELATÓRIOS E DECISÕES"
             title="Enxergue seu negócio com clareza e tome decisões estratégicas"
+            imageUrl="/reports-feature.png"
             items={[
                 "Saiba exatamente quantos clientes estão cadastrados",
                 "Veja quantos estão ativos e quantos precisam ser reativados",
