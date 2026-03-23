@@ -9,7 +9,7 @@ export const Pricing = () => {
     const whatsappUrl = "https://wa.me/8109011886491?text=Olá! Gostaria de saber mais sobre os planos do CP Gestão.";
 
     return (
-        <section id="pricing" className="py-20 md:py-32 bg-slate-950 relative overflow-hidden">
+        <section id="pricing" className="py-12 md:py-16 bg-slate-950 relative overflow-hidden">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-pink/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
@@ -160,7 +160,7 @@ export const Pricing = () => {
                 </div>
 
                 {/* Consultative Supporting Text (No separate headline) */}
-                <div className="max-w-4xl mx-auto mb-32 text-center px-4">
+                <div className="max-w-4xl mx-auto mb-16 text-center px-4">
                     <p className="text-brand-gray text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
                         Ainda tem dúvidas? <span className="text-white font-bold">Conheça antes de decidir.</span><br />
                         Agende uma conversa rápida para conhecer o sistema, entender como ele se adapta ao seu negócio e tirar todas as suas dúvidas. Sem compromisso.
@@ -175,7 +175,7 @@ export const Pricing = () => {
             </div>
 
             {/* 2. OFERTA LANÇAMENTO */}
-            <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-32">
+            <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-16">
                 <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
@@ -236,7 +236,7 @@ export const Pricing = () => {
             </div>
 
             {/* 3. COMO CONTRATAR EM 3 PASSOS */}
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-32">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16">
                 <div className="text-center mb-20">
                     <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-blue border-brand-blue/30">COMEÇAR É SIMPLES</Badge>
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[0.9]">

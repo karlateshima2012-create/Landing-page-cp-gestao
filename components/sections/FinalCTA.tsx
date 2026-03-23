@@ -3,7 +3,7 @@ import React from 'react';
 import { Starfield } from '../Starfield';
 
 export const FinalCTA = () => (
-    <section className="py-20 md:py-32 bg-transparent relative text-center w-full px-6 md:px-16 lg:px-24">
+    <section className="py-12 md:py-16 bg-transparent relative text-center w-full px-6 md:px-16 lg:px-24">
         {/* Continuous Background - Transitioning to black for footer */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none"></div>
 

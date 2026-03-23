@@ -3,7 +3,7 @@ import { Badge } from '../Badge';
 
 export const TargetAudience = () => {
     return (
-        <section id="solucoes" className="py-20 md:py-32 bg-slate-950 relative overflow-hidden w-full">
+        <section id="solucoes" className="py-12 md:py-16 bg-slate-950 relative overflow-hidden w-full">
             {/* Intensified LED Backlighting */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[radial-gradient(circle_at_center,rgba(56,182,255,0.25)_0%,transparent_70%)] -z-10 pointer-events-none blur-[150px]"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(229,21,122,0.1)_0%,transparent_60%)] -z-10 pointer-events-none blur-[180px]"></div>
