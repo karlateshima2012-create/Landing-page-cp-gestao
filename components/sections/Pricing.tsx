@@ -178,7 +178,7 @@ export const Pricing = () => {
             <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-32">
                 <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                    <div className="py-16 md:py-24 px-0 relative z-10 text-center">
+                    <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
                         <h3 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
                             Ganhe 2 Totens NFC com QR Code impressos em 3D ao contratar hoje
@@ -197,7 +197,7 @@ export const Pricing = () => {
                                 sub="Configuração do sistema de pontos inclusa."
                             />
                             <FeatureTile
-                                title="¥ 0"
+                                title="CUSTO ZERO"
                                 sub="Presente exclusivo para quem contrata hoje."
                                 highlight
                             />
@@ -291,10 +291,10 @@ const SmallCheckBullet = ({ text, color = 'blue' }: { text: string, color?: 'blu
 );
 
 const FeatureTile = ({ title, sub, highlight = false }: { title: string, sub: string, highlight?: boolean }) => (
-    <div className={`flex flex-col items-center justify-center p-6 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-all group/tile ${highlight ? 'border-brand-blue/30' : ''}`}>
-        <Check className={`w-5 h-5 mb-4 group-hover/tile:scale-125 transition-transform ${highlight ? 'text-brand-pink animate-pulse' : 'text-brand-blue'}`} />
-        <span className={`text-white font-black text-[11px] tracking-widest text-center uppercase mb-2 ${highlight ? 'text-brand-blue' : ''}`}>{title}</span>
-        <span className="text-brand-gray/60 text-[10px] font-medium text-center uppercase leading-tight">{sub}</span>
+    <div className={`flex flex-col items-center justify-center p-8 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-all group/tile ${highlight ? 'border-brand-blue/30' : ''}`}>
+        <Check className={`w-8 h-8 mb-6 group-hover/tile:scale-125 transition-transform ${highlight ? 'text-brand-pink animate-pulse' : 'text-brand-blue'}`} />
+        <span className={`text-white font-black text-xl md:text-2xl tracking-tighter text-center uppercase mb-3 leading-none ${highlight ? 'text-brand-blue' : ''}`}>{title}</span>
+        <span className="text-brand-gray/80 text-sm md:text-base font-light text-center leading-relaxed">{sub}</span>
     </div>
 );
 
