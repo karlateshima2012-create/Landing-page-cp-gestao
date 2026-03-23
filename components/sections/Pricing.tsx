@@ -166,8 +166,7 @@ export const Pricing = () => {
                         Agende uma conversa rápida para conhecer o sistema, entender como ele se adapta ao seu negócio e tirar todas as suas dúvidas. Sem compromisso.
                     </p>
 
-                    <a href={whatsappUrl} className="relative inline-flex items-center gap-4 bg-white text-slate-950 font-black py-4 px-8 rounded-xl text-[10px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group overflow-hidden">
-                        <MessageCircle className="w-4 h-4 text-brand-blue" />
+                    <a href={whatsappUrl} className="relative inline-flex items-center justify-center bg-white text-slate-950 font-black py-4 px-8 rounded-xl text-[10px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group overflow-hidden">
                         <span className="relative z-10">QUERO CONHECER ANTES DE DECIDIR</span>
                         <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     </a>
@@ -271,8 +270,7 @@ export const Pricing = () => {
 
             {/* Final CTA */}
             <div className="text-center pb-12">
-                <a href="https://wa.me/MESSAGE_URL?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-white hover:bg-slate-100 text-slate-950 font-black text-xs h-12 px-10 rounded-lg inline-flex items-center justify-center gap-3 transition-all shadow-[0_0_25px_rgba(56,182,255,0.35)] hover:scale-105 active:scale-95 uppercase tracking-wider group overflow-hidden">
-                    <MessageCircle className="w-4 h-4 text-brand-blue" />
+                <a href="https://wa.me/MESSAGE_URL?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-white hover:bg-slate-100 text-slate-950 font-black text-xs h-12 px-10 rounded-lg inline-flex items-center justify-center transition-all shadow-[0_0_25px_rgba(56,182,255,0.35)] hover:scale-105 active:scale-95 uppercase tracking-wider group overflow-hidden">
                     <span className="relative z-10">Começar agora pelo WhatsApp</span>
                     <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </a>
