@@ -30,19 +30,9 @@ export const FAQS: FAQItem[] = [
         answer: "Você consegue:\n\n• Cadastrar clientes\n• Registrar histórico de compras\n• Ver quanto cada cliente já gastou\n• Criar e gerenciar pontos e recompensas\n• Receber lembretes estratégicos\n• Acompanhar relatórios do seu negócio"
     },
     {
-        id: 5,
-        question: "O sistema já vem configurado?",
-        answer: "Sim. Você recebe tudo pronto para uso, configurado para o seu tipo de negócio.\nÉ só começar a usar."
-    },
-    {
         id: 6,
         question: "Como funciona o programa de pontos?",
         answer: "A cada compra, o cliente acumula pontos e pode trocar por recompensas.\nIsso aumenta a chance dele voltar e comprar novamente."
-    },
-    {
-        id: 7,
-        question: "Consigo usar NFC e QR Code?",
-        answer: "Sim. O sistema já está preparado para isso.\nVocê pode usar totens com NFC e QR Code para facilitar o cadastro e a pontuação dos clientes."
     },
     {
         id: 8,
@@ -63,11 +53,6 @@ export const FAQS: FAQItem[] = [
         id: 11,
         question: "Preciso entender de tecnologia para usar?",
         answer: "Não. O sistema foi feito para ser simples e fácil de usar no dia a dia."
-    },
-    {
-        id: 12,
-        question: "Tenho suporte em português?",
-        answer: "Sim. O atendimento é direto, em português, focado em quem empreende no Japão."
     }
 ];
 
@@ -81,33 +66,30 @@ export const FAQSection = () => {
             <div className="max-w-6xl mx-auto relative z-10 px-6 md:px-16 lg:px-24 pb-24">
 
                 <div className="text-center mb-16">
-                    <Badge icon variant="outline" className="uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 mb-4">FAQ</Badge>
                     <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Dúvidas Comuns</h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 lg:gap-8 w-[90%] md:w-full mx-auto">
+                <div className="max-w-3xl mx-auto space-y-4">
                     {FAQS.map(faq => (
                         <div
                             key={faq.id}
-                            className="bg-slate-950/40 border border-white/10 rounded-xl overflow-hidden transition-all hover:border-brand-blue/40 group backdrop-blur-md"
+                            className="bg-slate-900/40 border border-white/5 rounded-2xl overflow-hidden transition-all hover:border-brand-blue/30 group backdrop-blur-md"
                         >
                             <button
                                 onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-                                className="w-full text-left p-6 md:p-8 flex items-start justify-between gap-4"
+                                className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4"
                             >
-                                <h4 className="text-lg md:text-xl font-black text-white leading-tight flex items-start gap-4">
-                                    <div className="w-8 h-8 rounded-lg bg-brand-blue/20 text-brand-blue flex items-center justify-center text-sm font-black group-hover:bg-brand-blue group-hover:text-white transition-all flex-shrink-0 border border-brand-blue/30 mt-0.5">Q</div>
+                                <h4 className="text-lg md:text-xl font-bold text-white leading-tight">
                                     {faq.question}
                                 </h4>
-                                <div className="md:hidden text-white/40 mt-1">
-                                    {openId === faq.id ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                                <div className="text-white/40 group-hover:text-brand-blue transition-colors">
+                                    {openId === faq.id ? <ChevronUp className="w-6 h-6" /> : <ChevronDown className="w-6 h-6" />}
                                 </div>
                             </button>
 
-                            <div className={`px-6 md:px-8 pb-8 transition-all duration-300 ${openId === faq.id ? 'block' : 'hidden md:block'}`}>
-                                <div className="flex gap-4">
-                                    <div className="w-8 h-8 rounded-lg bg-slate-950 text-brand-gray/40 flex items-center justify-center text-sm font-black flex-shrink-0 border border-white/5 group-hover:border-brand-yellow/40 group-hover:text-brand-yellow transition-all mt-1">A</div>
-                                    <p className="text-brand-gray/80 text-[16px] md:text-[17px] leading-relaxed font-light drop-shadow-sm whitespace-pre-line">
+                            <div className={`px-6 md:px-8 transition-all duration-300 ${openId === faq.id ? 'max-h-[500px] pb-8 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                                <div className="pt-4 border-t border-white/5">
+                                    <p className="text-brand-gray/80 text-base md:text-lg leading-relaxed font-light whitespace-pre-line">
                                         {faq.answer}
                                     </p>
                                 </div>
