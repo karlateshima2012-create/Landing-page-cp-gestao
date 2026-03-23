@@ -208,7 +208,7 @@ export const Pricing = () => {
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                         </a>
 
-                        <div className="mt-20 pt-16 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-10 text-left">
+                        <div className="mt-12 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-10 text-left">
                             <div className="flex-grow space-y-10">
                                 <div>
                                     <h4 className="text-brand-blue font-black text-[10px] uppercase tracking-[0.2em] mb-2">
