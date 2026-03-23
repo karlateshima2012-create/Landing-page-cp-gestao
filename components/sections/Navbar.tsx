@@ -12,7 +12,7 @@ export const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex gap-10 items-center text-[11px] font-black uppercase tracking-[0.15em] text-white/70">
-                    <a href="#solucoes" className="hover:text-brand-pink transition-colors">O que é?</a>
+                    <a href="#solucoes" className="hover:text-brand-pink transition-colors">Solução</a>
                     <a href="#features" className="hover:text-brand-blue transition-colors">Funcionalidades</a>
                     <a href="#pricing" className="hover:text-brand-yellow transition-colors">Investimento</a>
                     <a href="#faq" className="hover:text-white transition-colors">Dúvidas</a>
@@ -42,7 +42,7 @@ export const Navbar = () => {
             {/* Mobile Menu Overlay */}
             {isMenuOpen && (
                 <div className="lg:hidden absolute top-20 left-0 right-0 bg-slate-950 border-b border-white/10 p-8 flex flex-col gap-6 items-center text-center animate-fade-in">
-                    <a href="#solucoes" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-pink">O que é?</a>
+                    <a href="#solucoes" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-pink">Solução</a>
                     <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-blue">Funcionalidades</a>
                     <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-yellow">Investimento</a>
                     <a href="#faq" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-white">Dúvidas</a>

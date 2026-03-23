@@ -41,7 +41,7 @@ export const Footer = () => {
                 <div>
                     <h4 className="text-white font-black text-[10px] mb-8 uppercase tracking-[0.4em] opacity-40">Navegação</h4>
                     <ul className="space-y-3 text-brand-gray text-[13px] font-bold">
-                        <li><a href="#solucoes" className="hover:text-brand-pink transition-colors">O que é?</a></li>
+                        <li><a href="#solucoes" className="hover:text-brand-pink transition-colors">Solução</a></li>
                         <li><a href="#features" className="hover:text-brand-blue transition-colors">Funcionalidades</a></li>
                         <li><a href="#pricing" className="hover:text-brand-yellow transition-colors">Investimento</a></li>
                         <li><a href="#faq" className="hover:text-white transition-colors">Dúvidas</a></li>
