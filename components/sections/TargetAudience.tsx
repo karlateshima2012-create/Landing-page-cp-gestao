@@ -14,8 +14,8 @@ export const TargetAudience = () => {
                     <div className="absolute inset-0 opacity-[0.05] bg-grid pointer-events-none"></div>
 
                     <div className="relative z-10 max-w-4xl mx-auto">
-                        <div className="text-center mb-20">
-                            <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-8 tracking-tighter leading-[1]">
+                        <div className="text-center mb-12">
+                            <h2 className="text-2xl md:text-4xl font-black text-white mt-4 mb-6 tracking-tighter leading-[1]">
                                 O que é <span className="text-brand-blue text-glow-blue">CP Gestão?</span>
                             </h2>
                             <p className="text-lg md:text-xl text-brand-gray font-light leading-relaxed">
@@ -23,12 +23,8 @@ export const TargetAudience = () => {
                             </p>
                         </div>
 
-                        {/* Divider Line */}
-                        <div className="w-24 h-px bg-gradient-to-r from-transparent via-brand-blue to-transparent mx-auto mb-20 opacity-30"></div>
-
-                        {/* Section 2: O que faz? */}
-                        <div className="text-center mb-20">
-                            <h2 className="text-2xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
+                        <div className="text-center mb-12">
+                            <h2 className="text-2xl md:text-4xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
                                 O que ele faz pela <span className="text-brand-pink text-glow-pink">sua empresa?</span>
                             </h2>
                             <div className="space-y-6 text-lg md:text-xl text-brand-gray font-light leading-relaxed">
@@ -42,12 +38,12 @@ export const TargetAudience = () => {
                         </div>
 
                         {/* Final Highlight */}
-                        <div className="mt-20 text-center relative border-t border-white/10 pt-20">
+                        <div className="mt-12 text-center relative border-t border-white/10 pt-12">
                             <div className="mb-10">
                                 <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)]">
                                     Quem não controla, perde cliente.
                                 </p>
-                                <p className="text-white font-black text-2xl md:text-4xl tracking-tight uppercase">
+                                <p className="text-white font-black text-2xl md:text-4xl tracking-tight">
                                     Quem fideliza, cresce.
                                 </p>
                             </div>
