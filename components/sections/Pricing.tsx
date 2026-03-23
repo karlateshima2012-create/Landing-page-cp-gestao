@@ -9,12 +9,12 @@ export const Pricing = () => {
     const whatsappUrl = "https://wa.me/8109011886491?text=Olá! Gostaria de saber mais sobre os planos do CP Gestão.";
 
     return (
-        <section id="pricing" className="py-12 md:py-16 bg-slate-950 relative overflow-hidden">
+        <section id="pricing" className="py-24 bg-slate-950 relative overflow-hidden">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-pink/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 w-[90%] md:w-full">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-24 w-full">
                 {/* 1. Pricing Plans Header */}
                 <div className="text-center mb-12 px-4">
                     <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-yellow border-brand-yellow/50">INVESTIMENTO</Badge>
