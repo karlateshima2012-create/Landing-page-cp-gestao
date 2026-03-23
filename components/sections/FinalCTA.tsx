@@ -3,12 +3,10 @@ import React from 'react';
 import { Starfield } from '../Starfield';
 
 export const FinalCTA = () => (
-    <section className="pt-4 md:pt-6 pb-4 md:pb-6 bg-transparent relative text-center w-full px-6 md:px-16 lg:px-24">
-        {/* Continuous Background - Transitioning to black for footer */}
+    <section className="bg-transparent relative text-center w-full px-0">
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none"></div>
 
-        {/* Card - Page Content Width (matching App.tsx main container max-w) */}
-        <div className="max-w-[1440px] mx-auto relative z-10 bg-slate-950/95 border border-white/10 border-b-0 rounded-[2rem] md:rounded-[3rem] py-16 md:py-24 px-0 backdrop-blur-3xl shadow-[0_50px_200px_-50px_rgba(0,0,0,1),0_0_80px_-20px_rgba(56,182,255,0.15)] overflow-hidden transition-all duration-500">
+        <div className="w-full relative z-10 bg-slate-950/95 py-16 md:py-24 px-6 backdrop-blur-3xl shadow-[0_0_80px_-20px_rgba(56,182,255,0.15)] overflow-hidden transition-all duration-500">
             <Starfield />
             {/* Internal Card Glow */}
 
