@@ -89,7 +89,7 @@ export const Pricing = () => {
                         </div>
 
                         <a href={proUrl} className="relative w-full h-12 bg-brand-blue text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all text-[10px] uppercase tracking-widest active:scale-95 shadow-lg shadow-brand-blue/20 group/btn overflow-hidden">
-                            <span className="relative z-10">Quero começar agora</span>
+                            <span className="relative z-10">COMEÇAR COM PLANO PRO</span>
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                         </a>
                     </div>
@@ -156,7 +156,7 @@ export const Pricing = () => {
                         </div>
 
                         <a href={eliteUrl} className="relative w-full h-14 bg-brand-yellow text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-xl active:scale-95 text-[10px] uppercase tracking-widest leading-none group/btn overflow-hidden">
-                            <span className="relative z-10">Quero começar agora</span>
+                            <span className="relative z-10">COMEÇAR COM PLANO ELITE</span>
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                         </a>
                     </div>
