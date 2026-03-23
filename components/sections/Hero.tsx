@@ -15,11 +15,11 @@ export const Hero = () => (
                 </span>
             </div>
 
-            <h1 className="text-[38px] md:text-[63px] font-black text-white mb-8 leading-[1.2] tracking-tighter max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tighter max-w-4xl mx-auto">
                 Pare de deixar dinheiro na mesa: conheça seus clientes e <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent">faça a sua empresa crescer.</span>
             </h1>
 
-            <p className="text-[20px] md:text-[23px] text-brand-gray font-medium leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-lg md:text-xl text-brand-gray font-light leading-relaxed max-w-3xl mx-auto mb-12">
                 Organize seus dados, <span className="text-white font-bold">fidelize quem compra</span> e garanta um <span className="text-white font-bold">crescimento previsível</span> com um CRM completo e inteligente.
             </p>
 

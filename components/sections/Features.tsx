@@ -25,9 +25,9 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
                             {badge}
                         </div>
                     )}
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight tracking-tight">{title}</h2>
+                    <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight">{title}</h2>
                     {description && (
-                        <p className="text-brand-gray text-lg md:text-xl leading-relaxed font-light max-w-xl mx-auto md:mx-0 mb-8">
+                        <p className="text-lg md:text-xl text-brand-gray leading-relaxed font-light max-w-xl mx-auto md:mx-0 mb-8">
                             {description}
                         </p>
                     )}
@@ -38,7 +38,7 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
                                     <div className="w-6 h-6 rounded-full bg-brand-blue/10 flex items-center justify-center flex-shrink-0 mt-0.5 border border-brand-blue/20 group-hover:border-brand-blue/40 transition-colors">
                                         <Check className="w-3.5 h-3.5 text-brand-blue" />
                                     </div>
-                                    <span className="group-hover:text-white transition-colors">{item}</span>
+                                    <span className="text-base font-light group-hover:text-white transition-colors">{item}</span>
                                 </li>
                             ))}
                         </ul>
