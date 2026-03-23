@@ -20,7 +20,7 @@ export const QuickFeatures = () => (
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             <QuickCard
                 badge="CRM COMPLETO"
-                title="Tenha o controle total da sua empresa"
+                title="TENHA O CONTROLE TOTAL DA SUA EMPRESA"
                 description="Cadastre seus clientes, acompanhe a data da última compra, receba lembretes estratégicos, descubra o valor que cada um já gastou, identifique os clientes recorrentes e tenha uma base organizada para decisões estratégicas."
                 colorClass="text-brand-blue bg-brand-blue"
             />
