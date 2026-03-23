@@ -36,8 +36,8 @@ export const Pricing = () => {
                         <div className="absolute -top-10 -left-10 w-24 h-24 bg-brand-blue/10 rounded-full blur-[40px]"></div>
 
                         <div className="mb-8">
-                            <h3 className="text-2xl font-black text-white mb-1 uppercase tracking-tight font-black">PLANO PRO</h3>
-                            <p className="text-brand-blue text-[10px] uppercase font-black tracking-widest opacity-80">Ideal para controle total</p>
+                            <h3 className="text-3xl font-black text-white mb-1 uppercase tracking-tight font-black">PLANO PRO</h3>
+                            <p className="text-brand-blue text-xs uppercase font-black tracking-widest opacity-80">Ideal para controle total</p>
                         </div>
 
                         <ul className="space-y-3 mb-10 flex-grow">
@@ -54,29 +54,29 @@ export const Pricing = () => {
                             <div className="space-y-4">
                                 <div className="space-y-1">
                                     <div className="flex items-baseline gap-1">
-                                        <span className="text-white text-4xl font-black transition-all">
+                                        <span className="text-white text-5xl font-black transition-all">
                                             {proPeriod === 'anual' ? '¥37.800' : '¥21.000'}
                                         </span>
-                                        <span className="text-brand-blue text-[10px] uppercase font-bold tracking-widest">/ {proPeriod === 'anual' ? 'anual' : 'semestral'}</span>
+                                        <span className="text-brand-blue text-xs uppercase font-bold tracking-widest">/ {proPeriod === 'anual' ? 'anual' : 'semestral'}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-brand-blue font-bold text-sm">
+                                        <span className="text-brand-blue font-bold text-base">
                                             ¥{proPeriod === 'anual' ? '3.150' : '3.500'}/mês
                                         </span>
-                                        <span className="text-brand-gray text-[10px] uppercase opacity-60">valor mensal estimado</span>
+                                        <span className="text-brand-gray text-[11px] uppercase opacity-60">valor mensal estimado</span>
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
                                     <button
                                         onClick={() => setProPeriod('semestral')}
-                                        className={`py-2 px-3 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all border ${proPeriod === 'semestral' ? 'bg-brand-blue text-slate-900 border-brand-blue shadow-lg shadow-brand-blue/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
+                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${proPeriod === 'semestral' ? 'bg-brand-blue text-slate-900 border-brand-blue shadow-lg shadow-brand-blue/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
                                     >
                                         Ver Plano Semestral
                                     </button>
                                     <button
                                         onClick={() => setProPeriod('anual')}
-                                        className={`py-2 px-3 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all border ${proPeriod === 'anual' ? 'bg-brand-blue text-slate-900 border-brand-blue shadow-lg shadow-brand-blue/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
+                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${proPeriod === 'anual' ? 'bg-brand-blue text-slate-900 border-brand-blue shadow-lg shadow-brand-blue/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
                                     >
                                         Ver Plano Anual
                                     </button>
@@ -103,8 +103,8 @@ export const Pricing = () => {
                         </div>
 
                         <div className="mb-8">
-                            <h3 className="text-2xl font-black text-white mb-1 uppercase tracking-tight font-black">PLANO ELITE</h3>
-                            <p className="text-brand-yellow text-[10px] uppercase font-black tracking-widest">Automação total e escala</p>
+                            <h3 className="text-3xl font-black text-white mb-1 uppercase tracking-tight font-black">PLANO ELITE</h3>
+                            <p className="text-brand-yellow text-xs uppercase font-black tracking-widest">Automação total e escala</p>
                         </div>
 
                         <ul className="space-y-3 mb-10 flex-grow">
@@ -121,29 +121,29 @@ export const Pricing = () => {
                             <div className="space-y-4">
                                 <div className="space-y-1">
                                     <div className="flex items-baseline gap-1">
-                                        <span className="text-white text-4xl font-black transition-all">
+                                        <span className="text-white text-5xl font-black transition-all">
                                             {elitePeriod === 'anual' ? '¥70.200' : '¥39.000'}
                                         </span>
-                                        <span className="text-brand-yellow text-[10px] uppercase font-bold tracking-widest">/ {elitePeriod === 'anual' ? 'anual' : 'semestral'}</span>
+                                        <span className="text-brand-yellow text-xs uppercase font-bold tracking-widest">/ {elitePeriod === 'anual' ? 'anual' : 'semestral'}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-brand-yellow font-bold text-sm">
+                                        <span className="text-brand-yellow font-bold text-base">
                                             ¥{elitePeriod === 'anual' ? '5.850' : '6.500'}/mês
                                         </span>
-                                        <span className="text-brand-gray text-[10px] uppercase opacity-60">valor mensal estimado</span>
+                                        <span className="text-brand-gray text-[11px] uppercase opacity-60">valor mensal estimado</span>
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
                                     <button
                                         onClick={() => setElitePeriod('semestral')}
-                                        className={`py-2 px-3 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all border ${elitePeriod === 'semestral' ? 'bg-brand-yellow text-slate-900 border-brand-yellow shadow-lg shadow-brand-yellow/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
+                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${elitePeriod === 'semestral' ? 'bg-brand-yellow text-slate-900 border-brand-yellow shadow-lg shadow-brand-yellow/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
                                     >
                                         Ver Plano Semestral
                                     </button>
                                     <button
                                         onClick={() => setElitePeriod('anual')}
-                                        className={`py-2 px-3 rounded-lg text-[9px] font-black uppercase tracking-widest transition-all border ${elitePeriod === 'anual' ? 'bg-brand-yellow text-slate-900 border-brand-yellow shadow-lg shadow-brand-yellow/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
+                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${elitePeriod === 'anual' ? 'bg-brand-yellow text-slate-900 border-brand-yellow shadow-lg shadow-brand-yellow/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
                                     >
                                         Ver Plano Anual
                                     </button>
@@ -288,7 +288,7 @@ const SmallCheckBullet = ({ text, color = 'blue' }: { text: string, color?: 'blu
         <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${color === 'yellow' ? 'bg-brand-yellow text-slate-950' : 'bg-brand-blue text-slate-950'}`}>
             <Check strokeWidth={4} className="w-2.5 h-2.5" />
         </div>
-        <span className="text-[11px] md:text-[12px] font-bold leading-tight uppercase font-medium">{text}</span>
+        <span className="text-[13px] md:text-sm font-bold leading-tight uppercase font-medium">{text}</span>
     </li>
 );
 
