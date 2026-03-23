@@ -14,7 +14,7 @@ export const Pricing = () => {
             <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-pink/10 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 w-[90%] md:w-full">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 w-[90%] md:w-full">
                 {/* 1. Pricing Plans Header */}
                 <div className="text-center mb-12 px-4">
                     <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-yellow border-brand-yellow/50">INVESTIMENTO</Badge>
@@ -174,7 +174,7 @@ export const Pricing = () => {
             </div>
 
             {/* 2. OFERTA LANÇAMENTO */}
-            <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-32">
+            <div className="max-w-[1440px] mx-auto relative z-10 px-4 md:px-8 lg:px-12 mb-32">
                 <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="py-16 md:py-24 px-0 relative z-10 text-center">
@@ -235,7 +235,7 @@ export const Pricing = () => {
             </div>
 
             {/* 3. COMO CONTRATAR EM 3 PASSOS */}
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-32">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 mb-32">
                 <div className="text-center mb-20">
                     <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-blue border-brand-blue/30">COMEÇAR É SIMPLES</Badge>
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
