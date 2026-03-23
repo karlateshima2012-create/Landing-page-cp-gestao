@@ -27,7 +27,7 @@ export const QuickFeatures = () => (
             <QuickCard
                 badge="Retenção"
                 title="PROGRAMA DE FIDELIDADE"
-                description="Seu cliente acumula pontos e ganha prêmios. Estimule a recompra com um sistema de fidelidade que prende o cliente no seu negócio."
+                description="Seu cliente acumula pontos a cada compra e troca por prêmios que você escolhe. Crie níveis de fidelidade, defina metas e deixe o sistema gerenciar toda a pontuação automaticamente. Quanto mais ele compra, mais benefícios ganha e mais motivos tem para voltar."
                 colorClass="text-brand-pink bg-brand-pink"
             />
             <QuickCard
