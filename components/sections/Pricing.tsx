@@ -76,7 +76,7 @@ export const Pricing = () => {
                         <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
                             <div className="space-y-2 text-center md:text-left">
                                 <div className="flex items-center justify-center md:justify-start gap-3">
-                                    <span className="text-white text-6xl md:text-7xl font-black tracking-tighter">
+                                    <span className="text-white text-5xl md:text-6xl font-black tracking-tighter">
                                         ¥{billingCycle === 'anual' ? '3.150' : '3.500'}
                                     </span>
                                     <div className="bg-brand-blue/10 text-brand-blue text-[10px] font-black px-2 py-0.5 rounded border border-brand-blue/20 tracking-widest">
@@ -120,7 +120,7 @@ export const Pricing = () => {
                         <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
                             <div className="space-y-2 text-center md:text-left">
                                 <div className="flex items-center justify-center md:justify-start gap-3">
-                                    <span className="text-white text-6xl md:text-7xl font-black tracking-tighter">
+                                    <span className="text-white text-5xl md:text-6xl font-black tracking-tighter">
                                         ¥{billingCycle === 'anual' ? '5.850' : '6.500'}
                                     </span>
                                     <div className="bg-brand-yellow/10 text-brand-yellow text-[10px] font-black px-2 py-0.5 rounded border border-brand-yellow/20 tracking-widest">
@@ -147,11 +147,11 @@ export const Pricing = () => {
                             PROFISSIONALISMO & SEGURANÇA
                         </span>
                         
-                        <h3 className="text-lg font-black text-white mb-2 tracking-tight leading-tight">
+                        <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight leading-tight">
                             Cancelamento disponível a qualquer momento
                         </h3>
                         
-                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-2 md:gap-x-4 text-brand-gray/80 text-lg font-light mb-4">
+                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-2 md:gap-x-4 text-brand-gray/80 text-base md:text-lg font-light mb-4">
                             <span>Implementação profissional inclusa</span>
                             <span className="opacity-30 self-center">•</span>
                             <span>Sem taxa de instalação</span>
@@ -159,7 +159,7 @@ export const Pricing = () => {
                             <span>Ativação imediata</span>
                         </div>
 
-                        <p className="text-brand-gray/80 text-sm font-light max-w-md mx-auto md:mx-0">
+                        <p className="text-brand-gray/80 text-[10px] md:text-xs font-light max-w-md mx-auto md:mx-0">
                             Planos com duração mínima de 6 ou 12 meses. O cancelamento encerra o acesso ao sistema.
                         </p>
                     </div>
@@ -181,7 +181,7 @@ export const Pricing = () => {
                         <h3 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
                             Ganhe 2 Totens NFC com QR Code produzidos em 3D ao contratar hoje
                         </h3>
-                        <p className="text-brand-gray text-lg font-light mb-12 max-w-2xl mx-auto">
+                        <p className="text-brand-gray text-base md:text-lg font-light mb-12 max-w-2xl mx-auto">
                             Sua estrutura completa, configurada por nós e pronta para uso imediato. Sem custo adicional.
                         </p>
 
@@ -266,8 +266,8 @@ const SmallCheckBullet = ({ text, color = 'blue' }: { text: string, color?: 'blu
 const FeatureTile = ({ title, sub, highlight = false }: { title: string, sub: string, highlight?: boolean }) => (
     <div className={`flex flex-col items-center justify-center p-8 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-all group/tile ${highlight ? 'border-brand-blue/30' : ''}`}>
         <Check className={`w-8 h-8 mb-6 group-hover/tile:scale-125 transition-transform ${highlight ? 'text-brand-pink animate-pulse' : 'text-brand-blue'}`} />
-        <span className={`text-white font-black text-lg tracking-tighter text-center uppercase mb-3 leading-none ${highlight ? 'text-brand-blue' : ''}`}>{title}</span>
-        <span className="text-brand-gray/80 text-lg font-light text-center leading-relaxed">{sub}</span>
+        <span className={`text-white font-black text-xl tracking-tighter text-center uppercase mb-3 leading-none ${highlight ? 'text-brand-blue' : ''}`}>{title}</span>
+        <span className="text-brand-gray/80 text-sm md:text-base font-light text-center leading-relaxed">{sub}</span>
     </div>
 );
 
