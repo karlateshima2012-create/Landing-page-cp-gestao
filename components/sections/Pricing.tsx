@@ -169,11 +169,11 @@ export const Pricing = () => {
                             PROFISSIONALISMO & SEGURANÇA
                         </span>
                         
-                        <h3 className="text-3xl md:text-[32px] font-black text-white mb-2 tracking-tight leading-tight">
+                        <h3 className="text-lg font-black text-white mb-2 tracking-tight leading-tight">
                             Cancelamento disponível a qualquer momento
                         </h3>
                         
-                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-2 md:gap-x-4 text-brand-gray/80 text-[16px] md:text-xl font-light mb-4">
+                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-2 md:gap-x-4 text-brand-gray/80 text-lg font-light mb-4">
                             <span>Implementação profissional inclusa</span>
                             <span className="opacity-30 self-center">•</span>
                             <span>Sem taxa de instalação</span>
@@ -181,7 +181,7 @@ export const Pricing = () => {
                             <span>Ativação imediata</span>
                         </div>
 
-                        <p className="text-brand-gray/30 text-[11px] md:text-[12px] font-light max-w-md mx-auto md:mx-0">
+                        <p className="text-brand-gray/30 text-sm font-light max-w-md mx-auto md:mx-0">
                             Planos com duração mínima de 6 ou 12 meses. O cancelamento encerra o acesso ao sistema.
                         </p>
                     </div>
@@ -288,8 +288,8 @@ const SmallCheckBullet = ({ text, color = 'blue' }: { text: string, color?: 'blu
 const FeatureTile = ({ title, sub, highlight = false }: { title: string, sub: string, highlight?: boolean }) => (
     <div className={`flex flex-col items-center justify-center p-8 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-all group/tile ${highlight ? 'border-brand-blue/30' : ''}`}>
         <Check className={`w-8 h-8 mb-6 group-hover/tile:scale-125 transition-transform ${highlight ? 'text-brand-pink animate-pulse' : 'text-brand-blue'}`} />
-        <span className={`text-white font-black text-xl md:text-2xl tracking-tighter text-center uppercase mb-3 leading-none ${highlight ? 'text-brand-blue' : ''}`}>{title}</span>
-        <span className="text-brand-gray/80 text-sm md:text-base font-light text-center leading-relaxed">{sub}</span>
+        <span className={`text-white font-black text-lg tracking-tighter text-center uppercase mb-3 leading-none ${highlight ? 'text-brand-blue' : ''}`}>{title}</span>
+        <span className="text-brand-gray/80 text-lg font-light text-center leading-relaxed">{sub}</span>
     </div>
 );
 
