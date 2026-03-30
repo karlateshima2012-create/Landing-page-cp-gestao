@@ -3,8 +3,7 @@ import { Badge } from '../Badge';
 import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket } from 'lucide-react';
 
 export const Pricing = () => {
-    const [proPeriod, setProPeriod] = React.useState<'semestral' | 'anual'>('anual');
-    const [elitePeriod, setElitePeriod] = React.useState<'semestral' | 'anual'>('anual');
+    const [billingCycle, setBillingCycle] = React.useState<'semestral' | 'anual'>('anual');
 
     const whatsappUrl = "https://wa.me/8109011886491?text=";
     const proUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano PRO.")}`;
@@ -29,6 +28,31 @@ export const Pricing = () => {
                     </p>
                 </div>
 
+                {/* Billing Toggle */}
+                <div className="flex flex-col items-center justify-center mb-16 gap-4">
+                    <div className="flex items-center gap-4 bg-slate-900/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 shadow-2xl">
+                        <button
+                            onClick={() => setBillingCycle('semestral')}
+                            className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 ${billingCycle === 'semestral' ? 'bg-brand-blue text-slate-950 shadow-lg shadow-brand-blue/20 scale-105' : 'text-white/40 hover:text-white/60'}`}
+                        >
+                            6 Meses
+                        </button>
+                        <button
+                            onClick={() => setBillingCycle('anual')}
+                            className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 ${billingCycle === 'anual' ? 'bg-brand-blue text-slate-950 shadow-lg shadow-brand-blue/20 scale-105' : 'text-white/40 hover:text-white/60'}`}
+                        >
+                            12 Meses
+                        </button>
+                    </div>
+                    {billingCycle === 'anual' && (
+                        <div className="flex items-center gap-2 animate-bounce">
+                            <span className="text-brand-pink text-[10px] font-black uppercase tracking-widest py-1 px-3 bg-brand-pink/10 rounded-full border border-brand-pink/20">
+                                ECONOMIZE ATÉ 11% NO PLANO ANUAL
+                            </span>
+                        </div>
+                    )}
+                </div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 items-stretch px-0">
                     {/* PLANO PRO */}
                     <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900/60 border-slate-800 hover:border-brand-blue/40 transition-all duration-500 backdrop-blur-xl flex flex-col group overflow-hidden">
@@ -49,49 +73,26 @@ export const Pricing = () => {
                             <SmallCheckBullet text="Packs de Contatos Extras disponíveis" />
                         </ul>
 
-                        <div className="bg-slate-950/40 border border-white/5 rounded-2xl p-6 mb-8 relative overflow-hidden">
-                            <div className="space-y-4">
-                                <div className="space-y-1">
-                                    <div className="flex items-baseline gap-1">
-                                        <span className="text-white text-5xl font-black transition-all">
-                                            {proPeriod === 'anual' ? '¥37.800' : '¥21.000'}
-                                        </span>
-                                        <span className="text-brand-blue text-xs uppercase font-bold tracking-widest">/ {proPeriod === 'anual' ? 'anual' : 'semestral'}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-brand-blue font-bold text-base">
-                                            ¥{proPeriod === 'anual' ? '3.150' : '3.500'}/mês
-                                        </span>
-                                        <span className="text-brand-gray text-[11px] uppercase opacity-60">valor mensal estimado</span>
+                        <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
+                            <div className="space-y-2 text-center md:text-left">
+                                <div className="flex items-center justify-center md:justify-start gap-3">
+                                    <span className="text-white text-6xl md:text-7xl font-black tracking-tighter">
+                                        ¥{billingCycle === 'anual' ? '3.150' : '3.500'}
+                                    </span>
+                                    <div className="bg-brand-blue/10 text-brand-blue text-[10px] font-black px-2 py-0.5 rounded border border-brand-blue/20 tracking-widest">
+                                        POR MÊS
                                     </div>
                                 </div>
-
-                                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
-                                    <button
-                                        onClick={() => setProPeriod('semestral')}
-                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${proPeriod === 'semestral' ? 'bg-brand-blue text-slate-900 border-brand-blue shadow-lg shadow-brand-blue/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
-                                    >
-                                        Ver Plano Semestral
-                                    </button>
-                                    <button
-                                        onClick={() => setProPeriod('anual')}
-                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${proPeriod === 'anual' ? 'bg-brand-blue text-slate-900 border-brand-blue shadow-lg shadow-brand-blue/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
-                                    >
-                                        Ver Plano Anual
-                                    </button>
+                                <div className="text-brand-gray/60 text-[11px] font-black uppercase tracking-widest">
+                                    COBRANÇA MENSAL AUTOMÁTICA DURANTE {billingCycle === 'anual' ? '12' : '6'} MESES
                                 </div>
-                                {proPeriod === 'anual' && (
-                                    <div className="bg-brand-pink/10 text-brand-pink text-[10px] font-black uppercase py-1.5 px-3 rounded-full text-center border border-brand-pink/20">
-                                        Economize ¥4.200 no período
-                                    </div>
-                                )}
                             </div>
-                        </div>
 
-                        <a href={proUrl} className="relative w-full h-12 bg-brand-blue text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all text-[10px] uppercase tracking-widest active:scale-95 shadow-lg shadow-brand-blue/20 group/btn overflow-hidden">
-                            <span className="relative z-10">COMEÇAR COM PLANO PRO</span>
-                            <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
-                        </a>
+                            <a href={proUrl} className="relative w-full h-14 bg-brand-blue text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all text-[11px] uppercase tracking-widest active:scale-95 shadow-lg shadow-brand-blue/20 group/btn overflow-hidden">
+                                <span className="relative z-10">COMEÇAR COM PLANO PRO</span>
+                                <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
+                            </a>
+                        </div>
                     </div>
 
                     {/* PLANO ELITE */}
@@ -116,49 +117,26 @@ export const Pricing = () => {
                             <SmallCheckBullet text="Packs de Contatos Extras disponíveis" color="yellow" />
                         </ul>
 
-                        <div className="bg-slate-950/40 border border-white/5 rounded-2xl p-6 mb-8 relative overflow-hidden">
-                            <div className="space-y-4">
-                                <div className="space-y-1">
-                                    <div className="flex items-baseline gap-1">
-                                        <span className="text-white text-5xl font-black transition-all">
-                                            {elitePeriod === 'anual' ? '¥70.200' : '¥39.000'}
-                                        </span>
-                                        <span className="text-brand-yellow text-xs uppercase font-bold tracking-widest">/ {elitePeriod === 'anual' ? 'anual' : 'semestral'}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-brand-yellow font-bold text-base">
-                                            ¥{elitePeriod === 'anual' ? '5.850' : '6.500'}/mês
-                                        </span>
-                                        <span className="text-brand-gray text-[11px] uppercase opacity-60">valor mensal estimado</span>
+                        <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
+                            <div className="space-y-2 text-center md:text-left">
+                                <div className="flex items-center justify-center md:justify-start gap-3">
+                                    <span className="text-white text-6xl md:text-7xl font-black tracking-tighter">
+                                        ¥{billingCycle === 'anual' ? '5.850' : '6.500'}
+                                    </span>
+                                    <div className="bg-brand-yellow/10 text-brand-yellow text-[10px] font-black px-2 py-0.5 rounded border border-brand-yellow/20 tracking-widest">
+                                        POR MÊS
                                     </div>
                                 </div>
-
-                                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
-                                    <button
-                                        onClick={() => setElitePeriod('semestral')}
-                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${elitePeriod === 'semestral' ? 'bg-brand-yellow text-slate-900 border-brand-yellow shadow-lg shadow-brand-yellow/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
-                                    >
-                                        Ver Plano Semestral
-                                    </button>
-                                    <button
-                                        onClick={() => setElitePeriod('anual')}
-                                        className={`py-2 px-3 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${elitePeriod === 'anual' ? 'bg-brand-yellow text-slate-900 border-brand-yellow shadow-lg shadow-brand-yellow/20' : 'bg-transparent text-white/40 border-white/10 hover:border-white/20'}`}
-                                    >
-                                        Ver Plano Anual
-                                    </button>
+                                <div className="text-brand-gray/60 text-[11px] font-black uppercase tracking-widest">
+                                    COBRANÇA MENSAL AUTOMÁTICA DURANTE {billingCycle === 'anual' ? '12' : '6'} MESES
                                 </div>
-                                {elitePeriod === 'anual' && (
-                                    <div className="bg-brand-pink/10 text-brand-pink text-[10px] font-black uppercase py-1.5 px-3 rounded-full text-center border border-brand-pink/20">
-                                        Economize ¥7.800 no período
-                                    </div>
-                                )}
                             </div>
-                        </div>
 
-                        <a href={eliteUrl} className="relative w-full h-14 bg-brand-yellow text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-xl active:scale-95 text-[10px] uppercase tracking-widest leading-none group/btn overflow-hidden">
-                            <span className="relative z-10">COMEÇAR COM PLANO ELITE</span>
-                            <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
-                        </a>
+                            <a href={eliteUrl} className="relative w-full h-14 bg-brand-yellow text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-xl active:scale-95 text-[11px] uppercase tracking-widest leading-none group/btn overflow-hidden">
+                                <span className="relative z-10">COMEÇAR COM PLANO ELITE</span>
+                                <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
