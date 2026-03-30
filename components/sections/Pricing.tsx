@@ -178,7 +178,7 @@ export const Pricing = () => {
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
-                        <h3 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
+                        <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
                             Ganhe 2 Totens NFC com QR Code produzidos em 3D ao contratar hoje
                         </h3>
                         <p className="text-brand-gray text-base md:text-lg font-light mb-12 max-w-2xl mx-auto">
@@ -213,7 +213,7 @@ export const Pricing = () => {
             <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16">
                 <div className="text-center mb-20">
                     <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-blue border-brand-blue/30">COMEÇAR É SIMPLES</Badge>
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
                         Como contratar em 3 passos
                     </h2>
                     <p className="text-brand-gray text-lg md:text-xl font-light max-w-2xl mx-auto">
