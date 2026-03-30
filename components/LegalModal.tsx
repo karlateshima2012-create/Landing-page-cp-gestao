@@ -35,30 +35,94 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                 {/* Scrollable Body */}
                 <div className="p-8 overflow-y-auto max-h-[calc(80vh-80px)] space-y-12 text-brand-gray leading-relaxed font-light custom-scrollbar">
                     <section>
-                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">Política de Privacidade</h3>
-                        <div className="space-y-4 text-sm">
-                            <p>A Creative Print valoriza a privacidade de seus usuários. Esta Política descreve como coletamos e utilizamos seus dados.</p>
-                            <p>1. Coleta de Dados: Coletamos apenas informações essenciais para a prestação de nossos serviços de gestão e fidelidade, como nome, contato e preferências de serviço.</p>
-                            <p>2. Uso das Informações: Seus dados são utilizados exclusivamente para gerenciar seus clientes, pontuações e enviar notificações relevantes via WhatsApp.</p>
-                            <p>3. Segurança: Adotamos medidas de segurança técnicas e organizacionais adequadas para proteger seus dados contra acessos não autorizados, vazamentos ou perdas acidentais.</p>
+                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">📄 CONTRATO DE PRESTAÇÃO DE SERVIÇO – CP AGENDA PRO</h3>
+                        <div className="space-y-6 text-sm">
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">1. Objeto</p>
+                                <p>A CONTRATADA (Creative Print) disponibiliza ao CONTRATANTE acesso ao sistema CP Agenda Pro, incluindo funcionalidades de agendamento online, gestão de calendário, notificações automatizadas e CRM de clientes.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">2. Modalidade de Contratação</p>
+                                <p>O serviço é contratado em uma das seguintes modalidades:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Plano Semestral: duração mínima de 6 meses</li>
+                                    <li>Plano Anual: duração mínima de 12 meses</li>
+                                </ul>
+                                <p>O plano escolhido no momento da contratação será aplicado durante todo o período contratado.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">3. Forma de Pagamento</p>
+                                <p>O pagamento será realizado via cartão de crédito através da plataforma Stripe. A cobrança será mensal e automática, conforme o plano escolhido.</p>
+                                <p className="italic underline">Valores Vigentes:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>Plano PRO: ¥3.500/mês (semestral) ou ¥3.150/mês (anual)</li>
+                                    <li>Plano AUTOMÁTICO: ¥6.500/mês (semestral) ou ¥5.850/mês (anual)</li>
+                                </ul>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">4. Compromisso e Cancelamento</p>
+                                <p>Ao contratar o serviço, o CONTRATANTE concorda com o período mínimo selecionado (6 ou 12 meses).</p>
+                                <p className="underline">Regras:</p>
+                                <ul className="list-disc pl-5 space-y-1">
+                                    <li>O cancelamento pode ser solicitado a qualquer momento.</li>
+                                    <li>O acesso ao sistema será encerrado conforme as regras contratuais.</li>
+                                    <li>Não haverá reembolso de valores já pagos.</li>
+                                    <li>As cobranças futuras serão interrompidas após o processamento do cancelamento.</li>
+                                </ul>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">5. Inadimplência</p>
+                                <p>Caso o pagamento não seja realizado, o acesso ao sistema poderá ser suspenso automaticamente. A reativação dependerá da regularização do pagamento.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">6. Ativação do Serviço</p>
+                                <p>Após a confirmação do pagamento, a Creative Print realizará a configuração inicial do sistema. O prazo de ativação pode variar conforme a complexidade da configuração personalizada.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">7. Responsabilidade do Cliente</p>
+                                <p>O CONTRATANTE é responsável pelo uso correto da plataforma, gestão de seus agendamentos e horários, e pela veracidade das informações inseridas no sistema.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white">8. Limitação de Responsabilidade</p>
+                                <p>A CONTRATADA não se responsabiliza por perda de vendas por mau uso do sistema ou falhas externas (internet, dispositivos de terceiros).</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <p className="font-bold text-white italic">9. Aceite</p>
+                                <p>Ao realizar o pagamento, o CONTRATANTE declara estar de acordo com todos os termos deste contrato.</p>
+                            </div>
                         </div>
                     </section>
 
-                    <section>
-                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">Termos de Uso</h3>
+                    <section className="pt-8 border-t border-white/5">
+                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">📜 TERMOS DE USO – CP AGENDA PRO</h3>
                         <div className="space-y-4 text-sm">
-                            <p>Ao utilizar o sistema CP Gestão, você concorda com os seguintes termos:</p>
-                            <p>1. Licença de Uso: Concedemos uma licença limitada, não exclusiva e intransferível para o uso de nossa plataforma conforme o plano contratado.</p>
-                            <p>2. Responsabilidade: O usuário é responsável pela veracidade dos dados inseridos e pelo uso ético das ferramentas de comunicação disponibilizadas.</p>
-                            <p>3. Pagamentos: O acesso ao sistema está condicionado à manutenção do plano de assinatura ativo de acordo com os ciclos de renovação escolhidos.</p>
-                            <p>4. Cancelamento: O cancelamento do plano de assinatura pode ser solicitado a qualquer momento, porém não haverá reembolso de valores já pagos. O acesso ao sistema permanecerá ativo até o final do ciclo vigente do plano contratado.</p>
-                            <p>5. O usuário declara ser o responsável legal pelos dados de seus clientes inseridos na plataforma, estando autorizado a compartilhá-los para a execução dos serviços.</p>
-                            <p>6. Cookies: Utilizamos cookies essenciais para o funcionamento da plataforma, como autenticação de sessão e preferências de uso. Ao utilizar o sistema CP Gestão, você consente com o uso desses cookies. Cookies não essenciais (como analytics) são opcionais e podem ser gerenciados pelo usuário nas configurações do navegador.</p>
+                            <p>1. Uso da Plataforma: O sistema deve ser utilizado exclusivamente para agendamentos e fins comerciais legítimos, sendo proibida a prática de spam ou fraudes.</p>
+                            <p>2. Dados e Privacidade: Os dados de agendamento são de responsabilidade do CONTRATANTE. A Creative Print não compartilha dados com terceiros, exceto provedores essenciais (Stripe).</p>
+                            <p>3. Acesso: O acesso é individual e intransferível. O compartilhamento indevido de contas resultará na suspensão imediata do serviço.</p>
+                            <p>4. Atualizações: Reservamo-nos o direito de realizar melhorias e atualizações visando desempenho e segurança sem aviso prévio.</p>
+                            <p>5. Suporte: O suporte técnico será prestado via canais oficiais conforme disponibilidade da empresa comercial.</p>
+                        </div>
+                    </section>
+
+                    <section className="pt-8 border-t border-white/5">
+                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">🔒 POLÍTICA DE PRIVACIDADE</h3>
+                        <div className="space-y-4 text-sm">
+                            <p>A Creative Print valoriza a sua privacidade. Coletamos apenas informações essenciais para a prestação de serviços de agendamento e gestão.</p>
+                            <p>Adotamos medidas de segurança técnicas rigorosas para proteger os dados de seus clientes contra acessos não autorizados.</p>
+                            <p>Este sistema utiliza Cookies para autenticação de sessão e gerenciamento de preferências. Ao utilizar, você consente com o uso destes recursos.</p>
                         </div>
                     </section>
 
                     <div className="pt-8 border-t border-white/5 text-center italic text-[10px]">
-                        Última atualização: Janeiro de 2026
+                        Última atualização: 30 de Março de 2026
                     </div>
                 </div>
             </div>
