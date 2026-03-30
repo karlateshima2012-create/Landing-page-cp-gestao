@@ -9,7 +9,6 @@ export const Pricing = () => {
     const whatsappUrl = "https://wa.me/8109011886491?text=";
     const proUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano PRO.")}`;
     const eliteUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano ELITE.")}`;
-    const consultUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de conhecer mais o sistema antes de decidir.")}`;
     const generalUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre os planos do CP Gestão.")}`;
 
     return (
@@ -163,28 +162,46 @@ export const Pricing = () => {
                     </div>
                 </div>
 
-                {/* Consultative Supporting Text (No separate headline) */}
-                <div className="max-w-4xl mx-auto mb-16 text-center px-4">
-                    <p className="text-brand-gray text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
-                        Ainda tem dúvidas? <span className="text-white font-bold">Conheça antes de decidir.</span><br />
-                        Agende uma conversa rápida para conhecer o sistema, entender como ele se adapta ao seu negócio e tirar todas as suas dúvidas. Sem compromisso.
-                    </p>
+                {/* 2. Security & Implementation Block */}
+                <div className="max-w-5xl mx-auto mb-24 px-8 flex flex-col md:flex-row items-center justify-between gap-10 group border-t border-white/5 pt-16">
+                    <div className="flex-grow text-center md:text-left">
+                        <span className="text-brand-blue font-black text-[11px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
+                            PROFISSIONALISMO & SEGURANÇA
+                        </span>
+                        
+                        <h3 className="text-3xl md:text-[32px] font-black text-white mb-2 tracking-tight leading-tight">
+                            Cancelamento disponível a qualquer momento
+                        </h3>
+                        
+                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-2 md:gap-x-4 text-brand-gray/80 text-[16px] md:text-xl font-light mb-4">
+                            <span>Implementação profissional inclusa</span>
+                            <span className="opacity-30 self-center">•</span>
+                            <span>Sem taxa de instalação</span>
+                            <span className="opacity-30 self-center">•</span>
+                            <span>Ativação imediata</span>
+                        </div>
 
-                    <a href={consultUrl} className="relative inline-flex items-center justify-center bg-white text-slate-950 font-black py-4 px-8 rounded-xl text-[10px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group overflow-hidden">
-                        <span className="relative z-10">QUERO CONHECER ANTES DE DECIDIR</span>
-                        <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    </a>
+                        <p className="text-brand-gray/30 text-[11px] md:text-[12px] font-light max-w-md mx-auto md:mx-0">
+                            Planos com duração mínima de 6 ou 12 meses. O cancelamento encerra o acesso ao sistema.
+                        </p>
+                    </div>
+
+                    <div className="flex-shrink-0 relative hidden md:block">
+                        <div className="absolute inset-0 bg-brand-blue/10 blur-[50px] rounded-full group-hover:bg-brand-blue/20 transition-all duration-700"></div>
+                        <ShieldCheck className="w-24 h-24 md:w-28 md:h-28 text-white/5 group-hover:text-brand-blue/20 transition-all duration-700 relative z-10" strokeWidth={1} />
+                    </div>
                 </div>
+
             </div>
 
-            {/* 2. OFERTA LANÇAMENTO */}
+            {/* 3. OFERTA LANÇAMENTO */}
             <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-16">
                 <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
                         <h3 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
-                            Ganhe 2 Totens NFC com QR Code impressos em 3D ao contratar hoje
+                            Ganhe 2 Totens NFC com QR Code produzidos em 3D ao contratar hoje
                         </h3>
                         <p className="text-brand-gray text-lg font-light mb-12 max-w-2xl mx-auto">
                             Sua estrutura completa, configurada por nós e pronta para uso imediato. Sem custo adicional.
@@ -192,48 +209,24 @@ export const Pricing = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 max-w-3xl mx-auto">
                             <FeatureTile
-                                title="Exclusividade impressa em 3D"
-                                sub="Totens físicos com acabamento premium."
+                                title="Exclusividade física"
+                                sub="Totens premium em 3D."
                             />
                             <FeatureTile
-                                title="Chegam funcionando"
-                                sub="Configuração do sistema de pontos inclusa."
+                                title="Pronto para uso"
+                                sub="Configuração completa inclusa."
                             />
                             <FeatureTile
                                 title="CUSTO ZERO"
-                                sub="Presente exclusivo para quem contrata hoje."
+                                sub="Exclusivo para hoje."
                                 highlight
                             />
                         </div>
 
-                        <a href={generalUrl} className="relative inline-flex items-center gap-4 bg-white text-slate-950 font-black py-4 px-8 rounded-xl text-xs uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group/btn overflow-hidden">
+                        <a href={generalUrl} className="relative inline-flex items-center gap-4 bg-white text-slate-950 font-black py-4 px-8 rounded-xl text-[11px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group/btn overflow-hidden">
                             <span className="relative z-10">Quero garantir meu bônus</span>
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                         </a>
-
-                        <div className="mt-12 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-10 text-left">
-                            <div className="flex-grow space-y-10">
-                                <div>
-                                    <h4 className="text-brand-blue font-black text-[10px] uppercase tracking-[0.2em] mb-2">
-                                        IMPLEMENTAÇÃO PROFISSIONAL INCLUSA EM TODOS OS PLANOS
-                                    </h4>
-                                </div>
-
-                                <div className="max-w-xl">
-                                    <h4 className="text-white font-black text-xs uppercase tracking-widest mb-4">
-                                        TRANSPARÊNCIA NO CONTRATO
-                                    </h4>
-                                    <p className="text-base text-brand-gray/80 font-light leading-relaxed">
-                                        Os planos operam em períodos de 6 ou 12 meses. Cancelamento livre a qualquer momento, com acesso ativo até o final do período contratado.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex-shrink-0 relative">
-                                <div className="absolute inset-0 bg-brand-blue/20 blur-3xl rounded-full"></div>
-                                <ShieldCheck className="w-24 h-24 text-white/5 group-hover:text-brand-blue/20 transition-all duration-700 relative z-10" />
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -288,7 +281,7 @@ const SmallCheckBullet = ({ text, color = 'blue' }: { text: string, color?: 'blu
         <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${color === 'yellow' ? 'bg-brand-yellow text-slate-950' : 'bg-brand-blue text-slate-950'}`}>
             <Check strokeWidth={4} className="w-2.5 h-2.5" />
         </div>
-        <span className="text-[13px] md:text-sm font-bold leading-tight uppercase font-medium">{text}</span>
+        <span className="text-[12px] md:text-sm font-bold uppercase tracking-tight">{text}</span>
     </li>
 );
 
