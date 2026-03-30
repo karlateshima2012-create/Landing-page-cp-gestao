@@ -31,15 +31,14 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                         </svg>
                     </button>
                 </div>
-
                 {/* Scrollable Body */}
                 <div className="p-8 overflow-y-auto max-h-[calc(80vh-80px)] space-y-12 text-brand-gray leading-relaxed font-light custom-scrollbar">
                     <section>
-                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">📄 CONTRATO DE PRESTAÇÃO DE SERVIÇO – CP AGENDA PRO</h3>
+                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">📄 CONTRATO DE PRESTAÇÃO DE SERVIÇO – CP GESTÃO</h3>
                         <div className="space-y-6 text-sm">
                             <div className="space-y-2">
                                 <p className="font-bold text-white">1. Objeto</p>
-                                <p>A CONTRATADA (Creative Print) disponibiliza ao CONTRATANTE acesso ao sistema CP Agenda Pro, incluindo funcionalidades de agendamento online, gestão de calendário, notificações automatizadas e CRM de clientes.</p>
+                                <p>A CONTRATADA (Creative Print) disponibiliza ao CONTRATANTE acesso ao sistema CP Gestão, incluindo funcionalidades de fidelidade, CRM, gestão de clientes e integração com dispositivos NFC/QR Code.</p>
                             </div>
 
                             <div className="space-y-2">
@@ -68,9 +67,9 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                                 <p className="underline">Regras:</p>
                                 <ul className="list-disc pl-5 space-y-1">
                                     <li>O cancelamento pode ser solicitado a qualquer momento.</li>
-                                    <li>O acesso ao sistema será encerrado conforme as regras contratuais.</li>
+                                    <li>O acesso ao sistema será encerrado imediatamente após o cancelamento.</li>
                                     <li>Não haverá reembolso de valores já pagos.</li>
-                                    <li>As cobranças futuras serão interrompidas após o processamento do cancelamento.</li>
+                                    <li>As cobranças futuras serão interrompidas imediatamente.</li>
                                 </ul>
                             </div>
 
@@ -86,7 +85,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
                             <div className="space-y-2">
                                 <p className="font-bold text-white">7. Responsabilidade do Cliente</p>
-                                <p>O CONTRATANTE é responsável pelo uso correto da plataforma, gestão de seus agendamentos e horários, e pela veracidade das informações inseridas no sistema.</p>
+                                <p>O CONTRATANTE é responsável pelo uso correto da plataforma, gestão de seus clientes e dados, e operação dos dispositivos NFC/QR Code vinculados ao sistema.</p>
                             </div>
 
                             <div className="space-y-2">
@@ -102,21 +101,21 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                     </section>
 
                     <section className="pt-8 border-t border-white/5">
-                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">📜 TERMOS DE USO – CP AGENDA PRO</h3>
+                        <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">📜 TERMOS DE USO – CP GESTÃO</h3>
                         <div className="space-y-4 text-sm">
-                            <p>1. Uso da Plataforma: O sistema deve ser utilizado exclusivamente para agendamentos e fins comerciais legítimos, sendo proibida a prática de spam ou fraudes.</p>
-                            <p>2. Dados e Privacidade: Os dados de agendamento são de responsabilidade do CONTRATANTE. A Creative Print não compartilha dados com terceiros, exceto provedores essenciais (Stripe).</p>
-                            <p>3. Acesso: O acesso é individual e intransferível. O compartilhamento indevido de contas resultará na suspensão imediata do serviço.</p>
+                            <p>1. Uso da Plataforma: O sistema deve ser utilizado exclusivamente para fins comerciais legítimos, sendo proibida a prática de spam, fraudes ou uso indevido de dados de clientes.</p>
+                            <p>2. Dados e Privacidade: Os dados inseridos no sistema são de responsabilidade do CONTRATANTE. A Creative Print não compartilha dados com terceiros, exceto provedores técnicos essenciais (Stripe).</p>
+                            <p>3. Acesso: O acesso é individual e vinculado ao cliente contratante. O compartilhamento indevido ou revenda do acesso sem autorização resultará na suspensão imediata do serviço.</p>
                             <p>4. Atualizações: Reservamo-nos o direito de realizar melhorias e atualizações visando desempenho e segurança sem aviso prévio.</p>
-                            <p>5. Suporte: O suporte técnico será prestado via canais oficiais conforme disponibilidade da empresa comercial.</p>
+                            <p>5. Suporte: O suporte técnico será prestado conforme disponibilidade, principalmente durante a ativação e uso inicial.</p>
                         </div>
                     </section>
 
                     <section className="pt-8 border-t border-white/5">
                         <h3 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-6">🔒 POLÍTICA DE PRIVACIDADE</h3>
                         <div className="space-y-4 text-sm">
-                            <p>A Creative Print valoriza a sua privacidade. Coletamos apenas informações essenciais para a prestação de serviços de agendamento e gestão.</p>
-                            <p>Adotamos medidas de segurança técnicas rigorosas para proteger os dados de seus clientes contra acessos não autorizados.</p>
+                            <p>A Creative Print valoriza a sua privacidade. Coletamos apenas informações essenciais para a prestação de serviços de gestão e fidelidade.</p>
+                            <p>Adotamos medidas de segurança técnicas rigorosas para proteger os seus dados e os dados de seus clientes contra acessos não autorizados.</p>
                             <p>Este sistema utiliza Cookies para autenticação de sessão e gerenciamento de preferências. Ao utilizar, você consente com o uso destes recursos.</p>
                         </div>
                     </section>
