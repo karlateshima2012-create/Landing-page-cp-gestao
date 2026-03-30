@@ -181,14 +181,14 @@ export const Pricing = () => {
                             <span>Ativação imediata</span>
                         </div>
 
-                        <p className="text-brand-gray/30 text-sm font-light max-w-md mx-auto md:mx-0">
+                        <p className="text-brand-gray/80 text-sm font-light max-w-md mx-auto md:mx-0">
                             Planos com duração mínima de 6 ou 12 meses. O cancelamento encerra o acesso ao sistema.
                         </p>
                     </div>
 
                     <div className="flex-shrink-0 relative hidden md:block">
-                        <div className="absolute inset-0 bg-brand-blue/10 blur-[50px] rounded-full group-hover:bg-brand-blue/20 transition-all duration-700"></div>
-                        <ShieldCheck className="w-24 h-24 md:w-28 md:h-28 text-white/5 group-hover:text-brand-blue/20 transition-all duration-700 relative z-10" strokeWidth={1} />
+                        <div className="absolute inset-0 bg-brand-blue/20 blur-[50px] rounded-full transition-all duration-700"></div>
+                        <ShieldCheck className="w-24 h-24 md:w-28 md:h-28 text-brand-blue/20 transition-all duration-700 relative z-10" strokeWidth={1} />
                     </div>
                 </div>
 
