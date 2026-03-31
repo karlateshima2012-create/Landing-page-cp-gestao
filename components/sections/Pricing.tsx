@@ -1,13 +1,14 @@
 import React from 'react';
 import { Badge } from '../Badge';
-import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket } from 'lucide-react';
+import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket, Crown } from 'lucide-react';
 
 export const Pricing = () => {
-    const [billingCycle, setBillingCycle] = React.useState<'semestral' | 'anual'>('anual');
+    const [openPro, setOpenPro] = React.useState(false);
+    const [openAuto, setOpenAuto] = React.useState(false);
 
     const whatsappUrl = "https://wa.me/8109011886491?text=";
     const proUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano PRO.")}`;
-    const eliteUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano ELITE.")}`;
+    const automaticoUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano AUTOMÁTICO.")}`;
     const generalUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre os planos do CP Gestão.")}`;
 
     return (
@@ -28,114 +29,135 @@ export const Pricing = () => {
                     </p>
                 </div>
 
-                {/* Billing Toggle */}
-                <div className="flex flex-col items-center justify-center mb-16 gap-4">
-                    <div className="flex items-center gap-4 bg-slate-900/80 backdrop-blur-md p-1.5 rounded-2xl border border-white/10 shadow-2xl">
-                        <button
-                            onClick={() => setBillingCycle('semestral')}
-                            className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 ${billingCycle === 'semestral' ? 'bg-brand-blue text-slate-950 shadow-lg shadow-brand-blue/20 scale-105' : 'text-white/40 hover:text-white/60'}`}
-                        >
-                            6 Meses
-                        </button>
-                        <button
-                            onClick={() => setBillingCycle('anual')}
-                            className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 ${billingCycle === 'anual' ? 'bg-brand-blue text-slate-950 shadow-lg shadow-brand-blue/20 scale-105' : 'text-white/40 hover:text-white/60'}`}
-                        >
-                            12 Meses
-                        </button>
-                    </div>
-                    {billingCycle === 'anual' && (
-                        <div className="flex items-center gap-2 animate-bounce">
-                            <span className="text-brand-pink text-[10px] font-black uppercase tracking-widest py-1 px-3 bg-brand-pink/10 rounded-full border border-brand-pink/20">
-                                ECONOMIZE ATÉ 11% NO PLANO ANUAL
-                            </span>
-                        </div>
-                    )}
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 items-stretch px-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16 items-start px-0">
                     {/* PLANO PRO */}
                     <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900/60 border-slate-800 hover:border-brand-blue/40 transition-all duration-500 backdrop-blur-xl flex flex-col group overflow-hidden">
                         <div className="absolute -top-10 -left-10 w-24 h-24 bg-brand-blue/10 rounded-full blur-[40px]"></div>
-
-                        <div className="mb-8">
-                            <h3 className="text-3xl font-black text-white mb-1 uppercase tracking-tight font-black">PLANO PRO</h3>
-                            <p className="text-brand-blue text-xs uppercase font-black tracking-widest opacity-80">Ideal para controle total</p>
+                        
+                        <div className="flex items-center justify-between mb-8">
+                            <div className="flex items-center gap-2">
+                                <Settings className="w-5 h-5 text-brand-blue" />
+                                <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Ideal para organização</span>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <Smartphone className="w-6 h-6 text-brand-blue/40" />
+                                <Crown className="w-6 h-6 text-brand-blue/20" />
+                            </div>
                         </div>
 
-                        <ul className="space-y-3 mb-10 flex-grow">
-                            <SmallCheckBullet text="Gestão 360º de Clientes (CRM)" />
-                            <SmallCheckBullet text="Sistema de Fidelidade Completo" />
-                            <SmallCheckBullet text="Gamificação por Pontuação" />
-                            <SmallCheckBullet text="Aprovação de pontuação Manual" />
-                            <SmallCheckBullet text="Relatórios & Métricas" />
-                            <SmallCheckBullet text="Capacidade até 4.000 contatos" />
-                            <SmallCheckBullet text="Packs de Contatos Extras disponíveis" />
-                        </ul>
+                        <div className="mb-6">
+                            <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight">PLANO PRO</h3>
+                            <p className="text-brand-gray/80 text-sm font-light leading-relaxed">
+                                Toda a organização que seu negócio precisa para crescer com ordem e controle total sobre cada cliente.
+                            </p>
+                        </div>
 
-                        <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
-                            <div className="space-y-2 text-center md:text-left">
-                                <div className="flex items-center justify-center md:justify-start gap-3">
-                                    <span className="text-white text-5xl md:text-6xl font-black tracking-tighter">
-                                        ¥{billingCycle === 'anual' ? '3.150' : '3.500'}
-                                    </span>
-                                    <div className="bg-brand-blue/10 text-brand-blue text-[10px] font-black px-2 py-0.5 rounded border border-brand-blue/20 tracking-widest">
-                                        POR MÊS
-                                    </div>
-                                </div>
-                                <div className="text-brand-gray/60 text-[11px] font-black uppercase tracking-widest">
-                                    COBRANÇA MENSAL AUTOMÁTICA DURANTE {billingCycle === 'anual' ? '12' : '6'} MESES
-                                </div>
+                        <div className="mb-8 space-y-1">
+                            <div className="text-brand-blue text-[10px] font-black uppercase tracking-widest opacity-80">Investimento mensal</div>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-white text-6xl font-black tracking-tighter">¥3.150</span>
+                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
                             </div>
+                            <div className="text-brand-gray/60 text-[11px] font-bold">
+                                Total de ¥37.800 em 12 meses
+                            </div>
+                        </div>
 
+                        <div className="mb-10 space-y-4">
                             <a href={proUrl} className="relative w-full h-14 bg-brand-blue text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all text-[11px] uppercase tracking-widest active:scale-95 shadow-lg shadow-brand-blue/20 group/btn overflow-hidden">
-                                <span className="relative z-10">COMEÇAR COM PLANO PRO</span>
+                                <span className="relative z-10 px-4 text-center">QUERO ORGANIZAR MEUS CLIENTES (PRO)</span>
                                 <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                             </a>
+                        </div>
+
+                        {/* Accordion Features */}
+                        <div className="border-t border-white/5 pt-6">
+                            <button 
+                                onClick={() => setOpenPro(!openPro)}
+                                className="w-full flex items-center justify-between group/acc"
+                            >
+                                <span className="text-white font-black text-xs uppercase tracking-widest">Principais recursos</span>
+                                <ArrowRight className={`w-4 h-4 text-brand-blue transition-transform duration-300 ${openPro ? 'rotate-90' : ''}`} />
+                            </button>
+                            
+                            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openPro ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                                <ul className="space-y-3">
+                                    <SmallCheckBullet text="Gestão 360º de Clientes (CRM)" />
+                                    <SmallCheckBullet text="Sistema de Fidelidade Completo" />
+                                    <SmallCheckBullet text="Gamificação por Pontuação" />
+                                    <SmallCheckBullet text="Aprovação de pontuação Manual" />
+                                    <SmallCheckBullet text="Relatórios & Métricas" />
+                                    <SmallCheckBullet text="Capacidade até 4.000 contatos" />
+                                    <SmallCheckBullet text="Packs de Contatos Extras disponíveis" />
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    {/* PLANO ELITE */}
-                    <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900 border-brand-yellow/30 backdrop-blur-3xl flex flex-col shadow-[0_0_50px_rgba(255,242,0,0.1)] transition-all duration-500 overflow-visible">
+                    {/* PLANO AUTOMÁTICO */}
+                    <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900 border-brand-yellow/30 backdrop-blur-3xl flex flex-col shadow-[0_0_50px_rgba(255,242,0,0.1)] transition-all duration-500 overflow-visible group">
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-yellow/10 rounded-full blur-[40px]"></div>
-                        <div className="absolute -top-5 left-12 z-20">
-                            <Badge variant="outline" className="bg-slate-950 text-brand-yellow font-black px-6 py-1.5 shadow-2xl text-[9px] uppercase border-2 border-brand-yellow">RECOMENDADO</Badge>
+                        <div className="absolute -top-4 right-8 z-20">
+                            <Badge variant="outline" className="bg-brand-yellow text-slate-950 font-black px-6 py-1.5 shadow-2xl text-[9px] uppercase border-none">RECOMENDADO</Badge>
                         </div>
 
-                        <div className="mb-8">
-                            <h3 className="text-3xl font-black text-white mb-1 uppercase tracking-tight font-black">PLANO ELITE</h3>
-                            <p className="text-brand-yellow text-xs uppercase font-black tracking-widest">Automação total e escala</p>
-                        </div>
-
-                        <ul className="space-y-3 mb-10 flex-grow">
-                            <SmallCheckBullet text="Gestão 360º de Clientes (CRM)" color="yellow" />
-                            <SmallCheckBullet text="Sistema de Fidelidade Completo" color="yellow" />
-                            <SmallCheckBullet text="Gamificação por Pontuação" color="yellow" />
-                            <SmallCheckBullet text="Aprovação de pontuação 100% automática" color="yellow" />
-                            <SmallCheckBullet text="Relatórios & Métricas" color="yellow" />
-                            <SmallCheckBullet text="Capacidade até 6.000 contatos" color="yellow" />
-                            <SmallCheckBullet text="Packs de Contatos Extras disponíveis" color="yellow" />
-                        </ul>
-
-                        <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
-                            <div className="space-y-2 text-center md:text-left">
-                                <div className="flex items-center justify-center md:justify-start gap-3">
-                                    <span className="text-white text-5xl md:text-6xl font-black tracking-tighter">
-                                        ¥{billingCycle === 'anual' ? '5.850' : '6.500'}
-                                    </span>
-                                    <div className="bg-brand-yellow/10 text-brand-yellow text-[10px] font-black px-2 py-0.5 rounded border border-brand-yellow/20 tracking-widest">
-                                        POR MÊS
-                                    </div>
-                                </div>
-                                <div className="text-brand-gray/60 text-[11px] font-black uppercase tracking-widest">
-                                    COBRANÇA MENSAL AUTOMÁTICA DURANTE {billingCycle === 'anual' ? '12' : '6'} MESES
-                                </div>
+                        <div className="flex items-center justify-between mb-8">
+                            <div className="flex items-center gap-2">
+                                <Zap className="w-5 h-5 text-brand-yellow" />
+                                <span className="text-brand-yellow/80 text-[10px] font-black uppercase tracking-widest">Máxima Performance</span>
                             </div>
+                            <div className="flex items-center gap-4">
+                                <Rocket className="w-6 h-6 text-brand-yellow/40" />
+                                <Crown className="w-6 h-6 text-brand-yellow" />
+                            </div>
+                        </div>
 
-                            <a href={eliteUrl} className="relative w-full h-14 bg-brand-yellow text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-xl active:scale-95 text-[11px] uppercase tracking-widest leading-none group/btn overflow-hidden">
-                                <span className="relative z-10">COMEÇAR COM PLANO ELITE</span>
+                        <div className="mb-6">
+                            <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Automático 🔥</h3>
+                            <p className="text-brand-gray/80 text-sm font-light leading-relaxed">
+                                A solução definitiva para escalar suas vendas e fidelizar clientes no automático, sem esforço manual.
+                            </p>
+                        </div>
+
+                        <div className="mb-8 space-y-1">
+                            <div className="text-brand-yellow text-[10px] font-black uppercase tracking-widest opacity-80">Investimento mensal</div>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-white text-6xl font-black tracking-tighter">¥5.850</span>
+                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
+                            </div>
+                            <div className="text-brand-gray/60 text-[11px] font-bold">
+                                Total de ¥70.200 em 12 meses
+                            </div>
+                        </div>
+
+                        <div className="mb-10 space-y-4">
+                            <a href={automaticoUrl} className="relative w-full h-14 bg-brand-yellow text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-xl active:scale-95 text-[11px] uppercase tracking-widest leading-none group/btn overflow-hidden">
+                                <span className="relative z-10 px-4 text-center">QUERO AUTOMATIZAR MEU NEGÓCIO (Automático)</span>
                                 <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                             </a>
+                        </div>
+
+                        {/* Accordion Features */}
+                        <div className="border-t border-white/5 pt-6">
+                            <button 
+                                onClick={() => setOpenAuto(!openAuto)}
+                                className="w-full flex items-center justify-between group/acc"
+                            >
+                                <span className="text-white font-black text-xs uppercase tracking-widest">Principais recursos</span>
+                                <ArrowRight className={`w-4 h-4 text-brand-yellow transition-transform duration-300 ${openAuto ? 'rotate-90' : ''}`} />
+                            </button>
+                            
+                            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openAuto ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                                <ul className="space-y-3">
+                                    <SmallCheckBullet text="Gestão 360º de Clientes (CRM)" color="yellow" />
+                                    <SmallCheckBullet text="Sistema de Fidelidade Completo" color="yellow" />
+                                    <SmallCheckBullet text="Gamificação por Pontuação" color="yellow" />
+                                    <SmallCheckBullet text="Aprovação de pontuação 100% automática" color="yellow" />
+                                    <SmallCheckBullet text="Relatórios & Métricas" color="yellow" />
+                                    <SmallCheckBullet text="Capacidade até 6.000 contatos" color="yellow" />
+                                    <SmallCheckBullet text="Packs de Contatos Extras disponíveis" color="yellow" />
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,7 +182,7 @@ export const Pricing = () => {
                         </div>
 
                         <p className="text-brand-gray/80 text-[10px] md:text-xs font-light max-w-md mx-auto md:mx-0">
-                            Planos com duração mínima de 6 ou 12 meses. O cancelamento encerra o acesso ao sistema.
+                            Planos com duração mínima de 12 meses. O cancelamento encerra o acesso ao sistema.
                         </p>
                     </div>
 

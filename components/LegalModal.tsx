@@ -43,33 +43,28 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
                             <div className="space-y-2">
                                 <p className="font-bold text-white">2. Modalidade de Contratação</p>
-                                <p>O serviço é contratado em uma das seguintes modalidades:</p>
-                                <ul className="list-disc pl-5 space-y-1">
-                                    <li>Plano Semestral: duração mínima de 6 meses</li>
-                                    <li>Plano Anual: duração mínima de 12 meses</li>
-                                </ul>
-                                <p>O plano escolhido no momento da contratação será aplicado durante todo o período contratado.</p>
+                                <p>O serviço é contratado na modalidade de Plano Anual, com duração mínima de 12 meses. O compromisso assumido no momento da contratação será aplicado durante todo o período contratado.</p>
                             </div>
 
                             <div className="space-y-2">
-                                <p className="font-bold text-white">3. Forma de Pagamento</p>
-                                <p>O pagamento será realizado via cartão de crédito através da plataforma Stripe. A cobrança será mensal e automática, conforme o plano escolhido.</p>
-                                <p className="italic underline">Valores Vigentes:</p>
+                                <p className="font-bold text-white">3. Forma de Pagamento e Renovação</p>
+                                <p>O serviço é cobrado de forma recorrente, com pagamentos mensais automáticos via Stripe. A assinatura permanece ativa e será renovada automaticamente até que o cliente solicite o cancelamento, respeitando o período mínimo contratado.</p>
+                                <p className="italic underline">Valores Vigentes (Plano Anual):</p>
                                 <ul className="list-disc pl-5 space-y-1">
-                                    <li>Plano PRO: ¥3.500/mês (semestral) ou ¥3.150/mês (anual)</li>
-                                    <li>Plano AUTOMÁTICO: ¥6.500/mês (semestral) ou ¥5.850/mês (anual)</li>
+                                    <li>Plano PRO: ¥3.150/mês</li>
+                                    <li>Plano AUTOMÁTICO: ¥5.850/mês</li>
                                 </ul>
                             </div>
 
                             <div className="space-y-2">
                                 <p className="font-bold text-white">4. Compromisso e Cancelamento</p>
-                                <p>Ao contratar o serviço, o CONTRATANTE concorda com o período mínimo selecionado (6 ou 12 meses).</p>
+                                <p>Ao contratar o serviço, o CONTRATANTE concorda com o período mínimo de 12 meses.</p>
                                 <p className="underline">Regras:</p>
                                 <ul className="list-disc pl-5 space-y-1">
-                                    <li>O cancelamento pode ser solicitado a qualquer momento.</li>
+                                    <li>O cancelamento pode ser solicitado a qualquer momento após o período mínimo.</li>
                                     <li>O acesso ao sistema será encerrado imediatamente após o cancelamento.</li>
                                     <li>Não haverá reembolso de valores já pagos.</li>
-                                    <li>As cobranças futuras serão interrompidas imediatamente.</li>
+                                    <li>As cobranças futuras serão interrompidas após o processamento do cancelamento.</li>
                                 </ul>
                             </div>
 
@@ -121,7 +116,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                     </section>
 
                     <div className="pt-8 border-t border-white/5 text-center italic text-[10px]">
-                        Última atualização: 30 de Março de 2026
+                        Última atualização: 31 de Março de 2026
                     </div>
                 </div>
             </div>
