@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from '../Badge';
-import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket } from 'lucide-react';
+import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket, Crown } from 'lucide-react';
 
 export const Pricing = () => {
     const [openPro, setOpenPro] = React.useState(false);
@@ -50,7 +50,6 @@ export const Pricing = () => {
                         </div>
 
                         <div className="mb-8 space-y-1">
-                            <div className="text-brand-blue text-[10px] font-black uppercase tracking-widest opacity-80">Investimento mensal</div>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥3.150</span>
                                 <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
@@ -62,7 +61,7 @@ export const Pricing = () => {
 
                         <div className="mb-10 space-y-4">
                             <a href={proUrl} className="relative w-full h-14 bg-brand-blue text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all text-[11px] uppercase tracking-widest active:scale-95 shadow-lg shadow-brand-blue/20 group/btn overflow-hidden">
-                                <span className="relative z-10 px-4 text-center">QUERO ORGANIZAR MEUS CLIENTES (PRO)</span>
+                                <span className="relative z-10 px-4 text-center">QUERO ORGANIZAR MEUS CLIENTES</span>
                                 <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                             </a>
                         </div>
@@ -105,7 +104,7 @@ export const Pricing = () => {
                                 <Zap className="w-5 h-5 text-brand-yellow" />
                                 <span className="text-brand-yellow/80 text-[10px] font-black uppercase tracking-widest">Máxima Performance</span>
                             </div>
-                            <span className="text-brand-yellow/60 text-[10px] font-black uppercase tracking-widest">Upgrade Automático</span>
+                            <Crown className="w-6 h-6 text-brand-yellow/80 hover:scale-110 transition-transform duration-300 cursor-help" />
                         </div>
 
                         <div className="mb-6">
@@ -116,7 +115,6 @@ export const Pricing = () => {
                         </div>
 
                         <div className="mb-8 space-y-1">
-                            <div className="text-brand-yellow text-[10px] font-black uppercase tracking-widest opacity-80">Investimento mensal</div>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥5.850</span>
                                 <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
@@ -128,7 +126,7 @@ export const Pricing = () => {
 
                         <div className="mb-10 space-y-4">
                             <a href={automaticoUrl} className="relative w-full h-14 bg-brand-yellow text-slate-950 font-black rounded-xl flex items-center justify-center gap-2 hover:scale-[1.03] transition-all shadow-xl active:scale-95 text-[11px] uppercase tracking-widest leading-none group/btn overflow-hidden">
-                                <span className="relative z-10 px-4 text-center">QUERO AUTOMATIZAR MEU NEGÓCIO (Automático)</span>
+                                <span className="relative z-10 px-4 text-center">QUERO AUTOMATIZAR MEU NEGÓCIO</span>
                                 <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                             </a>
                         </div>
