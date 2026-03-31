@@ -157,12 +157,7 @@ export const Pricing = () => {
                 </div>
 
                 <div className="max-w-5xl mx-auto mb-24 px-8 flex flex-col md:flex-row items-center justify-between gap-10 group border-t border-white/5 pt-16">
-                    <div className="flex-shrink-0 relative md:order-2">
-                        <div className="absolute inset-0 bg-brand-blue/10 blur-[50px] rounded-full transition-all duration-700"></div>
-                        <ShieldCheck className="w-20 h-20 md:w-28 md:h-28 text-brand-blue/40 group-hover:text-brand-blue/60 transition-all duration-700 relative z-10" strokeWidth={1} />
-                    </div>
-
-                    <div className="flex-grow text-center md:text-left md:order-1">
+                    <div className="flex-grow text-center md:text-left">
                         <span className="text-brand-blue font-black text-[11px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
                             PROFISSIONALISMO & SEGURANÇA
                         </span>
@@ -182,6 +177,11 @@ export const Pricing = () => {
                                 O cancelamento encerra o acesso ao sistema
                             </p>
                         </div>
+                    </div>
+
+                    <div className="flex-shrink-0 relative">
+                        <div className="absolute inset-0 bg-brand-blue/10 blur-[50px] rounded-full transition-all duration-700"></div>
+                        <ShieldCheck className="w-20 h-20 md:w-28 md:h-28 text-brand-blue/40 group-hover:text-brand-blue/60 transition-all duration-700 relative z-10" strokeWidth={1} />
                     </div>
                 </div>
 
