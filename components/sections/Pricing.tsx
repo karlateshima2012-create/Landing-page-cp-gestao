@@ -94,8 +94,8 @@ export const Pricing = () => {
                     {/* PLANO AUTOMÁTICO */}
                     <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900 border-brand-yellow/30 backdrop-blur-3xl flex flex-col shadow-[0_0_50px_rgba(255,242,0,0.1)] transition-all duration-500 overflow-visible group">
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-yellow/10 rounded-full blur-[40px]"></div>
-                        <div className="absolute -top-4 right-12 z-40 transform translate-y-[-50%]">
-                            <div className="bg-brand-yellow text-slate-950 font-black px-6 py-2 rounded-full shadow-[0_0_20px_rgba(255,242,0,0.4)] text-[10px] uppercase tracking-[0.2em] border-2 border-slate-900">
+                        <div className="absolute top-0 left-12 z-40 transform -translate-y-1/2">
+                            <div className="bg-slate-950 text-brand-yellow font-black px-6 py-2 rounded-full shadow-2xl text-[10px] uppercase tracking-[0.2em] border border-brand-yellow/30">
                                 RECOMENDADO
                             </div>
                         </div>
