@@ -156,33 +156,32 @@ export const Pricing = () => {
                     </div>
                 </div>
 
-                {/* 2. Security & Implementation Block */}
                 <div className="max-w-5xl mx-auto mb-24 px-8 flex flex-col md:flex-row items-center justify-between gap-10 group border-t border-white/5 pt-16">
-                    <div className="flex-grow text-center md:text-left">
+                    <div className="flex-shrink-0 relative md:order-2">
+                        <div className="absolute inset-0 bg-brand-blue/10 blur-[50px] rounded-full transition-all duration-700"></div>
+                        <ShieldCheck className="w-20 h-20 md:w-28 md:h-28 text-brand-blue/40 group-hover:text-brand-blue/60 transition-all duration-700 relative z-10" strokeWidth={1} />
+                    </div>
+
+                    <div className="flex-grow text-center md:text-left md:order-1">
                         <span className="text-brand-blue font-black text-[11px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
                             PROFISSIONALISMO & SEGURANÇA
                         </span>
                         
-                        <h3 className="text-2xl md:text-3xl font-black text-white mb-2 tracking-tight leading-tight">
-                            Cancelamento disponível a qualquer momento
+                        <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight leading-tight">
+                            Implementação profissional inclusa • Sem taxa de instalação
                         </h3>
                         
-                        <div className="flex flex-wrap justify-center md:justify-start items-center gap-x-2 md:gap-x-4 text-brand-gray/80 text-base md:text-lg font-light mb-4">
-                            <span>Implementação profissional inclusa</span>
-                            <span className="opacity-30 self-center">•</span>
-                            <span>Sem taxa de instalação</span>
-                            <span className="opacity-30 self-center">•</span>
-                            <span>Ativação imediata</span>
+                        <div className="space-y-2">
+                            <p className="text-brand-gray/80 text-base md:text-lg font-light">
+                                Cobrança mensal automática no cartão, com total segurança via Stripe
+                            </p>
+                            <p className="text-brand-gray/80 text-base md:text-lg font-light">
+                                Plano com permanência mínima de 12 meses
+                            </p>
+                            <p className="text-brand-gray/60 text-sm md:text-base font-light">
+                                O cancelamento encerra o acesso ao sistema
+                            </p>
                         </div>
-
-                        <p className="text-brand-gray/80 text-[10px] md:text-xs font-light max-w-md mx-auto md:mx-0">
-                            Planos com duração mínima de 12 meses. O cancelamento encerra o acesso ao sistema.
-                        </p>
-                    </div>
-
-                    <div className="flex-shrink-0 relative hidden md:block">
-                        <div className="absolute inset-0 bg-brand-blue/20 blur-[50px] rounded-full transition-all duration-700"></div>
-                        <ShieldCheck className="w-24 h-24 md:w-28 md:h-28 text-brand-blue/20 transition-all duration-700 relative z-10" strokeWidth={1} />
                     </div>
                 </div>
 
