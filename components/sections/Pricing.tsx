@@ -20,7 +20,7 @@ export const Pricing = () => {
             <div className="max-w-[1440px] mx-auto px-6 md:px-24 w-full">
                 {/* 1. Pricing Plans Header */}
                 <div className="text-center mb-12 px-4">
-                    <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-yellow border-brand-yellow/50">INVESTIMENTO</Badge>
+                    <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-yellow border-brand-yellow/50">PLANOS</Badge>
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
                         Escolha o seu plano
                     </h2>
@@ -49,13 +49,13 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-8 space-y-1">
+                        <div className="mb-0 space-y-1">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥3.150</span>
-                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
-                            </div>
-                            <div className="text-brand-gray/60 text-[11px] font-bold">
-                                Total de ¥37.800 em 12 meses
+                                <div className="flex flex-col">
+                                    <span className="text-brand-gray/40 text-[10px] font-bold uppercase leading-none">/mês</span>
+                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">/ANO</span>
+                                </div>
                             </div>
                         </div>
 
@@ -66,17 +66,13 @@ export const Pricing = () => {
                             </a>
                         </div>
 
-                        {/* Accordion Features */}
+                        {/* Features List (Always Visible) */}
                         <div className="border-t border-white/5 pt-6">
-                            <button 
-                                onClick={() => setOpenPro(!openPro)}
-                                className="w-full flex items-center justify-between group/acc"
-                            >
+                            <div className="flex items-center justify-between mb-6">
                                 <span className="text-white font-black text-xs uppercase tracking-widest">Principais recursos</span>
-                                <ArrowRight className={`w-4 h-4 text-brand-blue transition-transform duration-300 ${openPro ? 'rotate-90' : ''}`} />
-                            </button>
+                            </div>
                             
-                            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openPro ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                            <div>
                                 <ul className="space-y-3">
                                     <SmallCheckBullet text="Gestão 360º de Clientes (CRM)" />
                                     <SmallCheckBullet text="Sistema de Fidelidade Completo" />
@@ -114,13 +110,13 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-8 space-y-1">
+                        <div className="mb-0 space-y-1">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥5.850</span>
-                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
-                            </div>
-                            <div className="text-brand-gray/60 text-[11px] font-bold">
-                                Total de ¥70.200 em 12 meses
+                                <div className="flex flex-col">
+                                    <span className="text-brand-gray/40 text-[10px] font-bold uppercase leading-none">/mês</span>
+                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">/ANO</span>
+                                </div>
                             </div>
                         </div>
 
@@ -131,17 +127,13 @@ export const Pricing = () => {
                             </a>
                         </div>
 
-                        {/* Accordion Features */}
+                        {/* Features List (Always Visible) */}
                         <div className="border-t border-white/5 pt-6">
-                            <button 
-                                onClick={() => setOpenAuto(!openAuto)}
-                                className="w-full flex items-center justify-between group/acc"
-                            >
+                            <div className="flex items-center justify-between mb-6">
                                 <span className="text-white font-black text-xs uppercase tracking-widest">Principais recursos</span>
-                                <ArrowRight className={`w-4 h-4 text-brand-yellow transition-transform duration-300 ${openAuto ? 'rotate-90' : ''}`} />
-                            </button>
+                            </div>
                             
-                            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openAuto ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+                            <div>
                                 <ul className="space-y-3">
                                     <SmallCheckBullet text="Gestão 360º de Clientes (CRM)" color="yellow" />
                                     <SmallCheckBullet text="Sistema de Fidelidade Completo" color="yellow" />
