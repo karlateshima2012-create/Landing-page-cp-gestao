@@ -43,7 +43,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
                             <div className="space-y-2">
                                 <p className="font-bold text-white">2. Modalidade de Contratação</p>
-                                <p>O serviço é contratado na modalidade de Plano Anual, com duração mínima de 12 meses. O compromisso assumido no momento da contratação será aplicado durante todo o período contratado.</p>
+                                <p>O serviço é contratado na modalidade de Plano Anual, com duração mínima de 12 meses. O período mínimo contratado começa a partir da data da confirmação do primeiro pagamento. O compromisso assumido no momento da contratação será aplicado durante todo o período contratado.</p>
                             </div>
 
                             <div className="space-y-2">
@@ -61,7 +61,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                                 <p>Ao contratar o serviço, o CONTRATANTE concorda com o período mínimo de 12 meses.</p>
                                 <p className="underline">Regras:</p>
                                 <ul className="list-disc pl-5 space-y-1">
-                                    <li>O cancelamento pode ser solicitado a qualquer momento após o período mínimo.</li>
+                                    <li>Caso o cancelamento ocorra antes de 12 meses, o plano contratado será considerado até o final do período.</li>
                                     <li>O acesso ao sistema será encerrado imediatamente após o cancelamento.</li>
                                     <li>Não haverá reembolso de valores já pagos.</li>
                                     <li>As cobranças futuras serão interrompidas após o processamento do cancelamento.</li>

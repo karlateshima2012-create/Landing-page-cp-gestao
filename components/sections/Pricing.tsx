@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from '../Badge';
-import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket, Crown } from 'lucide-react';
+import { MessageCircle, Check, Box, ShieldCheck, Zap, ArrowRight, Settings, Smartphone, Rocket } from 'lucide-react';
 
 export const Pricing = () => {
     const [openPro, setOpenPro] = React.useState(false);
@@ -39,10 +39,7 @@ export const Pricing = () => {
                                 <Settings className="w-5 h-5 text-brand-blue" />
                                 <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Ideal para organização</span>
                             </div>
-                            <div className="flex items-center gap-4">
-                                <Smartphone className="w-6 h-6 text-brand-blue/40" />
-                                <Crown className="w-6 h-6 text-brand-blue/20" />
-                            </div>
+                            <Smartphone className="w-6 h-6 text-brand-blue/40" />
                         </div>
 
                         <div className="mb-6">
@@ -55,7 +52,7 @@ export const Pricing = () => {
                         <div className="mb-8 space-y-1">
                             <div className="text-brand-blue text-[10px] font-black uppercase tracking-widest opacity-80">Investimento mensal</div>
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-6xl font-black tracking-tighter">¥3.150</span>
+                                <span className="text-white text-4xl font-black tracking-tighter">¥3.150</span>
                                 <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
                             </div>
                             <div className="text-brand-gray/60 text-[11px] font-bold">
@@ -97,8 +94,10 @@ export const Pricing = () => {
                     {/* PLANO AUTOMÁTICO */}
                     <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900 border-brand-yellow/30 backdrop-blur-3xl flex flex-col shadow-[0_0_50px_rgba(255,242,0,0.1)] transition-all duration-500 overflow-visible group">
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-yellow/10 rounded-full blur-[40px]"></div>
-                        <div className="absolute -top-4 right-8 z-20">
-                            <Badge variant="outline" className="bg-brand-yellow text-slate-950 font-black px-6 py-1.5 shadow-2xl text-[9px] uppercase border-none">RECOMENDADO</Badge>
+                        <div className="absolute -top-4 right-12 z-40 transform translate-y-[-50%]">
+                            <div className="bg-brand-yellow text-slate-950 font-black px-6 py-2 rounded-full shadow-[0_0_20px_rgba(255,242,0,0.4)] text-[10px] uppercase tracking-[0.2em] border-2 border-slate-900">
+                                RECOMENDADO
+                            </div>
                         </div>
 
                         <div className="flex items-center justify-between mb-8">
@@ -106,14 +105,11 @@ export const Pricing = () => {
                                 <Zap className="w-5 h-5 text-brand-yellow" />
                                 <span className="text-brand-yellow/80 text-[10px] font-black uppercase tracking-widest">Máxima Performance</span>
                             </div>
-                            <div className="flex items-center gap-4">
-                                <Rocket className="w-6 h-6 text-brand-yellow/40" />
-                                <Crown className="w-6 h-6 text-brand-yellow" />
-                            </div>
+                            <span className="text-brand-yellow/60 text-[10px] font-black uppercase tracking-widest">Upgrade Automático</span>
                         </div>
 
                         <div className="mb-6">
-                            <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Automático 🔥</h3>
+                            <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Automático</h3>
                             <p className="text-brand-gray/80 text-sm font-light leading-relaxed">
                                 A solução definitiva para escalar suas vendas e fidelizar clientes no automático, sem esforço manual.
                             </p>
@@ -122,7 +118,7 @@ export const Pricing = () => {
                         <div className="mb-8 space-y-1">
                             <div className="text-brand-yellow text-[10px] font-black uppercase tracking-widest opacity-80">Investimento mensal</div>
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-6xl font-black tracking-tighter">¥5.850</span>
+                                <span className="text-white text-4xl font-black tracking-tighter">¥5.850</span>
                                 <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
                             </div>
                             <div className="text-brand-gray/60 text-[11px] font-bold">
