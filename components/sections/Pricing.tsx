@@ -183,7 +183,13 @@ export const Pricing = () => {
                                         <span className="text-brand-gray text-lg md:text-xl font-light">Ideal para captar clientes e registrar pontos</span>
                                     </li>
                                  </ul>
-                            </div>
+                                 <div className="mt-12">
+                                     <a href="https://wa.me/8109011886491?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-brand-blue hover:bg-slate-100 hover:text-slate-950 text-slate-950 font-black text-[11px] h-14 px-10 rounded-xl inline-flex items-center justify-center transition-all shadow-xl active:scale-95 uppercase tracking-widest group/btn overflow-hidden">
+                                         <span className="relative z-10 px-4 text-center">Começar agora pelo WhatsApp</span>
+                                         <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
+                                     </a>
+                                 </div>
+                             </div>
                             <div className="flex justify-center">
                                  <div className="relative group">
                                     <div className="absolute inset-0 bg-brand-blue/20 blur-[80px] rounded-full group-hover:bg-brand-blue/30 transition-all duration-1000"></div>
@@ -194,19 +200,12 @@ export const Pricing = () => {
                     </div>
 
                     <div className="text-center">
-                        <p className="text-white text-xl md:text-3xl font-black mb-4 uppercase tracking-tighter">
+                        <p className="text-white text-xl md:text-3xl font-black mb-4 tracking-tighter">
                             Fale com a gente e comece hoje mesmo
                         </p>
                     </div>
                 </div>
 
-            {/* Final CTA */}
-            <div className="text-center pb-12">
-                <a href="https://wa.me/MESSAGE_URL?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-white hover:bg-slate-100 text-slate-950 font-black text-xs h-12 px-10 rounded-lg inline-flex items-center justify-center transition-all shadow-[0_0_25px_rgba(56,182,255,0.35)] hover:scale-105 active:scale-95 uppercase tracking-wider group overflow-hidden">
-                    <span className="relative z-10">Começar agora pelo WhatsApp</span>
-                    <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                </a>
-            </div>
         </section>
     );
 };
