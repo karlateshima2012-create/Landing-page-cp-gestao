@@ -30,7 +30,7 @@ export const FeaturesShowcase = () => (
             {/* Centered Header (Top) */}
             <div className="text-center mb-16 md:mb-20 max-w-5xl mx-auto">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-tight">
-                    Tudo que sua empresa precisa para crescer
+                    Tudo que sua empresa precisa <br /> para <span className="text-brand-blue">crescer</span>
                 </h2>
             </div>
 
