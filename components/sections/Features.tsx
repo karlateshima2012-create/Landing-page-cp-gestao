@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Users, CreditCard, TrendingUp, Check } from 'lucide-react';
+import { TrendingUp, Check } from 'lucide-react';
 
 const FeatureSection = ({ icon, title, description, badge, items, colorClass, glowClass, imageUrl, reverse = false }: {
     icon: React.ReactNode,
@@ -66,39 +66,6 @@ const FeatureSection = ({ icon, title, description, badge, items, colorClass, gl
 
 export const FeaturesShowcase = () => (
     <div id="features" className="relative">
-        <FeatureSection
-            colorClass="bg-brand-blue text-white"
-            glowClass="btn-glow-blue"
-            icon={<Users className="w-8 h-8" />}
-            badge="CRM COMPLETO"
-            title="Tenha o controle total dos seus clientes na palma da mão"
-            imageUrl="/crm-feature.jpg"
-            items={[
-                "Cadastre clientes com nome, telefone, endereço e histórico",
-                "Saiba a data da última compra de cada um",
-                "Receba lembretes estratégicos para acionar clientes",
-                "Descubra quanto cada cliente já gastou (valor vitalício)",
-                "Identifique seus clientes que mais compram",
-                "Base organizada para campanhas de marketing certeiras"
-            ]}
-        />
-        <FeatureSection
-            reverse
-            colorClass="bg-brand-pink text-white"
-            glowClass="btn-glow-pink"
-            icon={<CreditCard className="w-8 h-8" />}
-            badge="SISTEMA DE FIDELIDADE"
-            title="Transforme clientes comuns em fãs que voltam sempre"
-            imageUrl="/loyalty-feature.jpg"
-            items={[
-                "Clientes acumulam pontos a cada compra realizada",
-                "Pontos viram prêmios e descontos (você define as regras)",
-                "Estímulo automático para recompra",
-                "Cliente acompanha seus pontos pelo celular",
-                "Aumento do ticket médio naturalmente",
-                "Diferencial competitivo: você fideliza enquanto concorrente só vende"
-            ]}
-        />
         <FeatureSection
             colorClass="bg-brand-yellow text-slate-950"
             glowClass="btn-glow-yellow"
