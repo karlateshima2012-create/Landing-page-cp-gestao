@@ -49,12 +49,12 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-0 space-y-1">
+                        <div className="mb-8 space-y-1">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥3.150</span>
                                 <div className="flex flex-col">
                                     <span className="text-brand-gray/40 text-[10px] font-bold uppercase leading-none">/mês</span>
-                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">/ANO</span>
+                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">¥37.800 /ANO</span>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +81,7 @@ export const Pricing = () => {
                                     <SmallCheckBullet text="Relatórios & Métricas" />
                                     <SmallCheckBullet text="Capacidade até 4.000 contatos" />
                                     <SmallCheckBullet text="Packs de Contatos Extras disponíveis" />
+                                    <SmallCheckBullet text="Suporte rápido e direto via Whatsapp" />
                                 </ul>
                             </div>
                         </div>
@@ -98,7 +99,7 @@ export const Pricing = () => {
                         <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-2">
                                 <Zap className="w-5 h-5 text-brand-yellow" />
-                                <span className="text-brand-yellow/80 text-[10px] font-black uppercase tracking-widest">Máxima Performance</span>
+                                <span className="text-white/60 text-[10px] font-black uppercase tracking-widest">Máxima Performance</span>
                             </div>
                             <Crown className="w-6 h-6 text-brand-yellow/80 hover:scale-110 transition-transform duration-300 cursor-help" />
                         </div>
@@ -110,12 +111,12 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-0 space-y-1">
+                        <div className="mb-8 space-y-1">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥5.850</span>
                                 <div className="flex flex-col">
                                     <span className="text-brand-gray/40 text-[10px] font-bold uppercase leading-none">/mês</span>
-                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">/ANO</span>
+                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">¥70.200 /ANO</span>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +143,7 @@ export const Pricing = () => {
                                     <SmallCheckBullet text="Relatórios & Métricas" color="yellow" />
                                     <SmallCheckBullet text="Capacidade até 6.000 contatos" color="yellow" />
                                     <SmallCheckBullet text="Packs de Contatos Extras disponíveis" color="yellow" />
+                                    <SmallCheckBullet text="Suporte rápido e direto via Whatsapp" color="yellow" />
                                 </ul>
                             </div>
                         </div>
@@ -161,12 +163,6 @@ export const Pricing = () => {
                         <div className="space-y-2">
                             <p className="text-brand-gray/80 text-base md:text-lg font-light">
                                 Cobrança mensal automática no cartão, com total segurança via Stripe
-                            </p>
-                            <p className="text-brand-gray/80 text-base md:text-lg font-light">
-                                Plano com permanência mínima de 12 meses
-                            </p>
-                            <p className="text-brand-gray/60 text-sm md:text-base font-light">
-                                O cancelamento encerra o acesso ao sistema
                             </p>
                         </div>
                     </div>
