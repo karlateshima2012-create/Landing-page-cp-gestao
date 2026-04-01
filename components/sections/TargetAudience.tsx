@@ -16,7 +16,7 @@ export const TargetAudience = () => {
 
                     <div className="relative z-10 max-w-5xl mx-auto">
                         <div className="text-center mb-8">
-                            <h2 className="text-4xl md:text-7xl font-black text-white mt-4 mb-6 tracking-tighter leading-[1.1]">
+                            <h2 className="text-3xl md:text-6xl font-black text-white mt-4 mb-6 tracking-tighter leading-[1.1]">
                                 O que é <span className="text-brand-blue text-glow-blue">CP Gestão?</span>
                             </h2>
                             
@@ -54,21 +54,13 @@ export const TargetAudience = () => {
                         {/* Result Highlight - Fluid & Color Matched */}
                         <div className="text-center mb-12 max-w-4xl mx-auto">
                             <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed tracking-tight">
-                                <span className="text-brand-blue font-bold mr-2">Resultado real para o seu negócio:</span>
+                                <span className="text-white font-bold mr-2">Resultado real para o seu negócio:</span>
                                 mais retenção de clientes, ticket médio maior e crescimento organizado.
                             </p>
                         </div>
 
-                        {/* Final Highlight */}
+                        {/* Final CTA Only */}
                         <div className="text-center relative pt-8">
-                            <div className="mb-8">
-                                <p className="text-brand-blue font-black text-3xl md:text-5xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)] uppercase">
-                                    Quem não controla, perde cliente.
-                                </p>
-                                <p className="text-white font-black text-3xl md:text-5xl tracking-tight uppercase">
-                                    Quem fideliza, cresce. <span className="text-brand-pink">Escolha crescer.</span>
-                                </p>
-                            </div>
 
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-12 bg-brand-blue/40 blur-[40px] rounded-full animate-pulse opacity-20"></div>
 
