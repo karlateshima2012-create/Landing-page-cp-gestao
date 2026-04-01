@@ -58,7 +58,7 @@ export const TargetAudience = () => {
                         </div>
 
                         {/* Final Highlight */}
-                        <div className="text-center relative pt-8 border-t border-white/5">
+                        <div className="text-center relative pt-8">
                             <div className="mb-12">
                                 <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)]">
                                     Quem não controla, perde cliente.
@@ -78,7 +78,7 @@ export const TargetAudience = () => {
                                     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
                             >
-                                <span className="relative z-10">Ver Planos</span>
+                                <span className="relative z-10">ESCOLHER MEU PLANO</span>
                                 <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                             </a>
                         </div>
