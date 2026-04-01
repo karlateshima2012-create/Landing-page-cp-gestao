@@ -153,7 +153,7 @@ export const Pricing = () => {
                             Totem com QR Code em 3D incluso na contratação
                         </h2>
                         <p className="text-brand-gray text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-                            Seu cliente acessa o sistema de fidelidade em segundos, apenas escaneando.
+                            Seu cliente acessa o sistema de fidelidade em segundos, apenas escaneando com o celular.
                         </p>
                     </div>
 
