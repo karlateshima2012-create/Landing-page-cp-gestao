@@ -49,14 +49,14 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-8 space-y-1">
+                        <div className="mb-8 space-y-2">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥3.150</span>
-                                <div className="flex flex-col">
-                                    <span className="text-brand-gray/40 text-[10px] font-bold uppercase leading-none">/mês</span>
-                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">¥37.800 /ANO</span>
-                                </div>
+                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
                             </div>
+                            <p className="text-brand-gray/60 text-[10px] font-bold uppercase tracking-wider">
+                                Cobrança mensal automática • Permanência mínima de 12 meses
+                            </p>
                         </div>
 
                         <div className="mb-10 space-y-4">
@@ -92,7 +92,7 @@ export const Pricing = () => {
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-yellow/10 rounded-full blur-[40px]"></div>
                         <div className="absolute top-0 left-12 z-40 transform -translate-y-1/2">
                             <div className="bg-slate-950 text-brand-yellow font-black px-6 py-2 rounded-full shadow-2xl text-[10px] uppercase tracking-[0.2em] border border-brand-yellow/30">
-                                RECOMENDADO
+                                MAIS VENDIDO
                             </div>
                         </div>
 
@@ -111,14 +111,14 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-8 space-y-1">
+                        <div className="mb-8 space-y-2">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-4xl font-black tracking-tighter">¥5.850</span>
-                                <div className="flex flex-col">
-                                    <span className="text-brand-gray/40 text-[10px] font-bold uppercase leading-none">/mês</span>
-                                    <span className="text-brand-gray/60 text-[10px] font-bold uppercase mt-1">¥70.200 /ANO</span>
-                                </div>
+                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
                             </div>
+                            <p className="text-brand-gray/60 text-[10px] font-bold uppercase tracking-wider">
+                                Cobrança mensal automática • Permanência mínima de 12 meses
+                            </p>
                         </div>
 
                         <div className="mb-10 space-y-4">
