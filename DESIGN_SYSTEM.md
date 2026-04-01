@@ -13,7 +13,14 @@ Este documento é a **Fonte Única da Verdade** para o estilo visual, cores e ti
 - **Fonte**: Inter, com espaçamento `tracking-tighter`.
 - **Destaque**: Gradiente linear `gradient-text` para termos estratégicos.
 
-### **2. TÍTULOS DENTRO DOS CARDS**
+### **2. SUBTÍTULO DE SEÇÃO (Impacto)**
+- **Tamanho (Desktop)**: `text-5xl` (~48px).
+- **Tamanho (Mobile)**: `text-3xl` (~30px).
+- **Peso (Weight)**: `font-black` (900).
+- **Cor**: `text-white`.
+- **Atributo**: `tracking-tighter` e `leading-tight`.
+
+### **3. TÍTULOS DENTRO DOS CARDS**
 - **Tamanho**: `text-2xl` (~24px).
 - **Peso (Weight)**: `font-black` (900).
 - **Cor**: `text-white` (ou `text-brand-blue` conforme contexto).
