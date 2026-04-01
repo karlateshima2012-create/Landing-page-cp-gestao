@@ -14,7 +14,7 @@ export const Hero = () => (
                 Sua empresa está <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent">perdendo dinheiro</span> todos os dias sem saber.
             </h1>
 
-            <p className="text-lg md:text-xl text-brand-gray font-light leading-relaxed max-w-4xl mx-auto mb-12">
+            <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed max-w-4xl mx-auto mb-12">
                 Com o <span className="text-white font-bold">CP Gestão</span>, você organiza seus clientes, fideliza quem compra e garante um <span className="text-white font-bold">crescimento previsível</span> com uma plataforma completa e inteligente.
             </p>
 

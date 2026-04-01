@@ -35,10 +35,10 @@ export const TrustHighlights = () => {
                     <Badge icon variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1.5 px-6 border-white/20">
                         Fluxo de Sucesso
                     </Badge>
-                    <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 italic">
+                    <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter mb-8 italic leading-[1.1]">
                         De 0 a <span className="text-brand-blue not-italic">Total Automação</span>
                     </h2>
-                    <p className="text-brand-gray/60 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    <p className="text-brand-gray/90 text-lg md:text-2xl max-w-4xl mx-auto font-light leading-relaxed">
                         Esqueça a burocracia. Criamos um caminho simples para você focar no que realmente importa: <span className="text-white font-medium">seus clientes.</span>
                     </p>
                 </div>
@@ -65,7 +65,7 @@ export const TrustHighlights = () => {
                                     </div>
                                 </div>
 
-                                <h4 className="text-2xl font-black text-white mb-5 tracking-tight group-hover:text-brand-blue transition-colors duration-300">
+                                <h4 className="text-2xl font-black text-white mb-5 tracking-tight group-hover:text-brand-blue transition-colors duration-300 uppercase">
                                     {step.title}
                                 </h4>
                                 <p className="text-brand-gray/80 text-lg font-light leading-relaxed">

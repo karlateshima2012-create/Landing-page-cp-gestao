@@ -7,12 +7,12 @@ const FeaturePoint = ({ subtitle, items }: {
     items: string[]
 }) => (
     <div className="flex-1 bg-slate-950/40 border border-white/5 p-8 rounded-3xl backdrop-blur-sm group hover:border-brand-blue/30 transition-all duration-300 shadow-xl flex flex-col justify-center">
-        <p className="text-brand-blue font-bold text-lg md:text-xl mb-4 leading-tight group-hover:text-white transition-colors duration-300">
+        <p className="text-brand-blue font-black text-2xl mb-4 uppercase tracking-tight">
             {subtitle}
         </p>
         <ul className="space-y-4">
             {items.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-4 text-brand-gray/90 text-lg md:text-xl font-light group-hover:text-white transition-colors duration-300">
+                <li key={idx} className="flex items-start gap-4 text-brand-gray/80 text-lg font-light group-hover:text-white transition-colors duration-300">
                     <Check className="w-5 h-5 mt-1.5 shrink-0 text-brand-blue" />
                     <span>{item}</span>
                 </li>
@@ -30,7 +30,7 @@ export const FeaturesShowcase = () => (
             {/* Centered Header (Top) */}
             <div className="text-center mb-16 md:mb-20 max-w-5xl mx-auto">
                 <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">PLATAFORMA COMPLETA</Badge>
-                <h2 className="text-3xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
+                <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
                     Tudo que sua empresa precisa para <span className="text-brand-blue text-glow-blue">crescer com previsibilidade</span>
                 </h2>
             </div>

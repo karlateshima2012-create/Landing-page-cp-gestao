@@ -13,13 +13,13 @@ const QuickCard = ({ badge, title, features, footer, colorClass }: {
         <div className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 ${colorClass} bg-opacity-20 self-start`}>
             {badge}
         </div>
-        <h3 className="text-2xl font-black text-white mb-6 tracking-tight">
+        <h3 className="text-2xl font-black text-white mb-6 tracking-tight uppercase">
             {title}
         </h3>
         
         <ul className="space-y-4 mb-8 flex-grow">
             {features.map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-brand-gray/90 text-sm leading-relaxed font-light">
+                <li key={idx} className="flex items-start gap-3 text-brand-gray/80 text-lg leading-relaxed font-light">
                     <Check className={`w-4 h-4 mt-1 flex-shrink-0 ${colorClass.split(' ')[0]}`} />
                     <span>{feature}</span>
                 </li>

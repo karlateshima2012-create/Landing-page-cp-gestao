@@ -65,8 +65,8 @@ export const FAQSection = () => {
 
             <div className="max-w-6xl mx-auto relative z-30 px-6 md:px-16 lg:px-24">
 
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Dúvidas Comuns</h2>
+                <div className="text-center mb-16 px-4">
+                    <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[1.1]">Dúvidas Comuns</h2>
                 </div>
 
                 <div className="max-w-3xl mx-auto space-y-2">
@@ -89,7 +89,7 @@ export const FAQSection = () => {
 
                             <div className={`px-5 md:px-6 transition-all duration-300 ${openId === faq.id ? 'max-h-[500px] pb-6 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
                                 <div className="pt-4 border-t border-white/5">
-                                    <p className="text-brand-gray/80 text-base md:text-lg leading-relaxed font-light whitespace-pre-line">
+                                    <p className="text-brand-gray/80 text-lg leading-relaxed font-light whitespace-pre-line">
                                         {faq.answer}
                                     </p>
                                 </div>

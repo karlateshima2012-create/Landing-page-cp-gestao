@@ -16,7 +16,7 @@ export const TargetAudience = () => {
 
                     <div className="relative z-10 max-w-5xl mx-auto">
                         <div className="text-center mb-8">
-                            <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-6 tracking-tighter leading-[1]">
+                            <h2 className="text-4xl md:text-7xl font-black text-white mt-4 mb-6 tracking-tighter leading-[1.1]">
                                 O que é <span className="text-brand-blue text-glow-blue">CP Gestão?</span>
                             </h2>
                             
@@ -34,7 +34,7 @@ export const TargetAudience = () => {
                                 <div className="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-6 border border-brand-blue/20 group-hover:scale-110 transition-transform duration-500">
                                     <Users className="w-7 h-7 text-brand-blue" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-black text-brand-blue mb-4 uppercase tracking-wider text-center">CRM SIMPLES E PODEROSO</h3>
+                                <h3 className="text-lg md:text-2xl font-black text-brand-blue mb-4 uppercase tracking-tight text-center">CRM SIMPLES E PODEROSO</h3>
                                 <p className="text-brand-gray/80 text-lg font-light leading-relaxed">
                                     Acesso a Histórico de compras, Informações importantes sobre cada cliente e lembretes para não perder oportunidades.
                                 </p>
@@ -44,7 +44,7 @@ export const TargetAudience = () => {
                                 <div className="w-14 h-14 bg-brand-pink/10 rounded-2xl flex items-center justify-center mb-6 border border-brand-pink/20 group-hover:scale-110 transition-transform duration-500">
                                     <Zap className="w-7 h-7 text-brand-pink" />
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-black text-brand-pink mb-4 uppercase tracking-wider text-center">PROGRAMA DE FIDELIDADE COM PONTOS</h3>
+                                <h3 className="text-lg md:text-2xl font-black text-brand-pink mb-4 uppercase tracking-tight text-center">PROGRAMA DE FIDELIDADE COM PONTOS</h3>
                                 <p className="text-brand-gray/80 text-lg font-light leading-relaxed">
                                     O cliente se cadastra, acumula pontos a cada compra ou atendimento, tudo feito de forma prática pelo celular.
                                 </p>
@@ -62,10 +62,10 @@ export const TargetAudience = () => {
                         {/* Final Highlight */}
                         <div className="text-center relative pt-8">
                             <div className="mb-8">
-                                <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)]">
+                                <p className="text-brand-blue font-black text-3xl md:text-5xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)] uppercase">
                                     Quem não controla, perde cliente.
                                 </p>
-                                <p className="text-white font-black text-2xl md:text-4xl tracking-tight">
+                                <p className="text-white font-black text-3xl md:text-5xl tracking-tight uppercase">
                                     Quem fideliza, cresce. <span className="text-brand-pink">Escolha crescer.</span>
                                 </p>
                             </div>
