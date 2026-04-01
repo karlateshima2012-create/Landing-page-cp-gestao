@@ -1,9 +1,17 @@
 
 import React from 'react';
 
-export const Logo: React.FC<{ className?: string; light?: boolean }> = ({ className = "h-12", light = true }) => {
-  const subtitle = "TECNOLOGIA E IMPRESSÃO 3D";
-
+export const Logo: React.FC<{ 
+  className?: string; 
+  light?: boolean;
+  title?: string;
+  subtitle?: string;
+}> = ({ 
+  className = "h-12", 
+  light = true,
+  title = "CREATIVE PRINT",
+  subtitle = "TECNOLOGIA E IMPRESSÃO 3D"
+}) => {
   return (
     <div className={`flex items-center gap-4 flex-shrink-0 ${className}`}>
       {/* 4 Colored Blocks Logo Mark */}
@@ -30,7 +38,7 @@ export const Logo: React.FC<{ className?: string; light?: boolean }> = ({ classN
       <div className="flex flex-col justify-center select-none whitespace-nowrap">
         {/* Main Title */}
         <div className={`text-[34px] font-black tracking-[-0.02em] leading-none ${light ? 'text-white' : 'text-slate-900'}`}>
-          CREATIVE PRINT
+          {title}
         </div>
 
         {/* Subtitle - Justified to match title width */}
