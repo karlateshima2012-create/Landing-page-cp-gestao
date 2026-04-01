@@ -11,11 +11,11 @@ export const Hero = () => (
 
 
             <h1 className="text-4xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter max-w-5xl mx-auto">
-                Sua empresa está <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent italic">perdendo dinheiro</span> todos os dias sem saber.
+                Sua empresa está <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent">perdendo dinheiro</span> todos os dias sem saber.
             </h1>
 
             <p className="text-lg md:text-xl text-brand-gray font-light leading-relaxed max-w-4xl mx-auto mb-12">
-                Com o <span className="text-white font-bold">CP Gestão</span>, você organiza seus clientes, fideliza quem compra e garante um <span className="text-white font-bold">crescimento previsível</span> com uma plataforma completa e inteligente.
+                Com o <span className="text-white font-bold">CP Gestão</span>, você organiza seus clientes, fideliza quem compra e garante um <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent font-bold">crescimento previsível</span> com uma plataforma completa e inteligente.
             </p>
 
             <div className="flex justify-center items-center">
