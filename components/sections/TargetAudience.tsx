@@ -41,10 +41,10 @@ export const TargetAudience = () => {
                         {/* Final Highlight */}
                         <div className="mt-16 text-center relative border-t border-white/10 pt-16">
                             <div className="mb-12">
-                                <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)] uppercase">
+                                <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)]">
                                     Quem não controla, perde cliente.
                                 </p>
-                                <p className="text-white font-black text-2xl md:text-4xl tracking-tight uppercase">
+                                <p className="text-white font-black text-2xl md:text-4xl tracking-tight">
                                     Quem fideliza, cresce.
                                 </p>
                             </div>
