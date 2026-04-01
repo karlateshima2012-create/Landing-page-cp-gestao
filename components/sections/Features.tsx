@@ -7,7 +7,7 @@ const FeaturePoint = ({ subtitle, items }: {
     items: string[]
 }) => (
     <div className="flex-1 bg-slate-950/40 border border-white/5 p-8 rounded-3xl backdrop-blur-sm group hover:border-brand-blue/30 transition-all duration-300 shadow-xl flex flex-col justify-center">
-        <p className="text-white font-black text-2xl mb-4 uppercase tracking-tight">
+        <p className="text-lg md:text-2xl text-white font-bold mb-4 tracking-tight">
             {subtitle}
         </p>
         <ul className="space-y-4">
@@ -32,6 +32,9 @@ export const FeaturesShowcase = () => (
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-tight">
                     Tudo que sua empresa precisa <br /> para <span className="text-brand-blue">crescer</span>
                 </h2>
+                <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed max-w-2xl mx-auto">
+                    Controle, fidelidade e decisões estratégicas
+                </p>
             </div>
 
             <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
