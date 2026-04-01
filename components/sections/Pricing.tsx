@@ -155,8 +155,8 @@ export const Pricing = () => {
                         </h3>
                         
                         <div className="space-y-2">
-                            <p className="text-brand-gray/80 text-base md:text-lg font-light">
-                                Cobrança mensal automática no cartão, com total segurança via Stripe
+                            <p className="text-brand-gray/80 text-base md:text-lg font-light leading-relaxed">
+                                Cobrança mensal automática no cartão, com total segurança via Stripe • Permanência mínima de 12 meses
                             </p>
                         </div>
                     </div>
