@@ -27,7 +27,7 @@ export const TargetAudience = () => {
                         </div>
 
                         {/* Feature Cards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
                             <div className="bg-slate-950/60 border border-white/10 p-8 md:p-10 rounded-[2.5rem] backdrop-blur-xl group hover:border-brand-blue/40 transition-all duration-500 flex flex-col items-center text-center">
                                 <div className="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-6 border border-brand-blue/20 group-hover:scale-110 transition-transform duration-500">
                                     <Users className="w-7 h-7 text-brand-blue" />
@@ -49,38 +49,36 @@ export const TargetAudience = () => {
                             </div>
                         </div>
 
-                        {/* Result Highlight */}
-                        <div className="text-center mb-16">
-                            <div className="inline-block py-4 px-8 rounded-2xl bg-white/5 border border-white/10">
-                                <p className="text-lg md:text-xl text-white font-medium tracking-tight">
-                                    Resultado real para o seu negócio: 
-                                    <span className="text-brand-blue font-bold ml-2">Mais retenção de clientes</span> — 
-                                    <span className="text-brand-pink font-bold mx-2">Ticket médio maior</span> — 
-                                    <span className="text-brand-yellow font-bold">Crescimento organizado</span>
-                                </p>
-                            </div>
+                        {/* Result Highlight - No Card/Fluid */}
+                        <div className="text-center mb-20 max-w-4xl mx-auto">
+                            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed tracking-tight">
+                                <span className="text-white font-black block md:inline mb-2 md:mb-0 mr-2 uppercase text-base md:text-lg tracking-widest text-brand-blue/80">Resultado real para o seu negócio:</span>
+                                mais retenção de clientes, ticket médio maior e crescimento organizado.
+                            </p>
                         </div>
 
                         {/* Final Highlight */}
-                        <div className="mt-12 text-center relative pt-12">
+                        <div className="text-center relative pt-8 border-t border-white/5">
                             <div className="mb-12">
                                 <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)]">
                                     Quem não controla, perde cliente.
                                 </p>
                                 <p className="text-white font-black text-2xl md:text-4xl tracking-tight">
-                                    Quem fideliza, cresce.
+                                    Quem fideliza, cresce. <span className="text-brand-pink">Escolha crescer.</span>
                                 </p>
                             </div>
 
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-12 bg-brand-blue/40 blur-[40px] rounded-full animate-pulse opacity-20"></div>
 
                             <a
-                                href="https://wa.me/8109011886491?text=Olá! Gostaria de saber mais sobre o CP Gestão."
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="#pricing"
                                 className="inline-flex items-center justify-center relative h-14 px-12 bg-white text-slate-950 font-black rounded-xl text-[10px] uppercase tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[0_15px_30px_-5px_rgba(255,255,255,0.25)] hover:shadow-brand-blue/40 group overflow-hidden"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+                                }}
                             >
-                                <span className="relative z-10">Começar a fidelizar agora</span>
+                                <span className="relative z-10">Ver Planos</span>
                                 <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                             </a>
                         </div>
