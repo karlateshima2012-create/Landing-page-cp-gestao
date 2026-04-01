@@ -10,12 +10,12 @@ export const Hero = () => (
         <div className="w-[90%] md:w-full max-w-5xl mx-auto relative z-10">
 
 
-            <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tighter max-w-4xl mx-auto">
-                Pare de deixar dinheiro na mesa: conheça seus clientes e <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent">faça a sua empresa crescer.</span>
+            <h1 className="text-4xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter max-w-5xl mx-auto">
+                Sua empresa está <span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent italic">perdendo dinheiro</span> todos os dias sem saber.
             </h1>
 
-            <p className="text-lg md:text-xl text-brand-gray font-light leading-relaxed max-w-3xl mx-auto mb-12">
-                Com o <span className="text-white font-bold">CP Gestão</span>, você organiza seus dados, fideliza quem compra e garante um <span className="text-white font-bold">crescimento previsível</span> com um CRM completo e inteligente.
+            <p className="text-lg md:text-xl text-brand-gray font-light leading-relaxed max-w-4xl mx-auto mb-12">
+                Com o <span className="text-white font-bold">CP Gestão</span>, você organiza seus clientes, fideliza quem compra e garante um <span className="text-white font-bold">crescimento previsível</span> com uma plataforma completa e inteligente.
             </p>
 
             <div className="flex justify-center items-center">
