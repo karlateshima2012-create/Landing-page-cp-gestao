@@ -182,11 +182,11 @@ export const Pricing = () => {
                     <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
                         <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">KIT ESTRATÉGICO DE ATIVAÇÃO</Badge>
                         
-                        <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-tight max-w-4xl mx-auto uppercase">
+                        <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-tight max-w-4xl mx-auto">
                             Sua estrutura física pronta para captar clientes e registrar pontos desde o primeiro dia
                         </h3>
                         
-                        <h4 className="text-xl md:text-2xl font-bold text-brand-blue mb-8 tracking-tight max-w-3xl mx-auto">
+                        <h4 className="text-base md:text-lg font-black text-white mb-8 tracking-tight max-w-3xl mx-auto">
                             2 Totens NFC com QR Code produzidos em 3D inclusos na contratação do plano
                         </h4>
 
@@ -209,12 +209,9 @@ export const Pricing = () => {
                             />
                         </div>
 
-                        <div className="space-y-4 mb-12">
-                            <p className="text-white font-bold text-lg md:text-xl tracking-tight max-w-2xl mx-auto leading-relaxed">
+                        <div className="mb-12">
+                            <p className="text-brand-gray font-light text-lg md:text-xl tracking-tight max-w-2xl mx-auto leading-relaxed">
                                 2 pontos de contato físicos já incluídos na sua implantação, pensados para gerar recorrência de clientes
-                            </p>
-                            <p className="text-brand-blue font-black text-[10px] md:text-xs uppercase tracking-[0.3em]">
-                                Incluso na implementação do seu sistema, sem custo adicional
                             </p>
                         </div>
 
