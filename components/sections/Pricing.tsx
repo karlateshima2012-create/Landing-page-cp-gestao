@@ -24,7 +24,7 @@ export const Pricing = () => {
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
                         Escolha o seu plano
                     </h2>
-                    <p className="text-brand-gray text-base md:text-lg font-light max-w-2xl mx-auto opacity-80">
+                    <p className="text-lg md:text-2xl text-brand-gray/90 font-light max-w-2xl mx-auto">
                         Sem taxa de ativação e sem cobranças ocultas.
                     </p>
                 </div>
@@ -51,7 +51,7 @@ export const Pricing = () => {
 
                         <div className="mb-10">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-5xl font-black tracking-tighter">¥3.150</span>
+                                <span className="text-white text-5xl font-black tracking-tighter">¥2.980</span>
                                 <span className="text-brand-gray/40 text-sm font-bold uppercase">/mês</span>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ export const Pricing = () => {
 
                         <div className="mb-10">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-5xl font-black tracking-tighter">¥5.850</span>
+                                <span className="text-white text-5xl font-black tracking-tighter">¥5.480</span>
                                 <span className="text-brand-gray/40 text-sm font-bold uppercase">/mês</span>
                             </div>
                         </div>
