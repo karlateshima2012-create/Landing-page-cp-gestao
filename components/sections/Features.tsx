@@ -7,7 +7,7 @@ const FeaturePoint = ({ subtitle, items }: {
     items: string[]
 }) => (
     <div className="flex-1 bg-slate-950/40 border border-white/5 p-8 rounded-3xl backdrop-blur-sm group hover:border-brand-blue/30 transition-all duration-300 shadow-xl flex flex-col justify-center">
-        <p className="text-brand-blue font-black text-2xl mb-4 uppercase tracking-tight">
+        <p className="text-white font-black text-2xl mb-4 uppercase tracking-tight">
             {subtitle}
         </p>
         <ul className="space-y-4">
@@ -29,9 +29,8 @@ export const FeaturesShowcase = () => (
         <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
             {/* Centered Header (Top) */}
             <div className="text-center mb-16 md:mb-20 max-w-5xl mx-auto">
-                <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">PLATAFORMA COMPLETA</Badge>
-                <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
-                    Tudo que sua empresa precisa para <span className="text-brand-blue text-glow-blue">crescer com previsibilidade</span>
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-tight">
+                    Tudo que sua empresa precisa para crescer
                 </h2>
             </div>
 
