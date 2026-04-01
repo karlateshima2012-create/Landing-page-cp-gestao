@@ -15,7 +15,6 @@ export const Navbar = () => {
                     <a href="#solucoes" className="hover:text-brand-pink transition-colors">Solução</a>
                     <a href="#features" className="hover:text-brand-blue transition-colors">Funcionalidades</a>
                     <a href="#pricing" className="hover:text-brand-yellow transition-colors">Planos</a>
-                    <a href="#faq" className="hover:text-white transition-colors">Dúvidas</a>
                 </div>
 
                 <div className="hidden lg:block">
@@ -45,7 +44,6 @@ export const Navbar = () => {
                     <a href="#solucoes" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-pink">Solução</a>
                     <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-blue">Funcionalidades</a>
                     <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-yellow">Planos</a>
-                    <a href="#faq" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-white">Dúvidas</a>
                     <a
                         href="https://wa.me/8109011886491?text=Olá! Gostaria de saber mais sobre o CP Gestão."
                         onClick={() => setIsMenuOpen(false)}

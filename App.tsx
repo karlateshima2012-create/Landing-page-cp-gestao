@@ -6,7 +6,6 @@ import { QuickFeatures } from './components/sections/QuickFeatures';
 import { FeaturesShowcase } from './components/sections/Features';
 import { TargetAudience } from './components/sections/TargetAudience';
 import { Pricing } from './components/sections/Pricing';
-import { FAQSection } from './components/sections/FAQ';
 
 import { FinalCTA } from './components/sections/FinalCTA';
 import { Footer } from './components/sections/Footer';
@@ -31,15 +30,7 @@ export default function App() {
       <Pricing />
 
 
-      {/* Unified Bottom Area: FAQ + Final CTA */}
       <div className="relative bg-slate-950 overflow-hidden">
-        {/* Atmospheric Gradients for Unification */}
-        <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-transparent via-brand-blue/20 to-transparent pointer-events-none z-10"></div>
-
-        {/* Central Ambient Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-[1200px] bg-brand-blue/10 blur-[200px] -z-10 pointer-events-none"></div>
-
-        <FAQSection />
         <FinalCTA />
       </div>
 
