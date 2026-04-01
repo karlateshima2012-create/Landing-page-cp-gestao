@@ -1,91 +1,98 @@
 import React from 'react';
 import { Badge } from '../Badge';
-import { Target, Users, Zap, TrendingUp } from 'lucide-react';
+import { TrendingUp, Users, Zap, BarChart3, Check } from 'lucide-react';
+
+const SubFeature = ({ icon: Icon, title, subtitle, items, colorClass }: {
+    icon: any,
+    title: string,
+    subtitle: string,
+    items: string[],
+    colorClass: string
+}) => (
+    <div className="mb-10 last:mb-0 group">
+        <div className="flex items-center gap-4 mb-4">
+            <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${colorClass} bg-opacity-10 border border-white/5 group-hover:scale-110 transition-transform duration-300`}>
+                <Icon className={`w-5 h-5 ${colorClass.replace('bg-', 'text-')}`} />
+            </div>
+            <h3 className={`text-sm font-black uppercase tracking-widest ${colorClass.replace('bg-', 'text-')}`}>{title}</h3>
+        </div>
+        <p className="text-white font-bold text-lg mb-4 leading-tight">{subtitle}</p>
+        <ul className="space-y-2">
+            {items.map((item, idx) => (
+                <li key={idx} className="flex items-center gap-3 text-brand-gray/80 text-sm font-light">
+                    <Check className={`w-3.5 h-3.5 ${colorClass.replace('bg-', 'text-')}`} />
+                    <span>{item}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
 
 export const FeaturesShowcase = () => (
-    <div id="features" className="relative py-20 bg-slate-950 border-y border-white/5 overflow-hidden">
-        {/* Glow Effects */}
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] -z-10"></div>
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-brand-pink/5 rounded-full blur-[120px] -z-10"></div>
+    <section id="features" className="py-20 md:py-32 bg-slate-950 relative overflow-hidden">
+        {/* Atmosphere */}
+        <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[150px] -z-10 -translate-x-1/2"></div>
 
-        <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
-            <div className="text-center mb-20 max-w-4xl mx-auto animate-fade-in">
-                <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">TUDO QUE VOCÊ PRECISA</Badge>
-                <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tight leading-[1]">
-                    Tudo que sua empresa precisa para <span className="text-brand-blue">crescer com previsibilidade</span>
-                </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                {/* 1. CONTROLE TOTAL */}
-                <div className="bg-slate-900/40 border-2 border-white/5 p-10 rounded-[2.5rem] backdrop-blur-3xl hover:border-brand-blue/40 transition-all duration-500 flex flex-col group shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/10 rounded-full blur-[60px] translate-x-16 -translate-y-16"></div>
-                    
-                    <div className="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-8 border border-brand-blue/20 group-hover:scale-110 transition-all duration-500">
-                        <Users className="w-7 h-7 text-brand-blue" />
+        <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24">
+            <div className="flex flex-col md:flex-row items-start gap-16 md:gap-24">
+                {/* Visual Side (Left) */}
+                <div className="flex-1 w-full order-2 md:order-1">
+                    <div className="relative group">
+                        <div className="absolute inset-0 bg-brand-blue/20 blur-[100px] opacity-20 transition-opacity group-hover:opacity-40"></div>
+                        <div className="relative bg-slate-900/60 border border-white/10 p-2 rounded-[2.5rem] backdrop-blur-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden aspect-[4/3] transform hover:-rotate-y-6 transition-transform duration-700">
+                            <img
+                                src="/reports-feature.jpg"
+                                alt="Dashboard CP Gestão"
+                                className="w-full h-full object-cover rounded-[2rem] opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none"></div>
+                        </div>
                     </div>
-                    
-                    <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">CONTROLE TOTAL</h3>
-                    <p className="text-brand-gray/90 font-medium mb-8 leading-relaxed">Organize todos os seus clientes em um só lugar</p>
-                    
-                    <ul className="space-y-4 mt-auto">
-                        <li className="flex items-start gap-3 text-sm text-brand-gray/80 font-light group-hover:text-white transition-colors duration-300">
-                            <span className="text-brand-blue font-black mt-0.5">•</span>
-                            <span>Data da última compra e valor vitalício</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-sm text-brand-gray/80 font-light group-hover:text-white transition-colors duration-300">
-                            <span className="text-brand-blue font-black mt-0.5">•</span>
-                            <span>Lembretes estratégicos</span>
-                        </li>
-                    </ul>
                 </div>
 
-                {/* 2. SISTEMA DE FIDELIDADE */}
-                <div className="bg-slate-900/40 border-2 border-white/5 p-10 rounded-[2.5rem] backdrop-blur-3xl hover:border-brand-pink/40 transition-all duration-500 flex flex-col group shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-pink/10 rounded-full blur-[60px] translate-x-16 -translate-y-16"></div>
+                {/* Content Side (Right) */}
+                <div className="flex-1 order-1 md:order-2">
+                    <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">PLATAFORMA COMPLETA</Badge>
+                    <h2 className="text-3xl md:text-5xl font-black text-white mb-12 tracking-tighter leading-[1.1] uppercase">
+                        Tudo que sua empresa precisa para <span className="text-brand-blue text-glow-blue">crescer com previsibilidade</span>
+                    </h2>
 
-                    <div className="w-14 h-14 bg-brand-pink/10 rounded-2xl flex items-center justify-center mb-8 border border-brand-pink/20 group-hover:scale-110 transition-all duration-500">
-                        <Zap className="w-7 h-7 text-brand-pink" />
+                    <div className="space-y-4">
+                        <SubFeature 
+                            icon={Users}
+                            title="CONTROLE TOTAL"
+                            subtitle="Organize todos os seus clientes em um só lugar"
+                            items={[
+                                "Data da última compra e valor vitalício",
+                                "Lembretes estratégicos"
+                            ]}
+                            colorClass="bg-brand-blue"
+                        />
+
+                        <SubFeature 
+                            icon={Zap}
+                            title="SISTEMA DE FIDELIDADE"
+                            subtitle="Transforme clientes comuns em fãs"
+                            items={[
+                                "Pontos por compra (você define as regras)",
+                                "Prêmios, descontos e acompanhamento pelo celular"
+                            ]}
+                            colorClass="bg-brand-pink"
+                        />
+
+                        <SubFeature 
+                            icon={TrendingUp}
+                            title="RELATÓRIOS E DECISÕES"
+                            subtitle="Enxergue seu negócio com clareza"
+                            items={[
+                                "Clientes ativos, ticket médio e vendas por período",
+                                "Métricas de retenção em tempo real"
+                            ]}
+                            colorClass="bg-brand-yellow"
+                        />
                     </div>
-
-                    <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">SISTEMA DE FIDELIDADE</h3>
-                    <p className="text-brand-gray/90 font-medium mb-8 leading-relaxed">Transforme clientes comuns em fãs</p>
-
-                    <ul className="space-y-4 mt-auto">
-                        <li className="flex items-start gap-3 text-sm text-brand-gray/80 font-light group-hover:text-white transition-colors duration-300">
-                            <span className="text-brand-pink font-black mt-0.5">•</span>
-                            <span>Pontos por compra (você define as regras)</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-sm text-brand-gray/80 font-light group-hover:text-white transition-colors duration-300">
-                            <span className="text-brand-pink font-black mt-0.5">•</span>
-                            <span>Prêmios, descontos e acompanhamento pelo celular</span>
-                        </li>
-                    </ul>
-                </div>
-
-                {/* 3. RELATÓRIOS E DECISÕES */}
-                <div className="bg-slate-900/40 border-2 border-white/5 p-10 rounded-[2.5rem] backdrop-blur-3xl hover:border-brand-yellow/40 transition-all duration-500 flex flex-col group shadow-2xl relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-yellow/10 rounded-full blur-[60px] translate-x-16 -translate-y-16"></div>
-
-                    <div className="w-14 h-14 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mb-8 border border-brand-yellow/20 group-hover:scale-110 transition-all duration-500">
-                        <TrendingUp className="w-7 h-7 text-brand-yellow" />
-                    </div>
-
-                    <h3 className="text-xl font-black text-white mb-4 uppercase tracking-wider">RELATÓRIOS E DECISÕES</h3>
-                    <p className="text-brand-gray/90 font-medium mb-8 leading-relaxed">Enxergue seu negócio com clareza</p>
-
-                    <ul className="space-y-4 mt-auto">
-                        <li className="flex items-start gap-3 text-sm text-brand-gray/80 font-light group-hover:text-white transition-colors duration-300">
-                            <span className="text-brand-yellow font-black mt-0.5">•</span>
-                            <span>Clientes ativos, ticket médio e vendas por período</span>
-                        </li>
-                        <li className="flex items-start gap-3 text-sm text-brand-gray/80 font-light group-hover:text-white transition-colors duration-300">
-                            <span className="text-brand-yellow font-black mt-0.5">•</span>
-                            <span>Métricas de retenção em tempo real</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 );
