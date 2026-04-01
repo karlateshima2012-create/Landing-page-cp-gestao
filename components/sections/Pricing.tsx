@@ -150,7 +150,7 @@ export const Pricing = () => {
                             PROFISSIONALISMO & SEGURANÇA
                         </span>
                         
-                        <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed">
+                        <p className="text-lg text-brand-gray/80 font-light leading-relaxed">
                             • Implementação profissional inclusa • Sem taxa de instalação • Pagamento mensal no cartão com total segurança • Atendimento personalizado • Suporte contínuo
                         </p>
                     </div>
