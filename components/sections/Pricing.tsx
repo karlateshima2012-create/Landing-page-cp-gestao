@@ -163,53 +163,6 @@ export const Pricing = () => {
 
             </div>
 
-            {/* 3. OFERTA LANÇAMENTO */}
-            <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24 mb-16">
-                <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
-                    <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                    <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
-                        <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">KIT ESTRATÉGICO DE ATIVAÇÃO</Badge>
-                        
-                        <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-tight max-w-4xl mx-auto">
-                            Sua estrutura física pronta para captar clientes e registrar pontos desde o primeiro dia
-                        </h3>
-                        
-                        <h4 className="text-base md:text-lg font-black text-brand-blue mb-2 tracking-tight max-w-3xl mx-auto">
-                            1 Totem com QR Code produzido em 3D incluso na contratação
-                        </h4>
-
-                        <p className="text-brand-gray text-base md:text-lg font-light mb-12 max-w-2xl mx-auto opacity-80 leading-relaxed">
-                            Seus clientes acessam seu sistema de fidelidade em segundos, apenas escaneando o QR Code.
-                        </p>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14 max-w-5xl mx-auto">
-                            <FeatureTile
-                                title="ACESSO IMEDIATO"
-                                sub="Sistema liberado com QR Code digital para uso desde o primeiro dia"
-                            />
-                            <FeatureTile
-                                title="PRESENÇA NO PONTO DE VENDA"
-                                sub="Totem físico facilita o acesso e incentiva o uso pelos clientes"
-                            />
-                            <FeatureTile
-                                title="USO ESTRATÉGICO"
-                                sub="Ideal para balcão, caixa ou área principal do atendimento"
-                            />
-                        </div>
-
-                        <div className="mb-12">
-                            <p className="text-brand-gray font-light text-lg md:text-xl tracking-tight max-w-2xl mx-auto leading-relaxed">
-                                Comece no digital e tenha um ponto físico para facilitar o uso no seu negócio
-                            </p>
-                        </div>
-
-                        <a href={generalUrl} className="relative inline-flex items-center gap-4 bg-white text-slate-950 font-black py-4 px-10 rounded-xl text-[11px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group/btn overflow-hidden">
-                            <span className="relative z-10">Quero meu Kit Estratégico</span>
-                            <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             {/* 3. COMO CONTRATAR EM 3 PASSOS */}
             <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16">
