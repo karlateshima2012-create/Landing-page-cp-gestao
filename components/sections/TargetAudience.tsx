@@ -1,5 +1,6 @@
 import React from 'react';
 import { Badge } from '../Badge';
+import { LayoutGrid, TrendingUp, Users, Zap } from 'lucide-react';
 
 export const TargetAudience = () => {
     return (
@@ -9,37 +10,59 @@ export const TargetAudience = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(229,21,122,0.1)_0%,transparent_60%)] -z-10 pointer-events-none blur-[180px]"></div>
 
             <div className="max-w-[1440px] mx-auto relative z-10 px-6 md:px-16 lg:px-24">
-                <div className="w-full bg-slate-900/40 border-2 border-brand-blue/60 rounded-[2rem] md:rounded-[4rem] py-16 md:py-24 px-6 md:px-12 lg:px-16 backdrop-blur-3xl shadow-[0_80px_160px_-40px_rgba(0,0,0,0.95)] relative overflow-hidden group/main">
+                <div className="w-full bg-slate-900/40 border-2 border-brand-blue/60 rounded-[2rem] md:rounded-[4rem] py-16 md:py-24 px-6 md:px-12 lg:px-20 backdrop-blur-3xl shadow-[0_80px_160px_-40px_rgba(0,0,0,0.95)] relative overflow-hidden group/main">
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-transparent opacity-100 pointer-events-none"></div>
                     <div className="absolute inset-0 opacity-[0.05] bg-grid pointer-events-none"></div>
 
-                    <div className="relative z-10 max-w-4xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-10 tracking-tighter leading-[1]">
+                    <div className="relative z-10 max-w-5xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-8 tracking-tighter leading-[1]">
                                 O que é <span className="text-brand-blue text-glow-blue">CP Gestão?</span>
                             </h2>
                             
-                            <div className="space-y-8 text-lg md:text-xl text-brand-gray/90 font-light leading-relaxed text-center">
-                                <p>
-                                    <span className="text-white font-bold">CP Gestão</span> é o sistema que transforma clientes ocasionais em clientes fiéis. É onde você armazena nome, telefone, saldo de pontos e histórico de cada cliente <span className="text-white font-bold">tudo em um só lugar.</span>
-                                </p>
+                            <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed max-w-4xl mx-auto mb-10">
+                                CP Gestão é a plataforma que transforma clientes ocasionais em clientes fiéis. 
+                                <span className="block mt-4 text-white font-bold">Dois sistemas em um: CRM + Programa de Fidelidade integrados.</span>
+                            </p>
+                        </div>
 
-                                <p>
-                                    Dois sistemas em um: <span className="text-brand-blue font-bold">CRM + Programa de Fidelidade integrados.</span> Com o CRM você conhece seu cliente de verdade e tem acesso a Histórico de compras e valores, Informações importantes sobre cada cliente, Lembretes para não perder oportunidades e Controle de quem compra, quando compra e o que prefere.
+                        {/* Feature Cards Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
+                            <div className="bg-slate-950/60 border border-white/10 p-8 md:p-10 rounded-[2.5rem] backdrop-blur-xl group hover:border-brand-blue/40 transition-all duration-500 flex flex-col items-center text-center">
+                                <div className="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-6 border border-brand-blue/20 group-hover:scale-110 transition-transform duration-500">
+                                    <Users className="w-7 h-7 text-brand-blue" />
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-black text-brand-blue mb-4 uppercase tracking-wider">CRM SIMPLES E PODEROSO</h3>
+                                <p className="text-brand-gray/80 text-lg font-light leading-relaxed">
+                                    Acesso a Histórico de compras, Informações importantes sobre cada cliente e lembretes para não perder oportunidades.
                                 </p>
+                            </div>
 
-                                <p>
-                                    Com o sistema de pontos, <span className="text-brand-pink font-bold">seu cliente tem motivo para voltar.</span> Ele se cadastra uma vez e começa a acumular pontos a cada compra ou atendimento. Quanto mais pontos, mais vantagens. E na hora de escolher onde gastar, <span className="text-white font-bold">ele escolhe você.</span>
+                            <div className="bg-slate-950/60 border border-white/10 p-8 md:p-10 rounded-[2.5rem] backdrop-blur-xl group hover:border-brand-pink/40 transition-all duration-500 flex flex-col items-center text-center">
+                                <div className="w-14 h-14 bg-brand-pink/10 rounded-2xl flex items-center justify-center mb-6 border border-brand-pink/20 group-hover:scale-110 transition-transform duration-500">
+                                    <Zap className="w-7 h-7 text-brand-pink" />
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-black text-brand-pink mb-4 uppercase tracking-wider">PROGRAMA DE FIDELIDADE COM PONTOS</h3>
+                                <p className="text-brand-gray/80 text-lg font-light leading-relaxed">
+                                    O cliente se cadastra, acumula pontos a cada compra ou atendimento, tudo feito de forma prática pelo celular.
                                 </p>
+                            </div>
+                        </div>
 
-                                <p>
-                                    Sua empresa precisa que os clientes voltem. Com o <span className="text-white font-bold text-glow-blue">CP Gestão</span>, você organiza quem é seu cliente, sabe o que ele precisa e ainda dá um incentivo real para ele escolher você de novo.
+                        {/* Result Highlight */}
+                        <div className="text-center mb-16">
+                            <div className="inline-block py-4 px-8 rounded-2xl bg-white/5 border border-white/10">
+                                <p className="text-lg md:text-xl text-white font-medium tracking-tight">
+                                    Resultado real para o seu negócio: 
+                                    <span className="text-brand-blue font-bold ml-2">Mais retenção de clientes</span> — 
+                                    <span className="text-brand-pink font-bold mx-2">Ticket médio maior</span> — 
+                                    <span className="text-brand-yellow font-bold">Crescimento organizado</span>
                                 </p>
                             </div>
                         </div>
 
                         {/* Final Highlight */}
-                        <div className="mt-16 text-center relative border-t border-white/10 pt-16">
+                        <div className="mt-12 text-center relative pt-12">
                             <div className="mb-12">
                                 <p className="text-brand-blue font-black text-2xl md:text-4xl tracking-tight mb-2 drop-shadow-[0_0_15px_rgba(56,182,255,0.4)]">
                                     Quem não controla, perde cliente.
