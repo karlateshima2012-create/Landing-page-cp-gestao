@@ -8,10 +8,10 @@ export const Footer = () => {
     const [isLegalOpen, setIsLegalOpen] = useState(false);
 
     return (
-        <footer className="py-12 px-6 relative border-t border-white/5 bg-slate-950">
+        <footer className="py-12 px-6 relative border-t border-white/5 bg-slate-950 overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-10">
                 {/* Main Content Row */}
-                <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-8">
+                <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-8">
                     {/* Branding Zone */}
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         {/* Logo & Back to Top stacked */}
@@ -44,25 +44,23 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Navigation - No separators after last item */}
-                    <div className="overflow-x-auto w-full lg:w-auto">
-                        <ul className="flex items-center justify-center lg:justify-end gap-x-6 md:gap-x-8 text-brand-gray text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] whitespace-nowrap min-w-max px-4">
-                            <li><a href="#solucoes" className="hover:text-white transition-colors">Solução</a></li>
-                            <li className="text-brand-blue/60 select-none text-lg leading-none">•</li>
-                            <li><a href="#features" className="hover:text-white transition-colors">Funcionalidades</a></li>
-                            <li className="text-brand-blue/60 select-none text-lg leading-none">•</li>
-                            <li><a href="#pricing" className="hover:text-white transition-colors">Planos</a></li>
-                            <li className="text-brand-blue/60 select-none text-lg leading-none">•</li>
-                            <li>
-                                <button
-                                    onClick={() => setIsLegalOpen(true)}
-                                    className="hover:text-white transition-colors text-left uppercase"
-                                >
-                                    Políticas
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
+                    {/* Navigation - Responsive flex wrap for mobile */}
+                    <ul className="flex flex-wrap justify-center lg:justify-end gap-x-6 md:gap-x-8 gap-y-4 text-brand-gray text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] px-4 w-full lg:w-auto">
+                        <li><a href="#solucoes" className="hover:text-white transition-colors">Solução</a></li>
+                        <li className="text-brand-blue/60 select-none text-lg leading-none hidden sm:block">•</li>
+                        <li><a href="#features" className="hover:text-white transition-colors">Funcionalidades</a></li>
+                        <li className="text-brand-blue/60 select-none text-lg leading-none hidden sm:block">•</li>
+                        <li><a href="#pricing" className="hover:text-white transition-colors">Planos</a></li>
+                        <li className="text-brand-blue/60 select-none text-lg leading-none hidden sm:block">•</li>
+                        <li>
+                            <button
+                                onClick={() => setIsLegalOpen(true)}
+                                className="hover:text-white transition-colors text-left uppercase"
+                            >
+                                Políticas
+                            </button>
+                        </li>
+                    </ul>
                 </div>
 
                 {/* Copyright */}
