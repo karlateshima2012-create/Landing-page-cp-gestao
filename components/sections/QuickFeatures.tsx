@@ -27,7 +27,7 @@ const QuickCard = ({ badge, title, features, footer, colorClass }: {
         </ul>
 
         <div className="pt-2">
-            <p className="text-sm font-bold leading-relaxed text-white opacity-90">
+            <p className="text-lg font-light leading-relaxed text-brand-gray/80 italic">
                 {footer}
             </p>
         </div>
