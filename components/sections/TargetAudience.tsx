@@ -51,8 +51,8 @@ export const TargetAudience = () => {
 
                         {/* Result Highlight - No Card/Fluid */}
                         <div className="text-center mb-20 max-w-4xl mx-auto">
-                            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed tracking-tight">
-                                <span className="text-white font-black block md:inline mb-2 md:mb-0 mr-2 uppercase text-base md:text-lg tracking-widest text-brand-blue/80">Resultado real para o seu negócio:</span>
+                            <p className="text-xl md:text-2xl text-white font-light leading-relaxed tracking-tight">
+                                <span className="text-brand-blue font-bold block md:inline mb-2 md:mb-0 mr-3 text-base md:text-lg tracking-wider">Resultado real para o seu negócio:</span>
                                 mais retenção de clientes, ticket médio maior e crescimento organizado.
                             </p>
                         </div>
