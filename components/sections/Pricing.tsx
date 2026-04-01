@@ -143,60 +143,62 @@ export const Pricing = () => {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="max-w-5xl mx-auto mb-24 px-8 flex flex-col md:flex-row items-center justify-between gap-10 group border-t border-white/5 pt-16">
-                    <div className="flex-grow text-center md:text-left">
-                        <span className="text-brand-blue font-black text-[11px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
-                            PROFISSIONALISMO & SEGURANÇA
-                        </span>
-                        
-                        <p className="text-lg text-brand-gray/80 font-light leading-relaxed">
-                            • Implementação profissional inclusa • Sem taxa de instalação • Pagamento mensal no cartão com total segurança • Atendimento personalizado • Suporte contínuo
+                {/* KIT ESTRATÉGICO DE ATIVAÇÃO */}
+                <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16 pt-16 border-t border-white/5">
+                    <div className="text-center mb-16">
+                        <Badge variant="blue" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">KIT ESTRATÉGICO DE ATIVAÇÃO</Badge>
+                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
+                            Totem com QR Code em 3D incluso na contratação
+                        </h2>
+                        <p className="text-brand-gray text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
+                            Seu cliente acessa o sistema de fidelidade em segundos, apenas escaneando.
                         </p>
                     </div>
 
-                    <div className="flex-shrink-0 relative">
-                        <div className="absolute inset-0 bg-brand-blue/10 blur-[50px] rounded-full transition-all duration-700"></div>
-                        <ShieldCheck className="w-20 h-20 md:w-28 md:h-28 text-brand-blue/40 group-hover:text-brand-blue/60 transition-all duration-700 relative z-10" strokeWidth={1} />
+                    <div className="w-full bg-slate-900/50 border border-white/5 rounded-[2rem] p-10 md:p-16 mb-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                 <h3 className="text-2xl font-black text-white mb-10 tracking-tight uppercase">
+                                    Comece no digital e tenha o ponto físico:
+                                 </h3>
+                                 <ul className="space-y-8">
+                                    <li className="flex items-start gap-5">
+                                        <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                            <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                        </div>
+                                        <span className="text-brand-gray text-lg md:text-xl font-light">QR Code digital liberado desde o primeiro dia</span>
+                                    </li>
+                                    <li className="flex items-start gap-5">
+                                        <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                            <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                        </div>
+                                        <span className="text-brand-gray text-lg md:text-xl font-light">Totem físico no balcão, caixa ou área principal</span>
+                                    </li>
+                                    <li className="flex items-start gap-5">
+                                        <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                            <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                        </div>
+                                        <span className="text-brand-gray text-lg md:text-xl font-light">Ideal para captar clientes e registrar pontos</span>
+                                    </li>
+                                 </ul>
+                            </div>
+                            <div className="flex justify-center">
+                                 <div className="relative group">
+                                    <div className="absolute inset-0 bg-brand-blue/20 blur-[80px] rounded-full group-hover:bg-brand-blue/30 transition-all duration-1000"></div>
+                                    <ShieldCheck className="w-32 h-32 md:w-56 md:h-56 text-brand-blue/40 relative z-10 transition-all duration-700 group-hover:text-brand-blue/60 group-hover:scale-110" strokeWidth={0.5} />
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-center">
+                        <p className="text-white text-xl md:text-3xl font-black mb-4 uppercase tracking-tighter">
+                            Fale com a gente e comece hoje mesmo
+                        </p>
                     </div>
                 </div>
-
-            </div>
-
-
-            {/* 3. COMO CONTRATAR EM 3 PASSOS */}
-            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16">
-                <div className="text-center mb-20">
-                    <Badge variant="outline" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-4 text-brand-blue border-brand-blue/30">COMEÇAR É SIMPLES</Badge>
-                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
-                        Como contratar em 3 passos
-                    </h2>
-                    <p className="text-brand-gray text-lg md:text-xl font-light max-w-2xl mx-auto">
-                        Sem burocracia e sem formulários complexos.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[90%] md:max-w-5xl mx-auto">
-                    <StepCardMinimal
-                        icon={<MessageCircle className="w-10 h-10" />}
-                        step="PASSO 1"
-                        title="Atendimento pelo WhatsApp"
-                        desc="Fale diretamente pelo whatsapp, sem complicação e sem formulários."
-                    />
-                    <StepCardMinimal
-                        icon={<Zap className="w-10 h-10" />}
-                        step="PASSO 2"
-                        title="Escolha do plano ideal"
-                        desc="Entendemos sua necessidade e definimos juntos a melhor opção para o seu negócio."
-                    />
-                    <StepCardMinimal
-                        icon={<Rocket className="w-10 h-10" />}
-                        step="PASSO 3"
-                        title="Pagamento e acesso imediato"
-                        desc="Pagamento simples e sistema liberado para uso imediatamente."
-                    />
-                </div>
-            </div>
 
             {/* Final CTA */}
             <div className="text-center pb-12">
