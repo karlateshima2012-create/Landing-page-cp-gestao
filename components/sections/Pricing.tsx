@@ -180,32 +180,46 @@ export const Pricing = () => {
                 <div className="w-full border-2 border-brand-blue/30 rounded-[2rem] md:rounded-[4rem] bg-slate-900 overflow-hidden relative group">
                     <div className="absolute inset-0 bg-brand-blue/5 opacity-20 group-hover:opacity-40 transition-opacity"></div>
                     <div className="py-16 md:py-24 px-8 md:px-16 lg:px-24 relative z-10 text-center">
-                        <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">OFERTA LANÇAMENTO</Badge>
-                        <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-none max-w-3xl mx-auto">
-                            Ganhe 2 Totens NFC com QR Code produzidos em 3D ao contratar hoje
+                        <Badge variant="blue" className="mb-8 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">KIT ESTRATÉGICO DE ATIVAÇÃO</Badge>
+                        
+                        <h3 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-tight max-w-4xl mx-auto uppercase">
+                            Sua estrutura física pronta para captar clientes e registrar pontos desde o primeiro dia
                         </h3>
-                        <p className="text-brand-gray text-base md:text-lg font-light mb-12 max-w-2xl mx-auto">
-                            Sua estrutura completa, configurada por nós e pronta para uso imediato. Sem custo adicional.
+                        
+                        <h4 className="text-xl md:text-2xl font-bold text-brand-blue mb-8 tracking-tight max-w-3xl mx-auto">
+                            2 Totens NFC com QR Code produzidos em 3D inclusos na contratação do plano
+                        </h4>
+
+                        <p className="text-brand-gray text-base md:text-lg font-light mb-12 max-w-2xl mx-auto opacity-80 leading-relaxed">
+                            Seus clientes acessam seu sistema de fidelidade em segundos, apenas aproximando o celular ou escaneando o QR Code.
                         </p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 max-w-3xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14 max-w-5xl mx-auto">
                             <FeatureTile
-                                title="Exclusividade física"
-                                sub="Totens premium em 3D."
+                                title="PRESENÇA NO PONTO DE VENDA"
+                                sub="Totens físicos que incentivam o cliente a interagir com seu negócio"
                             />
                             <FeatureTile
-                                title="Pronto para uso"
-                                sub="Configuração completa inclusa."
+                                title="ACESSO IMEDIATO"
+                                sub="Cadastro e solicitação de pontos sem complicação"
                             />
                             <FeatureTile
-                                title="CUSTO ZERO"
-                                sub="Exclusivo para hoje."
-                                highlight
+                                title="USO ESTRATÉGICO"
+                                sub="Ideal para balcão, caixa ou áreas de atendimento com maior fluxo"
                             />
                         </div>
 
-                        <a href={generalUrl} className="relative inline-flex items-center gap-4 bg-white text-slate-950 font-black py-4 px-8 rounded-xl text-[11px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group/btn overflow-hidden">
-                            <span className="relative z-10">Quero garantir meu bônus</span>
+                        <div className="space-y-4 mb-12">
+                            <p className="text-white font-bold text-lg md:text-xl tracking-tight max-w-2xl mx-auto leading-relaxed">
+                                2 pontos de contato físicos já incluídos na sua implantação, pensados para gerar recorrência de clientes
+                            </p>
+                            <p className="text-brand-blue font-black text-[10px] md:text-xs uppercase tracking-[0.3em]">
+                                Incluso na implementação do seu sistema, sem custo adicional
+                            </p>
+                        </div>
+
+                        <a href={generalUrl} className="relative inline-flex items-center gap-4 bg-white text-slate-950 font-black py-4 px-10 rounded-xl text-[11px] uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl leading-none group/btn overflow-hidden">
+                            <span className="relative z-10">Quero meu Kit Estratégico</span>
                             <div className="absolute inset-x-0 bottom-0 h-1 bg-brand-blue transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
                         </a>
                     </div>
