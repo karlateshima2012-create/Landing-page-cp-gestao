@@ -13,7 +13,7 @@ const QuickCard = ({ badge, title, features, footer, colorClass }: {
         <div className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 ${colorClass} bg-opacity-20 self-start`}>
             {badge}
         </div>
-        <h3 className="text-2xl font-black text-white mb-6 uppercase tracking-tight">
+        <h3 className="text-2xl font-black text-white mb-6 tracking-tight">
             {title}
         </h3>
         
@@ -26,8 +26,8 @@ const QuickCard = ({ badge, title, features, footer, colorClass }: {
             ))}
         </ul>
 
-        <div className="pt-6 border-t border-white/5">
-            <p className={`text-sm font-bold leading-relaxed ${colorClass.split(' ')[0]} opacity-90`}>
+        <div className="pt-2">
+            <p className="text-sm font-bold leading-relaxed text-white opacity-90">
                 {footer}
             </p>
         </div>
