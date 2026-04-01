@@ -15,7 +15,7 @@ export const TargetAudience = () => {
 
                     <div className="relative z-10 max-w-4xl mx-auto">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-10 tracking-tighter leading-[1] uppercase">
+                            <h2 className="text-3xl md:text-5xl font-black text-white mt-4 mb-10 tracking-tighter leading-[1]">
                                 O que é <span className="text-brand-blue text-glow-blue">CP Gestão?</span>
                             </h2>
                             
