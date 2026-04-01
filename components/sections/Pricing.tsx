@@ -49,12 +49,12 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-8 space-y-2">
+                        <div className="mb-10 space-y-3">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-4xl font-black tracking-tighter">¥3.150</span>
-                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
+                                <span className="text-white text-5xl font-black tracking-tighter">¥3.150</span>
+                                <span className="text-brand-gray/40 text-sm font-bold uppercase">/mês</span>
                             </div>
-                            <p className="text-brand-gray/60 text-[10px] font-bold uppercase tracking-wider">
+                            <p className="text-brand-gray/60 text-[11px] font-medium leading-tight">
                                 Cobrança mensal automática • Permanência mínima de 12 meses
                             </p>
                         </div>
@@ -111,12 +111,12 @@ export const Pricing = () => {
                             </p>
                         </div>
 
-                        <div className="mb-8 space-y-2">
+                        <div className="mb-10 space-y-3">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-4xl font-black tracking-tighter">¥5.850</span>
-                                <span className="text-brand-gray/40 text-xs font-bold uppercase">/mês</span>
+                                <span className="text-white text-5xl font-black tracking-tighter">¥5.850</span>
+                                <span className="text-brand-gray/40 text-sm font-bold uppercase">/mês</span>
                             </div>
-                            <p className="text-brand-gray/60 text-[10px] font-bold uppercase tracking-wider">
+                            <p className="text-brand-gray/60 text-[11px] font-medium leading-tight">
                                 Cobrança mensal automática • Permanência mínima de 12 meses
                             </p>
                         </div>
