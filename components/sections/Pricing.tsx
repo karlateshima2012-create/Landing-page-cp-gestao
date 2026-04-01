@@ -150,15 +150,9 @@ export const Pricing = () => {
                             PROFISSIONALISMO & SEGURANÇA
                         </span>
                         
-                        <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight leading-tight">
-                            Implementação profissional inclusa • Sem taxa de instalação
-                        </h3>
-                        
-                        <div className="space-y-2">
-                            <p className="text-brand-gray/80 text-base md:text-lg font-light leading-relaxed">
-                                Cobrança mensal automática no cartão, com total segurança via Stripe • Permanência mínima de 12 meses
-                            </p>
-                        </div>
+                        <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed">
+                            • Implementação profissional inclusa • Sem taxa de instalação • Pagamento mensal no cartão com total segurança • Atendimento personalizado • Suporte contínuo
+                        </p>
                     </div>
 
                     <div className="flex-shrink-0 relative">
