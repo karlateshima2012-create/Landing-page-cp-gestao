@@ -199,11 +199,6 @@ export const Pricing = () => {
                         </div>
                     </div>
 
-                    <div className="text-center">
-                        <p className="text-brand-gray/80 text-lg md:text-xl font-light mb-4">
-                            Fale com a gente e comece hoje mesmo
-                        </p>
-                    </div>
                 </div>
 
         </section>
