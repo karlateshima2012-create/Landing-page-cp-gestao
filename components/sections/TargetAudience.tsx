@@ -54,7 +54,7 @@ export const TargetAudience = () => {
                         {/* Result Highlight - Fluid & Color Matched */}
                         <div className="text-center mb-12 max-w-4xl mx-auto">
                             <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed tracking-tight">
-                                <span className="text-white font-bold mr-2">Resultado real para o seu negócio:</span>
+                                <span className="text-white font-light mr-2">Resultado real para o seu negócio:</span>
                                 mais retenção de clientes, ticket médio maior e crescimento organizado.
                             </p>
                         </div>
