@@ -186,7 +186,7 @@ export const Pricing = () => {
                             Sua estrutura física pronta para captar clientes e registrar pontos desde o primeiro dia
                         </h3>
                         
-                        <h4 className="text-base md:text-lg font-black text-white mb-8 tracking-tight max-w-3xl mx-auto">
+                        <h4 className="text-base md:text-lg font-black text-brand-blue mb-2 tracking-tight max-w-3xl mx-auto">
                             1 Totem com QR Code produzido em 3D incluso na contratação
                         </h4>
 
