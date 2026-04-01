@@ -187,31 +187,31 @@ export const Pricing = () => {
                         </h3>
                         
                         <h4 className="text-base md:text-lg font-black text-white mb-8 tracking-tight max-w-3xl mx-auto">
-                            2 Totens NFC com QR Code produzidos em 3D inclusos na contratação do plano
+                            1 Totem com QR Code produzido em 3D incluso na contratação
                         </h4>
 
                         <p className="text-brand-gray text-base md:text-lg font-light mb-12 max-w-2xl mx-auto opacity-80 leading-relaxed">
-                            Seus clientes acessam seu sistema de fidelidade em segundos, apenas aproximando o celular ou escaneando o QR Code.
+                            Seus clientes acessam seu sistema de fidelidade em segundos, apenas escaneando o QR Code.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14 max-w-5xl mx-auto">
                             <FeatureTile
-                                title="PRESENÇA NO PONTO DE VENDA"
-                                sub="Totens físicos que incentivam o cliente a interagir com seu negócio"
+                                title="ACESSO IMEDIATO"
+                                sub="Sistema liberado com QR Code digital para uso desde o primeiro dia"
                             />
                             <FeatureTile
-                                title="ACESSO IMEDIATO"
-                                sub="Cadastro e solicitação de pontos sem complicação"
+                                title="PRESENÇA NO PONTO DE VENDA"
+                                sub="Totem físico facilita o acesso e incentiva o uso pelos clientes"
                             />
                             <FeatureTile
                                 title="USO ESTRATÉGICO"
-                                sub="Ideal para balcão, caixa ou áreas de atendimento com maior fluxo"
+                                sub="Ideal para balcão, caixa ou área principal do atendimento"
                             />
                         </div>
 
                         <div className="mb-12">
                             <p className="text-brand-gray font-light text-lg md:text-xl tracking-tight max-w-2xl mx-auto leading-relaxed">
-                                2 pontos de contato físicos já incluídos na sua implantação, pensados para gerar recorrência de clientes
+                                Comece no digital e tenha um ponto físico para facilitar o uso no seu negócio
                             </p>
                         </div>
 
