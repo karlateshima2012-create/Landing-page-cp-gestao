@@ -200,7 +200,7 @@ export const Pricing = () => {
                     </div>
 
                     <div className="text-center">
-                        <p className="text-white text-xl md:text-3xl font-black mb-4 tracking-tighter">
+                        <p className="text-brand-gray/80 text-lg md:text-xl font-light mb-4">
                             Fale com a gente e comece hoje mesmo
                         </p>
                     </div>
