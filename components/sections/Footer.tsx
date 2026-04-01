@@ -29,22 +29,21 @@ export const Footer = () => {
 
                         <button
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                            className="flex items-center gap-3 text-brand-blue/60 hover:text-brand-blue transition-all group pt-2"
+                            className="flex items-center gap-3 text-brand-blue/60 hover:text-brand-blue transition-all group mt-10"
                         >
                             <div className="w-12 h-12 md:w-8 md:h-8 rounded-xl md:rounded-lg border border-brand-blue/30 flex items-center justify-center group-hover:border-brand-blue/40 group-hover:bg-brand-blue/10 transition-all">
                                 <ArrowUp className="w-5 h-5 md:w-4 md:h-4" />
                             </div>
-                            <span className="hidden md:block text-[9px] uppercase tracking-[0.2em] font-black">Voltar ao Topo</span>
+                            <span className="hidden md:block text-[11px] uppercase tracking-[0.2em] font-black">Voltar ao Topo</span>
                         </button>
                     </div>
                 </div>
                 <div>
-                    <h4 className="text-white font-black text-[10px] mb-8 uppercase tracking-[0.4em] opacity-40">Navegação</h4>
-                    <ul className="space-y-3 text-brand-gray text-[13px] font-bold">
+                    <h4 className="text-white font-black text-xs mb-8 uppercase tracking-[0.4em] opacity-40">Navegação</h4>
+                    <ul className="space-y-4 text-brand-gray text-[14px] font-bold">
                         <li><a href="#solucoes" className="hover:text-brand-pink transition-colors">Solução</a></li>
                         <li><a href="#features" className="hover:text-brand-blue transition-colors">Funcionalidades</a></li>
                         <li><a href="#pricing" className="hover:text-brand-yellow transition-colors">Planos</a></li>
-                        <li><a href="#faq" className="hover:text-white transition-colors">Dúvidas</a></li>
                         <li>
                             <button
                                 onClick={() => setIsLegalOpen(true)}
@@ -57,7 +56,7 @@ export const Footer = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-white/5 text-slate-500 text-[9px] font-black tracking-[0.2em]">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 pt-4 border-t border-white/5 text-slate-500 text-[11px] font-black tracking-[0.2em]">
                 <p>© {new Date().getFullYear()} Creative Print. Todos os direitos reservados.</p>
             </div>
 
