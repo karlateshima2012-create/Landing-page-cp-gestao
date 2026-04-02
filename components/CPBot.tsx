@@ -131,10 +131,6 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
 
           {/* HEAD */}
           <motion.g animate={current.head} className="origin-[50px_50px]">
-            {/* Orelhas / Antenas laterais */}
-            <rect x="8" y="25" width="4" height="15" rx="2" fill="#CBD5E1" />
-            <rect x="88" y="25" width="4" height="15" rx="2" fill="#CBD5E1" />
-            
             {/* Main Head Shell */}
             <rect x="12" y="10" width="76" height="52" rx="26" fill="url(#robotHeadGrad)" stroke="#E2E8F0" strokeWidth="0.5" />
             
@@ -167,13 +163,6 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
             </g>
           </motion.g>
 
-          {/* ARMS (Independent Floating Components) */}
-          <motion.g animate={{ rotate: [5, 12, 5], y: [0, -2, 0] }} transition={{ duration: 5, repeat: Infinity }} transform="translate(15, 52)">
-             <path d="M 0 0 Q -10 10 -5 22" stroke="url(#robotHeadGrad)" strokeWidth="8" strokeLinecap="round" />
-          </motion.g>
-          <motion.g animate={{ rotate: [-5, -12, -5], y: [0, -2, 0] }} transition={{ duration: 5, repeat: Infinity }} transform="translate(85, 52)">
-             <path d="M 0 0 Q 10 10 5 22" stroke="url(#robotHeadGrad)" strokeWidth="8" strokeLinecap="round" />
-          </motion.g>
         </motion.g>
       </svg>
     </div>
