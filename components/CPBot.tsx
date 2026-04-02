@@ -16,17 +16,17 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
   const variants = {
     happy: {
       head: { y: [0, -6, 0], rotate: [0, 2, -2, 0], transition: { duration: 3, repeat: Infinity, ease: "easeInOut" } },
-      body: { y: [0, -2, 0], transition: { duration: 3, repeat: Infinity, ease: "easeInOut" } },
+      body: { y: [0, -3, 0], transition: { duration: 3, repeat: Infinity, ease: "easeInOut" } },
       eyes: { scaleY: [1, 0.1, 1], transition: { duration: 4, repeat: Infinity, times: [0, 0.95, 1] } },
     },
     cheerful: {
       head: { rotate: [0, 15, -15, 0], y: [0, -8, 0], transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } },
-      body: { y: [0, -3, 0], transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } },
+      body: { y: [0, -5, 0], x: [0, 2, -2, 0], transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } },
       eyes: { scale: [1, 1.2, 1], transition: { duration: 0.5, repeat: Infinity } },
     },
     curious: {
       head: { rotate: [12, 18, 12], x: [4, 6, 4], transition: { duration: 2, repeat: Infinity, ease: "easeInOut" } },
-      body: { rotate: 4, x: 1 },
+      body: { rotate: 4, x: 2 },
       eyesLeft: { scale: 0.6, y: 4, x: 2 },
       eyesRight: { scale: 1.5, y: -4, x: -2 }
     },
@@ -42,7 +42,7 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
     },
     sad: {
       head: { y: 10, rotate: 5 },
-      body: { y: 3, scale: 0.95, rotate: -2 },
+      body: { y: 5, scale: 0.95, rotate: -2 },
       eyes: { y: 10, scaleY: 0.2, opacity: 0.3 },
     },
     love: {
@@ -71,7 +71,7 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
 
   return (
     <div className={`relative select-none ${className}`}>
-      <svg viewBox="0 0 100 120" className="w-full h-full scale-[1.1] origin-bottom">
+      <svg viewBox="0 0 100 120" className="w-full h-full">
         <defs>
           <linearGradient id="robotBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#FFFFFF" />
@@ -102,30 +102,25 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
 
         {/* Shadow */}
         <motion.ellipse
-          cx="50" cy="114" rx="20" ry="5"
+          cx="50" cy="114" rx="28" ry="8"
           fill="rgba(0,0,0,0.1)"
-          animate={{ rx: [18, 24, 18], opacity: [0.06, 0.12, 0.06] }}
+          animate={{ rx: [26, 32, 26], opacity: [0.06, 0.12, 0.06] }}
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
 
         {/* Entire Robot Group */}
         <motion.g animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-          
-          {/* BODY (Small - 20%) - Reduced scale and moved up closer to head */}
-          <motion.g animate={current.body} transform="translate(0, -10)" className="origin-center">
-            <path d="M 32 60 C 32 90 68 90 68 60 L 68 55 L 32 55 Z" fill="url(#robotBodyGrad)" stroke="#D1D5DB" strokeWidth="0.5" />
-            {/* Minimal Detail */}
-            <path d="M 38 68H62" stroke="rgba(0,0,0,0.05)" strokeWidth="1" fill="none" />
+          {/* Body Group */}
+          <motion.g animate={current.body} className="origin-center">
+            <path d="M 25 60 C 25 110 75 110 75 60 L 75 50 L 25 50 Z" fill="url(#robotBodyGrad)" stroke="#D1D5DB" strokeWidth="0.5" />
           </motion.g>
 
-          {/* HEAD (Large - 70%) - Increased scale dramatically */}
-          <motion.g animate={current.head} transform="translate(2, -15) scale(1.15)" className="origin-[50px_60px]">
-             {/* Antennas - Hidden or smaller */}
-            <rect x="18" y="25" width="2" height="15" rx="1" fill="#D1D5DB" />
-            <rect x="80" y="25" width="3" height="12" rx="1.5" fill="#D1D5DB" />
-            
-            <rect x="10" y="5" width="80" height="60" rx="30" fill="url(#robotHeadGrad)" stroke="#D1D5DB" strokeWidth="0.5" />
-            <rect x="18" y="15" width="64" height="42" rx="20" fill="url(#robotScreenGrad)" />
+          {/* Head Group */}
+          <motion.g animate={current.head} className="origin-[50px_60px]">
+            <rect x="10" y="10" width="80" height="56" rx="28" fill="url(#robotHeadGrad)" stroke="#D1D5DB" strokeWidth="0.5" />
+            <rect x="6" y="30" width="6" height="18" rx="3" fill="#D1D5DB" />
+            <rect x="88" y="30" width="6" height="18" rx="3" fill="#D1D5DB" />
+            <rect x="18" y="18" width="64" height="40" rx="16" fill="url(#robotScreenGrad)" />
 
             {/* Expressive Eyes */}
             <g filter="url(#glow)">
@@ -151,17 +146,6 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
                 </>
               )}
             </g>
-            
-            {/* Top Light */}
-            <circle cx="50" cy="5" r="2.5" fill="#00EDFF" className="animate-pulse" />
-          </motion.g>
-
-          {/* Arms - Smaller and closer to head */}
-          <motion.g animate={{ rotate: 10, y: -10 }} transform="translate(15, 60) scale(0.6)">
-             <path d="M 0 0 Q -10 10 -5 25" stroke="url(#robotBodyGrad)" strokeWidth="12" strokeLinecap="round" />
-          </motion.g>
-          <motion.g animate={{ rotate: -10, y: -10 }} transform="translate(85, 60) scale(0.6)">
-             <path d="M 0 0 Q 10 10 5 25" stroke="url(#robotBodyGrad)" strokeWidth="12" strokeLinecap="round" />
           </motion.g>
         </motion.g>
       </svg>
@@ -280,7 +264,7 @@ export const CPBot = () => {
                             initial={{ opacity: 0, x: 20, scale: 0.8 }}
                             animate={{ opacity: 1, x: 0, scale: 1 }}
                             exit={{ opacity: 0, x: 20, scale: 0.8 }}
-                            className="absolute right-36 md:right-40 bottom-24 bg-gray-900 text-cyan-400 px-6 py-4 rounded-3xl rounded-br-none shadow-2xl border border-gray-800 min-w-[200px]"
+                            className="absolute right-32 bottom-20 bg-gray-900 text-cyan-400 px-6 py-4 rounded-3xl rounded-br-none shadow-2xl border border-gray-800 min-w-[200px]"
                         >
                             <p className="text-[10px] font-black uppercase tracking-[0.15em] leading-tight">
                                 {talkingText}
@@ -290,7 +274,6 @@ export const CPBot = () => {
                     )}
                 </AnimatePresence>
 
-                {/* The Improved Robot Component - Big Head Proportions */}
                 <motion.div
                     onClick={() => {
                         setIsOpen(!isOpen);
@@ -298,7 +281,7 @@ export const CPBot = () => {
                     }}
                     onMouseEnter={() => setExpression('curious')}
                     onMouseLeave={() => setExpression('happy')}
-                    className="w-32 h-36 md:w-44 md:h-48 cursor-pointer pointer-events-auto"
+                    className="w-28 h-32 md:w-36 md:h-40 cursor-pointer pointer-events-auto"
                 >
                     <Robot expression={expression} className="w-full h-full" />
                 </motion.div>
