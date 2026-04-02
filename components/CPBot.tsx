@@ -3,91 +3,174 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X, MessageCircle } from 'lucide-react';
 
-// Types for robot states
-type RobotMood = 'happy' | 'cheerful' | 'curious' | 'thinking' | 'surprised' | 'sad';
+// --- ROBOT VISUAL COMPONENT (EXTRACTED FROM USER'S ENHANCED VERSION) ---
 
-const RobotEyes = ({ mood }: { mood: RobotMood }) => {
-    const variants = {
-        happy: { d: "M15 22C15 22 17 18 21 18C25 18 27 22 27 22", strokeWidth: 3 },
-        cheerful: { d: "M15 22C15 22 17 18 21 18C25 18 27 22 27 22", strokeWidth: 4 },
-        curious: { d: "M15 24A3 3 0 1 1 15.1 24", strokeWidth: 0 }, // Right winks later
-        thinking: { d: "M15 24L24 24", strokeWidth: 3 },
-        surprised: { d: "M15 24A4 4 0 1 1 15.1 24", strokeWidth: 0 },
-        sad: { d: "M15 20C15 20 17 24 21 24C25 24 27 20 27 20", strokeWidth: 3 }
-    };
+export type RobotExpression = "happy" | "cheerful" | "curious" | "thinking" | "surprised" | "sad" | "love" | "sparkle" | "confused" | "angry";
 
-    return (
-        <g className="eyes-group">
-            {/* Left Eye */}
-            <motion.path 
-                animate={mood === 'curious' ? { d: "M15 22L21 22", strokeWidth: 3 } : variants[mood]}
-                stroke="#00F2FF" fill="none" strokeLinecap="round" 
-                className="drop-shadow-[0_0_8px_rgba(0,242,255,0.8)]"
-            />
-            {/* Right Eye */}
-            <motion.path 
-                animate={variants[mood]}
-                transform="translate(20, 0)"
-                stroke="#00F2FF" fill="none" strokeLinecap="round" 
-                className="drop-shadow-[0_0_8px_rgba(0,242,255,0.8)]"
-            />
-        </g>
-    );
-};
+interface RobotProps {
+  expression?: RobotExpression;
+  className?: string;
+}
 
-const RobotMouth = ({ mood }: { mood: RobotMood }) => {
-    const variants = {
-        happy: { d: "M26 38C26 38 28 42 34 42C40 42 42 38 42 38", strokeWidth: 2.5 },
-        cheerful: { d: "M24 36C24 36 28 44 34 44C40 44 44 36 44 36", strokeWidth: 4 },
-        curious: { d: "M32 40A2 2 0 1 1 32.1 40", strokeWidth: 0 },
-        thinking: { d: "M30 40L38 40", strokeWidth: 2.5 },
-        surprised: { d: "M31 40A3 3 0 1 1 31.1 40", strokeWidth: 0 },
-        sad: { d: "M26 42C26 42 30 38 34 38C38 38 42 42 42 42", strokeWidth: 2.5 }
-    };
+const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
+  const variants = {
+    happy: {
+      head: { y: [0, -6, 0], rotate: [0, 2, -2, 0], transition: { duration: 3, repeat: Infinity, ease: "easeInOut" } },
+      body: { y: [0, -3, 0], transition: { duration: 3, repeat: Infinity, ease: "easeInOut" } },
+      eyes: { scaleY: [1, 0.1, 1], transition: { duration: 4, repeat: Infinity, times: [0, 0.95, 1] } },
+    },
+    cheerful: {
+      head: { rotate: [0, 15, -15, 0], y: [0, -8, 0], transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } },
+      body: { y: [0, -5, 0], x: [0, 2, -2, 0], transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" } },
+      eyes: { scale: [1, 1.2, 1], transition: { duration: 0.5, repeat: Infinity } },
+    },
+    curious: {
+      head: { rotate: [12, 18, 12], x: [4, 6, 4], transition: { duration: 2, repeat: Infinity, ease: "easeInOut" } },
+      body: { rotate: 4, x: 2 },
+      eyesLeft: { scale: 0.6, y: 4, x: 2 },
+      eyesRight: { scale: 1.5, y: -4, x: -2 }
+    },
+    thinking: {
+      head: { y: 2, rotate: -12, x: -2 },
+      body: { y: 0, rotate: -2 },
+      eyes: { scaleY: 0.1, y: 4 },
+    },
+    surprised: {
+      head: { y: [-12, -18, -12], scale: 1.1, transition: { duration: 0.3, repeat: Infinity, repeatType: "mirror" as const } },
+      body: { scale: 0.9 },
+      eyes: { scale: 1.8, y: -4 },
+    },
+    sad: {
+      head: { y: 10, rotate: 5 },
+      body: { y: 5, scale: 0.95, rotate: -2 },
+      eyes: { y: 10, scaleY: 0.2, opacity: 0.3 },
+    },
+    love: {
+      head: { y: [0, -4, 0], transition: { duration: 2, repeat: Infinity } },
+      body: { scale: 1.05 },
+      eyes: { scale: [1, 1.2, 1], transition: { duration: 0.8, repeat: Infinity } }
+    },
+    sparkle: {
+      head: { rotate: [0, 5, -5, 0], transition: { duration: 1, repeat: Infinity } },
+      body: { y: -2 },
+      eyes: { scale: [1, 1.3, 1], rotate: [0, 90, 180, 270, 360], transition: { duration: 2, repeat: Infinity } }
+    },
+    confused: {
+      head: { rotate: -10, x: -5 },
+      body: { rotate: -2 },
+      eyes: { y: 2 }
+    },
+    angry: {
+      head: { y: 4, scale: 1.05 },
+      body: { y: 2, scale: 1.1 },
+      eyes: { rotate: [0, 2, -2, 0], transition: { duration: 0.1, repeat: Infinity } }
+    }
+  };
 
-    return (
-        <motion.path 
-            animate={variants[mood]}
-            stroke="#00F2FF" fill={['curious', 'surprised', 'cheerful'].includes(mood) ? '#00F2FF' : 'none'} 
-            strokeLinecap="round" 
-            className="drop-shadow-[0_0_8px_rgba(0,242,255,0.8)]"
+  const current = variants[expression];
+
+  return (
+    <div className={`relative select-none ${className}`}>
+      <svg viewBox="0 0 100 120" className="w-full h-full">
+        <defs>
+          <linearGradient id="robotBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="60%" stopColor="#F3F4F6" />
+            <stop offset="100%" stopColor="#E5E7EB" />
+          </linearGradient>
+          <linearGradient id="robotHeadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="100%" stopColor="#E5E7EB" />
+          </linearGradient>
+          <linearGradient id="robotScreenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#1F2937" />
+            <stop offset="100%" stopColor="#111827" />
+          </linearGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#22D3EE" />
+            <stop offset="100%" stopColor="#0891B2" />
+          </radialGradient>
+          <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FF4D4D" />
+            <stop offset="100%" stopColor="#B30000" />
+          </radialGradient>
+        </defs>
+
+        {/* Shadow */}
+        <motion.ellipse
+          cx="50" cy="114" rx="28" ry="8"
+          fill="rgba(0,0,0,0.1)"
+          animate={{ rx: [26, 32, 26], opacity: [0.06, 0.12, 0.06] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
-    );
+
+        {/* Entire Robot Group */}
+        <motion.g animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
+          {/* Body Group */}
+          <motion.g animate={current.body} className="origin-center">
+            <path d="M 25 60 C 25 110 75 110 75 60 L 75 50 L 25 50 Z" fill="url(#robotBodyGrad)" stroke="#D1D5DB" strokeWidth="0.5" />
+          </motion.g>
+
+          {/* Head Group */}
+          <motion.g animate={current.head} className="origin-[50px_60px]">
+            <rect x="10" y="10" width="80" height="56" rx="28" fill="url(#robotHeadGrad)" stroke="#D1D5DB" strokeWidth="0.5" />
+            <rect x="6" y="30" width="6" height="18" rx="3" fill="#D1D5DB" />
+            <rect x="88" y="30" width="6" height="18" rx="3" fill="#D1D5DB" />
+            <rect x="18" y="18" width="64" height="40" rx="16" fill="url(#robotScreenGrad)" />
+
+            {/* Expressive Eyes */}
+            <g filter="url(#glow)">
+              {expression === "curious" ? (
+                <>
+                  <motion.circle cx="36" cy="36" r="6" fill="url(#cyanGlow)" animate={(current as any).eyesLeft} />
+                  <motion.circle cx="64" cy="36" r="6" fill="url(#cyanGlow)" animate={(current as any).eyesRight} />
+                </>
+              ) : ["cheerful", "happy"].includes(expression) ? (
+                <>
+                  <motion.path d="M28 40 Q36 28 44 40" fill="none" stroke="url(#cyanGlow)" strokeWidth="6" strokeLinecap="round" animate={(current as any).eyes} />
+                  <motion.path d="M56 40 Q64 28 72 40" fill="none" stroke="url(#cyanGlow)" strokeWidth="6" strokeLinecap="round" animate={(current as any).eyes} />
+                </>
+              ) : expression === "love" ? (
+                <>
+                  <motion.path d="M36 42 Q36 38 32 38 Q28 38 28 42 Q28 48 36 54 Q44 48 44 42 Q44 38 40 38 Q36 38 36 42" fill="url(#redGlow)" animate={(current as any).eyes} transform="translate(0, -8)" />
+                  <motion.path d="M64 42 Q64 38 60 38 Q56 38 56 42 Q56 48 64 54 Q72 48 72 42 Q72 38 68 38 Q64 38 64 42" fill="url(#redGlow)" animate={(current as any).eyes} transform="translate(0, -8)" />
+                </>
+              ) : (
+                <>
+                  <motion.ellipse cx="36" cy="38" rx="7" ry="6" fill="url(#cyanGlow)" animate={(current as any).eyes} />
+                  <motion.ellipse cx="64" cy="38" rx="7" ry="6" fill="url(#cyanGlow)" animate={(current as any).eyes} />
+                </>
+              )}
+            </g>
+          </motion.g>
+        </motion.g>
+      </svg>
+    </div>
+  );
 };
+
+// --- MAIN BOT COMPONENT WITH INTERFACE ---
 
 export const CPBot = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [mood, setMood] = useState<RobotMood>('happy');
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [expression, setExpression] = useState<RobotExpression>("happy");
+    const [messages, setMessages] = useState([
+        { role: 'bot', text: 'OLÁ! EU SOU O CP BOT. COMO POSSO TE AJUDAR?' }
+    ]);
     const [isTalking, setIsTalking] = useState(false);
     const [talkingText, setTalkingText] = useState("");
-    const [messages, setMessages] = useState([
-        { role: 'bot', text: 'Olá! Sou o CP Bot. Como posso ajudar você?' }
-    ]);
     const [input, setInput] = useState('');
 
-    // Eye Tracking Logic
-    useEffect(() => {
-        const handleMove = (e: MouseEvent) => {
-            const botEl = document.getElementById('robot-trigger');
-            if (!botEl) return;
-            const rect = botEl.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const x = (e.clientX - centerX) / 25;
-            const y = (e.clientY - centerY) / 20;
-            setMousePos({ x: Math.max(-8, Math.min(8, x)), y: Math.max(-5, Math.min(5, y)) });
-        };
-        window.addEventListener('mousemove', handleMove);
-        return () => window.removeEventListener('mousemove', handleMove);
-    }, []);
-
-    // Simulated Talking
     const handleBotSpeech = async (text: string) => {
         setIsTalking(true);
         setTalkingText("");
-        for (let i = 0; i < text.length; i++) {
-            setTalkingText(prev => prev + text[i]);
+        const upperText = text.toUpperCase();
+        for (let i = 0; i < upperText.length; i++) {
+            setTalkingText(prev => prev + upperText[i]);
             await new Promise(r => setTimeout(r, 40));
         }
         setTimeout(() => setIsTalking(false), 3000);
@@ -97,58 +180,58 @@ export const CPBot = () => {
         e?.preventDefault();
         if (!input.trim()) return;
 
-        setMessages([...messages, { role: 'user', text: input }]);
-        const userInput = input;
+        setMessages([...messages, { role: 'user', text: input.toUpperCase() }]);
+        const userInput = input.toLowerCase();
         setInput('');
-        setMood('thinking');
+        setExpression('thinking');
 
-        // Logic patterns for mood
         setTimeout(() => {
-            let response = "Estou processando seu pedido... Deseja falar com um atendente humano?";
-            let newMood: RobotMood = 'curious';
+            let response = "ESTOU PROCESSANDO SUA DÚVIDA... DESEJA FALAR COM UM ESPECIALISTA?";
+            let nextExpression: RobotExpression = 'curious';
 
-            if (userInput.toLowerCase().includes('preço') || userInput.toLowerCase().includes('valor')) {
-                response = "Nossos planos começam com condições excelentes. Posso te levar para a seção de planos?";
-                newMood = 'cheerful';
-            } else if (userInput.toLowerCase().includes('oi') || userInput.toLowerCase().includes('olá')) {
-                response = "Oi! Que prazer falar com você!";
-                newMood = 'happy';
+            if (userInput.includes('preço') || userInput.includes('valor') || userInput.includes('plano')) {
+                response = "TEMOS PLANOS FLEXÍVEIS! POSSO TE MOSTRAR A TABELA?";
+                nextExpression = 'sparkle';
+            } else if (userInput.includes('oi') || userInput.includes('olá')) {
+                response = "OLÁ! É UM PRAZER TE ATENDER!";
+                nextExpression = 'love';
             }
 
             setMessages(prev => [...prev, { role: 'bot', text: response }]);
-            setMood(newMood);
+            setExpression(nextExpression);
             handleBotSpeech(response);
-        }, 1200);
+        }, 1500);
     };
 
     return (
-        <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4">
-            {/* Chat Window */}
+        <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="w-[320px] md:w-[400px] h-[500px] bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col mb-4"
+                        className="w-[320px] md:w-[400px] h-[520px] bg-white rounded-[40px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)] border border-gray-100 overflow-hidden flex flex-col mb-4"
                     >
-                        <div className="p-6 border-b border-white/5 bg-white/5 flex justify-between items-center">
+                        {/* Custom Chat Header */}
+                        <div className="p-8 border-b border-gray-50 flex justify-between items-center bg-gray-50/50">
                             <div className="flex items-center gap-3">
-                                <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-                                <span className="font-black text-[10px] uppercase tracking-widest text-white/50">CP Bot Assistente</span>
+                                <div className="w-3 h-3 rounded-full bg-cyan-500 animate-pulse" />
+                                <span className="font-black text-[10px] uppercase tracking-[0.2em] text-gray-400">CP BOT ONLINE</span>
                             </div>
-                            <button onClick={() => setIsOpen(false)} className="text-white/30 hover:text-white transition-colors">
-                                <X size={18} />
+                            <button onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-gray-900 transition-colors">
+                                <X size={20} />
                             </button>
                         </div>
 
-                        <div className="flex-1 overflow-y-auto p-6 space-y-5">
+                        {/* Message Feed */}
+                        <div className="flex-1 overflow-y-auto p-8 space-y-6">
                             {messages.map((m, i) => (
                                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed ${
+                                    <div className={`max-w-[85%] p-5 rounded-[24px] text-xs font-bold leading-relaxed tracking-wider ${
                                         m.role === 'user' 
-                                        ? 'bg-brand-blue text-white rounded-br-none shadow-lg' 
-                                        : 'bg-white/5 text-slate-300 rounded-bl-none border border-white/10'
+                                        ? 'bg-cyan-500 text-white rounded-br-none shadow-lg' 
+                                        : 'bg-gray-100 text-gray-800 rounded-bl-none border border-gray-50'
                                     }`}>
                                         {m.text}
                                     </div>
@@ -156,15 +239,16 @@ export const CPBot = () => {
                             ))}
                         </div>
 
-                        <form onSubmit={sendMessage} className="p-4 bg-white/5 border-t border-white/5 flex gap-3">
+                        {/* Input Area */}
+                        <form onSubmit={sendMessage} className="p-6 bg-white border-t border-gray-50 flex gap-3">
                             <input 
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                placeholder="Fale comigo..."
-                                className="flex-1 bg-transparent border-none text-white text-sm focus:ring-0 placeholder:text-white/20"
+                                placeholder="DIGITE SUA MENSAGEM..."
+                                className="flex-1 bg-gray-50 border-none rounded-2xl px-5 text-[10px] font-black uppercase tracking-wider focus:ring-2 focus:ring-cyan-500/20 text-gray-800"
                             />
-                            <button type="submit" className="p-2.5 bg-brand-blue hover:bg-brand-blue/80 text-white rounded-xl transition-all shadow-lg active:scale-95">
+                            <button type="submit" className="p-3.5 bg-gray-900 text-white rounded-2xl hover:bg-cyan-500 transition-all shadow-xl active:scale-95">
                                 <Send size={18} />
                             </button>
                         </form>
@@ -172,18 +256,17 @@ export const CPBot = () => {
                 )}
             </AnimatePresence>
 
-            {/* Robot Trigger Container */}
-            <div className="relative group flex items-end">
-                {/* Speech Bubble (Typing Effect) */}
+            <div className="relative flex items-end">
+                {/* Speech Bubble */}
                 <AnimatePresence>
                     {isTalking && !isOpen && (
                         <motion.div
                             initial={{ opacity: 0, x: 20, scale: 0.8 }}
                             animate={{ opacity: 1, x: 0, scale: 1 }}
                             exit={{ opacity: 0, x: 20, scale: 0.8 }}
-                            className="absolute right-28 bottom-20 bg-slate-900 border border-white/10 px-5 py-3 rounded-2xl rounded-br-none shadow-2xl max-w-[200px]"
+                            className="absolute right-32 bottom-20 bg-gray-900 text-cyan-400 px-6 py-4 rounded-3xl rounded-br-none shadow-2xl border border-gray-800 min-w-[200px]"
                         >
-                            <p className="text-[11px] text-white/90 leading-tight font-medium">
+                            <p className="text-[10px] font-black uppercase tracking-[0.15em] leading-tight">
                                 {talkingText}
                                 <span className="animate-pulse">|</span>
                             </p>
@@ -191,73 +274,18 @@ export const CPBot = () => {
                     )}
                 </AnimatePresence>
 
-                {/* High Fidelity Interactive Robot */}
-                <motion.button
-                    id="robot-trigger"
-                    onClick={() => setIsOpen(!isOpen)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    animate={{
-                        y: [0, -12, 0],
+                {/* The Improved Robot Component */}
+                <motion.div
+                    onClick={() => {
+                        setIsOpen(!isOpen);
+                        if (!isOpen) setExpression('sparkle');
                     }}
-                    transition={{
-                        y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                    className="relative w-24 h-28 md:w-28 md:h-32 transition-all outline-none"
+                    onMouseEnter={() => setExpression('curious')}
+                    onMouseLeave={() => setExpression('happy')}
+                    className="w-28 h-32 md:w-36 md:h-40 cursor-pointer pointer-events-auto"
                 >
-                    <svg viewBox="0 0 80 90" className="w-full h-full drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)]">
-                        <defs>
-                            <linearGradient id="robotBodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style={{ stopColor: '#FDFDFD' }} />
-                                <stop offset="100%" style={{ stopColor: '#D8DBE0' }} />
-                            </linearGradient>
-                            <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style={{ stopColor: '#2C2F36' }} />
-                                <stop offset="100%" style={{ stopColor: '#1A1C22' }} />
-                            </linearGradient>
-                        </defs>
-
-                        {/* Floating Shadow */}
-                        <ellipse cx="40" cy="85" rx="15" ry="3" fill="rgba(0,0,0,0.15)" />
-
-                        {/* Arms - Floating Independent */}
-                        <motion.g animate={{ rotate: mood === 'curious' ? [-10, 10, -10] : 0, transition: { repeat: Infinity, duration: 2 } }}>
-                            <path d="M12 55Q8 65 10 75" stroke="url(#robotBodyGradient)" strokeWidth="8" strokeLinecap="round" />
-                        </motion.g>
-                        <motion.g animate={{ rotate: mood === 'happy' ? [0, 15, 0] : 0, transition: { repeat: Infinity, duration: 1.5 } }}>
-                            <path d="M68 55Q72 65 70 75" stroke="url(#robotBodyGradient)" strokeWidth="8" strokeLinecap="round" />
-                        </motion.g>
-
-                        {/* Head & Face - Follows Mouse */}
-                        <motion.g
-                            animate={{
-                                x: mousePos.x,
-                                y: mousePos.y,
-                                rotate: mood === 'curious' ? -10 : 0
-                            }}
-                        >
-                            {/* Head Shell */}
-                            <rect x="15" y="5" width="50" height="45" rx="22" fill="url(#robotBodyGradient)" />
-                            {/* Face Shield */}
-                            <rect x="20" y="10" width="40" height="35" rx="18" fill="url(#shieldGradient)" />
-                            
-                            {/* Facial Features */}
-                            <RobotEyes mood={mood} />
-                            <RobotMouth mood={mood} />
-                            
-                            {/* Antenna */}
-                            <line x1="40" y1="5" x2="40" y2="0" stroke="#BBB" strokeWidth="2.5" strokeLinecap="round" />
-                            <circle cx="40" cy="0" r="2" fill="#00EDFF" className="animate-pulse" />
-                        </motion.g>
-
-                        {/* Body Shell */}
-                        <motion.g animate={mood === 'sad' ? { y: 2 } : { y: 0 }}>
-                            <path d="M22 50C22 50 25 78 40 78C55 78 58 50 58 50" fill="url(#robotBodyGradient)" />
-                            {/* Detail Line */}
-                            <path d="M25 68H55" stroke="rgba(0,0,0,0.05)" strokeWidth="1" fill="none" />
-                        </motion.g>
-                    </svg>
-                </motion.button>
+                    <Robot expression={expression} className="w-full h-full" />
+                </motion.div>
             </div>
         </div>
     );
