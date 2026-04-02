@@ -131,6 +131,10 @@ const Robot = ({ expression = "happy", className = "" }: RobotProps) => {
 
           {/* HEAD */}
           <motion.g animate={current.head} className="origin-[50px_50px]">
+            {/* Orelhas / Antenas laterais */}
+            <rect x="8" y="25" width="4" height="15" rx="2" fill="#CBD5E1" />
+            <rect x="88" y="25" width="4" height="15" rx="2" fill="#CBD5E1" />
+            
             {/* Main Head Shell */}
             <rect x="12" y="10" width="76" height="52" rx="26" fill="url(#robotHeadGrad)" stroke="#E2E8F0" strokeWidth="0.5" />
             
