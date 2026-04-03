@@ -21,7 +21,12 @@
     animation-iteration-count: infinite;
 }
 
-html {
+html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
 }
 

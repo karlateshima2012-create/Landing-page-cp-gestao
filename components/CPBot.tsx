@@ -43,7 +43,17 @@ const Robot = ({ expression = "neutral", className = "" }: RobotProps) => {
           </filter>
         </defs>
 
-        <motion.g animate={{ y: [0, -6, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
+        <motion.g 
+          animate={{ 
+            y: [0, -10, 0],
+            rotate: [0, 2, -2, 0]
+          }} 
+          transition={{ 
+            duration: 5, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        >
           
           {/* SIDE ANTENNAS - Middle Ground (6x20) */}
           <rect x="6" y="22.5" width="6" height="20" rx="3" fill="#3BA9D5" />
@@ -52,8 +62,8 @@ const Robot = ({ expression = "neutral", className = "" }: RobotProps) => {
           {/* TOP ANTENNA - Middle Ground (22x6) */}
           <rect 
             x="39" y="4" width="22" height="6" rx="3" 
-            fill={expression === "scanning" || expression === "inquiry" ? brandYellow : (expression === "error" ? brandYellow : "#3BA9D5")} 
-            filter={expression === "scanning" || expression === "inquiry" ? "url(#yellowGlow)" : "none"}
+            fill={expression === "inquiry" ? brandYellow : (expression === "error" ? brandYellow : "#3BA9D5")} 
+            filter={expression === "inquiry" ? "url(#yellowGlow)" : "none"}
           />
 
           <rect 
@@ -67,10 +77,10 @@ const Robot = ({ expression = "neutral", className = "" }: RobotProps) => {
           <rect x="18" y="18" width="64" height="38" rx="12" fill="url(#screenBG)" />
 
           <g filter="url(#glow)">
-            {expression === "scanning" || expression === "inquiry" ? (
+            {expression === "inquiry" ? (
               <>
-                <rect x="34" y="31" width="6" height="12" rx="3" fill={expression === "inquiry" ? brandYellow : brandBlue} />
-                <rect x="60" y="31" width="6" height="12" rx="3" fill={expression === "inquiry" ? brandYellow : brandBlue} />
+                <rect x="34" y="31" width="6" height="12" rx="3" fill={brandYellow} />
+                <rect x="60" y="31" width="6" height="12" rx="3" fill={brandYellow} />
               </>
             ) : (expression === "error" || expression === "crazy") ? (
               <>
@@ -78,10 +88,10 @@ const Robot = ({ expression = "neutral", className = "" }: RobotProps) => {
                 <rect x="62" y="38" width="6" height="6" rx="3" fill={brandBlue} />
                 <path d="M58 30 Q65 24 72 30" fill="none" stroke={brandBlue} strokeWidth="2.5" strokeLinecap="round" />
               </>
-            ) : ["happy", "cheerful"].includes(expression) ? (
+            ) : ["happy", "cheerful", "scanning"].includes(expression) ? (
               <>
-                <path d="M32 38 Q38 28 44 38" fill="none" stroke={brandBlue} strokeWidth="5.5" strokeLinecap="round" />
-                <path d="M56 38 Q62 28 68 38" fill="none" stroke={brandBlue} strokeWidth="5.5" strokeLinecap="round" />
+                <path d="M32 38 Q38 28 44 38" fill="none" stroke={brandBlue} strokeWidth="3.5" strokeLinecap="round" />
+                <path d="M56 38 Q62 28 68 38" fill="none" stroke={brandBlue} strokeWidth="3.5" strokeLinecap="round" />
               </>
             ) : expression === "love" ? (
               <>
@@ -159,21 +169,24 @@ export const CPBot = () => {
 
         const handleBehavior = (e: any) => {
             if (activeHoverRef.current) return;
+
             const currentScrollY = window.scrollY;
             const scrollDelta = Math.abs(currentScrollY - lastScrollY);
             lastScrollY = currentScrollY;
+
             if (scrollDelta > 0) {
-                setExpression('scanning');
+                setExpression('happy');
                 if (behaviorTimeoutRef.current) clearTimeout(behaviorTimeoutRef.current);
                 behaviorTimeoutRef.current = setTimeout(() => {
                     if (!activeHoverRef.current) setExpression('neutral');
-                }, 800);
+                }, 600);
             }
         };
 
         const handleGlobalHover = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
             if (!target) return;
+
             const isCTA = target.closest('a, button, [class*="cta"], #final-cta, #pricing button');
             if (isCTA) {
                 activeHoverRef.current = true;
@@ -181,6 +194,7 @@ export const CPBot = () => {
                 if (revertTimeoutRef.current) clearTimeout(revertTimeoutRef.current);
                 return;
             }
+
             const isOther = target.closest('.card, .feature-card, .faq-item, input, select, textarea, [class*="cursor-pointer"], [data-interactive], .pricing-card');
             if (isOther) {
                 activeHoverRef.current = true;
@@ -268,7 +282,12 @@ export const CPBot = () => {
                     }}
                     onAnimationComplete={() => {
                         setExpression('love');
-                        setTimeout(() => setExpression('neutral'), 3000);
+                        setTalkingText("COMO POSSO AJUDAR ?");
+                        setIsTalking(true);
+                        setTimeout(() => {
+                            setExpression('neutral');
+                            setIsTalking(false);
+                        }, 4000);
                     }}
                     className="fixed bottom-8 right-4 z-[100] flex flex-col items-end"
                 >
@@ -287,11 +306,11 @@ export const CPBot = () => {
                                     <button onClick={() => setIsOpen(false)} className="text-black/50 hover:text-black transition-colors"><X size={22} strokeWidth={3} /></button>
                                 </div>
 
-                                {/* Area de Mensagens - Minimalista */}
+                                {/* Area de Mensagens Humanizada e Branca */}
                                 <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-white scrollbar-hide">
                                     {messages.map((m, i) => (
                                         <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                            <div className={`max-w-[90%] p-5 rounded-[22px] text-[15px] leading-relaxed tracking-wide shadow-sm ${
+                                            <div className={`max-w-[90%] p-5 rounded-[22px] text-[15px] font-medium leading-relaxed tracking-wide shadow-sm border border-slate-100 ${
                                                 m.role === 'user' 
                                                 ? 'bg-slate-100 text-slate-800 rounded-br-none border-none' 
                                                 : 'bg-white text-slate-800 font-medium rounded-bl-none border border-[#22D3EE]/30'
@@ -318,9 +337,9 @@ export const CPBot = () => {
                     </AnimatePresence>
                     <div className="relative flex items-end">
                         <AnimatePresence>
-                            {isTalking && !isOpen && (
-                                <motion.div initial={{ opacity: 0, scale: 0.8, x: 20 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={{ opacity: 0, scale: 0.8, x: 20 }} className="absolute right-32 bottom-20 bg-slate-900 text-[#22D3EE] px-6 py-4 rounded-3xl rounded-br-none shadow-2xl border border-slate-800 min-w-[200px] z-[110]">
-                                    <p className="text-[13px] font-bold tracking-tight leading-tight">{talkingText}<span className="animate-pulse">|</span></p>
+                            {(isTalking && !isOpen) && (
+                                <motion.div initial={{ opacity: 0, scale: 0.8, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.8, y: 20 }} className="absolute right-16 bottom-32 bg-slate-900 text-[#22D3EE] px-6 py-4 rounded-3xl rounded-br-none shadow-[0_10px_40px_-5px_rgba(34,211,238,0.3)] border border-[#22D3EE]/20 min-w-[200px] z-[110]">
+                                    <p className="text-[13px] font-bold tracking-[0.05em] leading-tight drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]">{talkingText}</p>
                                 </motion.div>
                             )}
                         </AnimatePresence>

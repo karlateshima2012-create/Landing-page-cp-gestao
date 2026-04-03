@@ -65,8 +65,8 @@ export const FeaturesShowcase = () => (
                     />
                 </div>
 
-                {/* Visual Side (Right) */}
-                <div className="flex-1 w-full flex items-center">
+                {/* Visual Side (Right) - HIDDEN ON MOBILE */}
+                <div className="hidden md:flex flex-1 w-full items-center">
                     <div className="relative group w-full h-full">
                         <div className="absolute inset-0 bg-brand-blue/20 blur-[100px] opacity-10 transition-opacity group-hover:opacity-20"></div>
                         <div className="relative h-full bg-slate-950/40 border border-white/10 p-2 rounded-[3.5rem] backdrop-blur-3xl shadow-2xl overflow-hidden transform hover:rotate-y-2 transition-all duration-700 min-h-[400px]">
