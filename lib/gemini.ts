@@ -1,5 +1,5 @@
 
-// CP Bot Intelligence Service - v1.0.1
+// CP Bot Intelligence Service - v1.0.2 - Brain Activated
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env.GEMINI_API_KEY : "") || "";
