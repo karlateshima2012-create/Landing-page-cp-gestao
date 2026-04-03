@@ -101,8 +101,13 @@ if (isset($listData['models'])) {
     }
 }
 
-// Ordem de preferência
-$preferredModels = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro', 'gemini-1.0-pro'];
+// Ordem de preferência baseada no rastreio real da conta
+$preferredModels = [
+    'gemini-2.5-flash', 
+    'gemini-2.0-flash', 
+    'gemini-flash-latest', 
+    'gemini-pro-latest'
+];
 $modelsToTry = array_unique(array_merge(array_intersect($preferredModels, $availableModels), $preferredModels));
 
 foreach ($modelsToTry as $modelName) {
