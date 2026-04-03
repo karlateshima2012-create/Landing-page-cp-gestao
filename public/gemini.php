@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -8,80 +8,82 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit(0);
 }
 
-// Chave da API (será injetada pelo deploy ou lida do sistema)
+// Chave da API - Injetada pela Action
 $apiKey = 'GEMINI_API_KEY_PLACEHOLDER';
+
+if ($apiKey === 'GEMINI_API_KEY_PLACEHOLDER' || empty($apiKey)) {
+    echo json_encode(['text' => 'Erro: Chave de API não configurada no servidor.']);
+    exit;
+}
 
 $input = json_decode(file_get_contents('php://input'), true);
 $message = $input['message'] ?? '';
 $history = $input['history'] ?? [];
+$systemPrompt = $input['systemPrompt'] ?? '';
 
 if (empty($message)) {
-    echo json_encode(['error' => 'No message provided']);
+    echo json_encode(['text' => 'Por favor, digite uma mensagem.']);
     exit;
 }
 
-// Convert history to Gemini format
-$contents = [];
-// Initial system prompt
-$contents[] = [
-    'role' => 'user',
-    'parts' => [['text' => $input['systemPrompt']]]
-];
-$contents[] = [
-    'role' => 'model',
-    'parts' => [['text' => 'Entendido.']]
-];
-
+// Formatar histórico para o padrão Gemini (estritamente alternado: user, model, user...)
+$formattedContents = [];
 foreach ($history as $msg) {
-    $contents[] = [
-        'role' => $msg['role'] === 'bot' ? 'model' : 'user',
-        'parts' => [['text' => $msg['text']]]
-    ];
+    if (empty($msg['text'])) continue;
+    $role = ($msg['role'] === 'bot' || $msg['role'] === 'model') ? 'model' : 'user';
+    
+    // Evitar roles repetidos seguidos (exige alternância)
+    $lastIdx = count($formattedContents) - 1;
+    if ($lastIdx >= 0 && $formattedContents[$lastIdx]['role'] === $role) {
+        $formattedContents[$lastIdx]['parts'][0]['text'] .= "\n" . $msg['text'];
+    } else {
+        $formattedContents[] = [
+            'role' => $role,
+            'parts' => [['text' => $msg['text']]]
+        ];
+    }
 }
-$contents[] = [
+
+// Adicionar a mensagem atual
+$formattedContents[] = [
     'role' => 'user',
     'parts' => [['text' => $message]]
 ];
 
-$apiKey = 'GEMINI_API_KEY_PLACEHOLDER';
+// Montar Payload Oficial para Gemini 1.5 Flash
+$payload = [
+    'contents' => $formattedContents,
+    'system_instruction' => [
+        'parts' => [['text' => $systemPrompt]]
+    ],
+    'generationConfig' => [
+        'temperature' => 0.7,
+        'maxOutputTokens' => 800
+    ]
+];
 
-// Lista de modelos para tentar (alguns servidores exigem nomes diferentes)
-$models = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-pro'];
-$responseText = '';
-$success = false;
+$url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
 
-foreach ($models as $modelName) {
-    if ($success) break;
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
 
-    $url = "https://generativelanguage.googleapis.com/v1beta/models/" . $modelName . ":generateContent?key=" . $apiKey;
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['contents' => $contents]));
-
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    
-    if (!curl_errno($ch) && $httpCode === 200) {
-        $data = json_decode($response, true);
-        $responseText = $data['candidates'][0]['content']['parts'][0]['text'] ?? '';
-        if (!empty($responseText)) {
-            $success = true;
-        }
-    }
-    curl_close($ch);
-}
-
-if ($success) {
-    echo json_encode(['text' => $responseText]);
+if (curl_errno($ch)) {
+    echo json_encode(['text' => 'Erro de conexão: ' . curl_error($ch)]);
 } else {
-    // Se todos falharem, mostre o erro do último para diagnóstico
-    $errorData = json_decode($response, true);
-    $msg = $errorData['error']['message'] ?? 'Erro de conexão com Google';
-    if ($apiKey === 'GEMINI_API_KEY_PLACEHOLDER') {
-        $msg = 'Configuração da chave pendente no servidor.';
+    $data = json_decode($response, true);
+    if ($httpCode !== 200) {
+        $errMsg = $data['error']['message'] ?? 'Erro desconhecido do Google';
+        echo json_encode(['text' => 'Erro do Google (' . $httpCode . '): ' . $errMsg]);
+    } else {
+        $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? 'Não consegui processar sua resposta.';
+        echo json_encode(['text' => $text]);
     }
-    echo json_encode(['text' => 'Erro do Google (' . $modelName . '): ' . $msg]);
 }
+
+curl_close($ch);
