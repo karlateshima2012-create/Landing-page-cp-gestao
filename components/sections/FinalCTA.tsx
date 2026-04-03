@@ -3,7 +3,7 @@ import React from 'react';
 import { Starfield } from '../Starfield';
 
 export const FinalCTA = () => (
-    <section className="bg-transparent relative text-center w-full px-0">
+    <section id="final-cta" className="bg-transparent relative text-center w-full px-0">
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none"></div>
 
         <div className="w-full relative z-30 bg-slate-950/95 py-16 md:py-24 px-6 backdrop-blur-3xl shadow-[0_0_80px_-20px_rgba(56,182,255,0.15)] overflow-hidden transition-all duration-500">
