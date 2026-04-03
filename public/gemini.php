@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // Chave da API - Injetada pela Action
-$apiKey = 'GEMINI_API_KEY_PLACEHOLDER';
+$apiKey = 'AIzaSyBdZ4Z436BTCuijPIFGW3dUs08MlvWe1bs';
 
 if ($apiKey === 'GEMINI_API_KEY_PLACEHOLDER' || empty($apiKey)) {
     echo json_encode(['text' => 'Erro: Chave de API não configurada no servidor.']);
