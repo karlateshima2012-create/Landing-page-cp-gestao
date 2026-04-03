@@ -26,29 +26,27 @@ Instruções de Resposta:
 `;
 
 export const getGeminiResponse = async (userMessage: string, history: { role: string; text: string }[]) => {
-  if (!apiKey || apiKey === "") {
-    return "Olá! Estou configurando meu cérebro digital. Por enquanto, posso te ajudar pelo nosso WhatsApp oficial!";
-  }
-
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    
-    const chat = model.startChat({
-      history: [
-        { role: "user", parts: [{ text: SYSTEM_INSTRUCTIONS }] },
-        { role: "model", parts: [{ text: "Entendido. Sou o CP Bot e estou pronto para ajudar como especialista em CP Gestão." }] },
-        ...history.map(msg => ({
-          role: msg.role === "bot" ? "model" : "user",
-          parts: [{ text: msg.text }]
-        }))
-      ],
+    const response = await fetch('gemini.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: userMessage,
+        history: history,
+        systemPrompt: SYSTEM_INSTRUCTIONS
+      }),
     });
 
-    const result = await chat.sendMessage(userMessage);
-    const response = await result.response;
-    return response.text();
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+    return data.text || "Desculpe, tive um erro técnico.";
   } catch (error) {
-    console.error("Gemini API Error:", error);
+    console.error("Gemini Proxy Error:", error);
     return "Ops! Tive um pequeno curto-circuito. Pode me perguntar novamente ou chamar no WhatsApp?";
   }
 };
