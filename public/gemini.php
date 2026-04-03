@@ -26,36 +26,57 @@ if (empty($message)) {
     exit;
 }
 
+// Injetar instrução master na primeira interação
+$systemMessage = "INSTRUÇÃO MASTER: " . $systemPrompt . "\n\nResponda agora ao usuário seguindo estas diretrizes.";
+
 // Formatar histórico para o padrão Gemini (estritamente alternado: user, model, user...)
 $formattedContents = [];
-foreach ($history as $msg) {
-    if (empty($msg['text'])) continue;
-    $role = ($msg['role'] === 'bot' || $msg['role'] === 'model') ? 'model' : 'user';
+
+// Adicionar instrução como primeira mensagem do usuário se o histórico estiver vazio
+if (empty($history)) {
+    $formattedContents[] = [
+        'role' => 'user',
+        'parts' => [['text' => $systemMessage . "\n\nMensagem do usuário: " . $message]]
+    ];
+} else {
+    // Se houver histórico, injetamos a instrução na primeira mensagem dele
+    $first = true;
+    foreach ($history as $msg) {
+        if (empty($msg['text'])) continue;
+        $role = ($msg['role'] === 'bot' || $msg['role'] === 'model') ? 'model' : 'user';
+        
+        $text = $msg['text'];
+        if ($first && $role === 'user') {
+            $text = $systemMessage . "\n\nHistórico anterior:\n" . $text;
+            $first = false;
+        }
+
+        $lastIdx = count($formattedContents) - 1;
+        if ($lastIdx >= 0 && $formattedContents[$lastIdx]['role'] === $role) {
+            $formattedContents[$lastIdx]['parts'][0]['text'] .= "\n" . $text;
+        } else {
+            $formattedContents[] = [
+                'role' => $role,
+                'parts' => [['text' => $text]]
+            ];
+        }
+    }
     
-    // Evitar roles repetidos seguidos (exige alternância)
+    // Adicionar a mensagem atual
     $lastIdx = count($formattedContents) - 1;
-    if ($lastIdx >= 0 && $formattedContents[$lastIdx]['role'] === $role) {
-        $formattedContents[$lastIdx]['parts'][0]['text'] .= "\n" . $msg['text'];
+    if ($formattedContents[$lastIdx]['role'] === 'user') {
+        $formattedContents[$lastIdx]['parts'][0]['text'] .= "\n\nMensagem atual: " . $message;
     } else {
         $formattedContents[] = [
-            'role' => $role,
-            'parts' => [['text' => $msg['text']]]
+            'role' => 'user',
+            'parts' => [['text' => $message]]
         ];
     }
 }
 
-// Adicionar a mensagem atual
-$formattedContents[] = [
-    'role' => 'user',
-    'parts' => [['text' => $message]]
-];
-
-// Montar Payload Oficial para Gemini 1.5 Flash
+// Montar Payload Oficial para Gemini v1
 $payload = [
     'contents' => $formattedContents,
-    'system_instruction' => [
-        'parts' => [['text' => $systemPrompt]]
-    ],
     'generationConfig' => [
         'temperature' => 0.7,
         'maxOutputTokens' => 800
