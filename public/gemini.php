@@ -43,27 +43,45 @@ $contents[] = [
     'parts' => [['text' => $message]]
 ];
 
-$url = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
+$apiKey = 'GEMINI_API_KEY_PLACEHOLDER';
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['contents' => $contents]));
+// Lista de modelos para tentar (alguns servidores exigem nomes diferentes)
+$models = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-pro'];
+$responseText = '';
+$success = false;
 
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+foreach ($models as $modelName) {
+    if ($success) break;
 
-if (curl_errno($ch)) {
-    echo json_encode(['error' => curl_error($ch)]);
-} else {
-    $data = json_decode($response, true);
-    if (isset($data['error'])) {
-        echo json_encode(['text' => 'Erro do Google: ' . ($data['error']['message'] ?? 'Erro desconhecido')]);
-    } else {
-        $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? 'Desculpe, não consegui gerar uma resposta agora.';
-        echo json_encode(['text' => $text]);
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/" . $modelName . ":generateContent?key=" . $apiKey;
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['contents' => $contents]));
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    
+    if (!curl_errno($ch) && $httpCode === 200) {
+        $data = json_decode($response, true);
+        $responseText = $data['candidates'][0]['content']['parts'][0]['text'] ?? '';
+        if (!empty($responseText)) {
+            $success = true;
+        }
     }
+    curl_close($ch);
 }
 
-curl_close($ch);
+if ($success) {
+    echo json_encode(['text' => $responseText]);
+} else {
+    // Se todos falharem, mostre o erro do último para diagnóstico
+    $errorData = json_decode($response, true);
+    $msg = $errorData['error']['message'] ?? 'Erro de conexão com Google';
+    if ($apiKey === 'GEMINI_API_KEY_PLACEHOLDER') {
+        $msg = 'Configuração da chave pendente no servidor.';
+    }
+    echo json_encode(['text' => 'Erro do Google (' . $modelName . '): ' . $msg]);
+}
