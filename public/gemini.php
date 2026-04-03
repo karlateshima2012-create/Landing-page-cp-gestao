@@ -83,17 +83,33 @@ $payload = [
     ]
 ];
 
-// TENTATIVA SEQUENCIAL DE MODELOS E VERSÕES
-$endpoints = [
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=$apiKey",
-    "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=$apiKey",
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$apiKey"
-];
-
 $finalText = '';
 $lastError = '';
 
-foreach ($endpoints as $url) {
+// TENTATIVA 1: Mapeamento de Modelos Disponíveis para esta Chave
+$listUrl = "https://generativelanguage.googleapis.com/v1beta/models?key=$apiKey";
+$ch = curl_init($listUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$listResponse = curl_exec($ch);
+$listData = json_decode($listResponse, true);
+curl_close($ch);
+
+$availableModels = [];
+if (isset($listData['models'])) {
+    foreach ($listData['models'] as $m) {
+        $availableModels[] = str_replace('models/', '', $m['name']);
+    }
+}
+
+// Ordem de preferência
+$preferredModels = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro', 'gemini-1.0-pro'];
+$modelsToTry = array_unique(array_merge(array_intersect($preferredModels, $availableModels), $preferredModels));
+
+foreach ($modelsToTry as $modelName) {
+    if (!empty($finalText)) break;
+
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/" . $modelName . ":generateContent?key=" . $apiKey;
+
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
@@ -106,15 +122,15 @@ foreach ($endpoints as $url) {
     if ($httpCode === 200) {
         $data = json_decode($response, true);
         $finalText = $data['candidates'][0]['content']['parts'][0]['text'] ?? '';
-        if (!empty($finalText)) break;
     } else {
-        $data = json_decode($response, true);
-        $lastError = "Erro $httpCode: " . ($data['error']['message'] ?? 'Falha desconhecida');
+        $errData = json_decode($response, true);
+        $lastError = "($modelName) " . ($errData['error']['message'] ?? 'Erro desconhecido');
     }
 }
 
 if (!empty($finalText)) {
     echo json_encode(['text' => $finalText]);
 } else {
-    echo json_encode(['text' => "Falha na conexão de inteligência. Por favor, tente novamente. Detalhe: $lastError"]);
+    $modelsFound = !empty($availableModels) ? implode(', ', $availableModels) : 'Nenhum';
+    echo json_encode(['text' => "Google recusou a conexão. Verifique se a 'Generative Language API' está ATIVADA no seu Google AI Studio. Modelos detectados na sua conta: $modelsFound. Último Erro: $lastError"]);
 }
