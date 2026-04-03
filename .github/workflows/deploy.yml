@@ -25,6 +25,8 @@ jobs:
         env:
           VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
+      - name: Inject API key into PHP Proxy
+        run: sed -i "s!GEMINI_API_KEY_PLACEHOLDER!${{ secrets.GEMINI_API_KEY }}!g" dist/gemini.php
 
       - name: Create target directory (if missing)
         uses: appleboy/ssh-action@master
