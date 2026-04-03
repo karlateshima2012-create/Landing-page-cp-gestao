@@ -83,29 +83,38 @@ $payload = [
     ]
 ];
 
-$modelName = 'gemini-1.5-flash';
-$url = "https://generativelanguage.googleapis.com/v1/models/" . $modelName . ":generateContent?key=" . $apiKey;
+// TENTATIVA SEQUENCIAL DE MODELOS E VERSÕES
+$endpoints = [
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=$apiKey",
+    "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=$apiKey",
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$apiKey"
+];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+$finalText = '';
+$lastError = '';
 
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+foreach ($endpoints as $url) {
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
 
-if (curl_errno($ch)) {
-    echo json_encode(['text' => 'Erro de conexão: ' . curl_error($ch)]);
-} else {
-    $data = json_decode($response, true);
-    if ($httpCode !== 200) {
-        $errMsg = $data['error']['message'] ?? 'Erro desconhecido do Google';
-        echo json_encode(['text' => 'Erro do Google (' . $httpCode . '): ' . $errMsg]);
+    if ($httpCode === 200) {
+        $data = json_decode($response, true);
+        $finalText = $data['candidates'][0]['content']['parts'][0]['text'] ?? '';
+        if (!empty($finalText)) break;
     } else {
-        $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? 'Não consegui processar sua resposta.';
-        echo json_encode(['text' => $text]);
+        $data = json_decode($response, true);
+        $lastError = "Erro $httpCode: " . ($data['error']['message'] ?? 'Falha desconhecida');
     }
 }
 
-curl_close($ch);
+if (!empty($finalText)) {
+    echo json_encode(['text' => $finalText]);
+} else {
+    echo json_encode(['text' => "Falha na conexão de inteligência. Por favor, tente novamente. Detalhe: $lastError"]);
+}
