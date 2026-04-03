@@ -26,8 +26,11 @@ if (empty($message)) {
     exit;
 }
 
-// Injetar instrução master na primeira interação
-$systemMessage = "INSTRUÇÃO MASTER: " . $systemPrompt . "\n\nResponda agora ao usuário seguindo estas diretrizes.";
+// Injetar instrução master na primeira interação com tags de autoridade
+$systemMessage = "### SISTEMA DE IDENTIDADE MASTER ###\n" . 
+                 "REGRAS INVIOLÁVEIS:\n" . $systemPrompt . "\n\n" .
+                 "### FIM DA IDENTIDADE ###\n\n" .
+                 "Agora, responda com autoridade seguindo as regras acima:";
 
 // Formatar histórico para o padrão Gemini (estritamente alternado: user, model, user...)
 $formattedContents = [];
