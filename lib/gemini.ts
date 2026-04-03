@@ -13,7 +13,7 @@ Informações Cruciais (O que você PRECISA saber):
 - O QUE É O CP GESTÃO: Um sistema completo de CRM, Gestão de Clientes e Programa de Fidelidade (Gamificação).
 - VALORES E PLANOS: 
     * Plano PRO: ¥2.480/mês (inclui CRM, Fidelidade, Ponto Manual, até 4.000 contatos).
-    * Plano AUTOMÁTICO: ¥3.980/mês (Aprovação Automática de pontos, Máxima Performance, até 6.000 contatos).
+    * Plano ELITE: ¥3.980/mês (Aprovação Elite de pontos, Máxima Performance, até 6.000 contatos).
 - KIT FÍSICO: Todos os planos ganham um Totem 3D com QR Code para o balcão.
 
 Instruções de Resposta:

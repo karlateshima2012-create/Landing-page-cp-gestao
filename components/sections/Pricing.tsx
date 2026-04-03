@@ -8,7 +8,7 @@ export const Pricing = () => {
 
     const whatsappUrl = "https://wa.me/8109011886491?text=";
     const proUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano PRO.")}`;
-    const automaticoUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano AUTOMÁTICO.")}`;
+    const automaticoUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre o Plano ELITE.")}`;
     const generalUrl = `${whatsappUrl}${encodeURIComponent("Olá! Gostaria de saber mais sobre os planos do CP Gestão.")}`;
 
     return (
@@ -84,7 +84,7 @@ export const Pricing = () => {
                         </div>
                     </div>
 
-                    {/* PLANO AUTOMÁTICO */}
+                    {/* PLANO ELITE */}
                     <div className="w-full relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border-2 bg-slate-900 border-brand-yellow/30 backdrop-blur-3xl flex flex-col shadow-[0_0_50px_rgba(255,242,0,0.1)] transition-all duration-500 overflow-visible group">
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-yellow/10 rounded-full blur-[40px]"></div>
                         <div className="absolute top-0 left-12 z-40 transform -translate-y-1/2">
@@ -102,7 +102,7 @@ export const Pricing = () => {
                         </div>
 
                         <div className="mb-6">
-                            <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Automático</h3>
+                            <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Elite</h3>
                             <p className="text-brand-gray/80 text-sm font-light leading-relaxed">
                                 A solução definitiva para escalar suas vendas e fidelizar clientes no automático, sem esforço manual.
                             </p>

@@ -52,7 +52,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                                 <p className="italic underline">Valores Vigentes (Plano Anual):</p>
                                 <ul className="list-disc pl-5 space-y-1">
                                     <li>Plano PRO: ¥3.150/mês</li>
-                                    <li>Plano AUTOMÁTICO: ¥5.850/mês</li>
+                                    <li>Plano ELITE: ¥5.850/mês</li>
                                 </ul>
                             </div>
 
