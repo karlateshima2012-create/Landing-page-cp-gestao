@@ -243,17 +243,28 @@ export const CPBot = () => {
         };
     }, []);
 
+    const [isLoading, setIsLoading] = useState(false);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isLoading]);
+
     const sendMessage = async (e?: React.FormEvent) => {
         e?.preventDefault();
-        if (!input.trim()) return;
+        if (!input.trim() || isLoading) return;
 
         const userMsg = input;
         setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
         setInput('');
+        setIsLoading(true);
         setExpression('thinking');
 
         try {
-            // Send history excluding the last user message just added
             const responseText = await getGeminiResponse(userMsg, messages);
             
             setMessages(prev => [...prev, { role: 'bot', text: responseText }]);
@@ -265,6 +276,8 @@ export const CPBot = () => {
             const fallback = "Tive um probleminha técnico. Pode me chamar no WhatsApp?";
             setMessages(prev => [...prev, { role: 'bot', text: fallback }]);
             setExpression('sad');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -318,18 +331,28 @@ export const CPBot = () => {
 
                                 {/* Area de Mensagens Humanizada e Branca */}
                                 <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-white scrollbar-hide">
-                                    {messages.map((m, i) => (
-                                        <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                            <div className={`max-w-[90%] p-5 rounded-[22px] text-[15px] font-medium leading-relaxed tracking-wide shadow-sm border border-slate-100 ${
-                                                m.role === 'user' 
-                                                ? 'bg-slate-100 text-slate-800 rounded-br-none border-none' 
-                                                : 'bg-white text-slate-800 font-medium rounded-bl-none border border-[#22D3EE]/30'
-                                            }`}>
-                                                {m.text}
-                                            </div>
+                                {messages.map((m, i) => (
+                                    <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div className={`max-w-[90%] p-5 rounded-[22px] text-[15px] font-medium leading-relaxed tracking-wide shadow-sm border border-slate-100 ${
+                                            m.role === 'user' 
+                                            ? 'bg-slate-100 text-slate-800 rounded-br-none border-none' 
+                                            : 'bg-white text-slate-800 font-medium rounded-bl-none border border-[#22D3EE]/30'
+                                        }`}>
+                                            {m.text}
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                ))}
+                                {isLoading && (
+                                    <div className="flex justify-start">
+                                        <div className="bg-white p-5 rounded-[22px] rounded-bl-none border border-[#22D3EE]/30 shadow-sm flex gap-1 items-center">
+                                            <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 0.6, repeat: Infinity }} className="w-2 h-2 rounded-full bg-[#22D3EE]" />
+                                            <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }} className="w-2 h-2 rounded-full bg-[#22D3EE]" />
+                                            <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }} className="w-2 h-2 rounded-full bg-[#22D3EE]" />
+                                        </div>
+                                    </div>
+                                )}
+                                <div ref={messagesEndRef} />
+                            </div>
 
                                 {/* Barra de Input */}
                                 <form onSubmit={sendMessage} className="p-5 bg-white border-t border-slate-100 flex gap-2">

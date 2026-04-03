@@ -77,8 +77,11 @@ if (empty($history)) {
     }
 }
 
-// Montar Payload Oficial para Gemini v1
+// Montar Payload Oficial para Gemini v1 / v1beta com system_instruction
 $payload = [
+    'system_instruction' => [
+        'parts' => [['text' => $systemPrompt]]
+    ],
     'contents' => $formattedContents,
     'generationConfig' => [
         'temperature' => 0.7,
