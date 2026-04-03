@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, X, CheckCircle2, AlertCircle, HelpCircle } from 'lucide-react';
+import { getGeminiResponse } from '../lib/gemini';
 
 // --- ROBOT VISUAL COMPONENT ---
 
@@ -242,20 +243,29 @@ export const CPBot = () => {
         };
     }, []);
 
-    const sendMessage = (e?: React.FormEvent) => {
+    const sendMessage = async (e?: React.FormEvent) => {
         e?.preventDefault();
         if (!input.trim()) return;
-        setMessages([...messages, { role: 'user', text: input }]);
+
+        const userMsg = input;
+        setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
         setInput('');
         setExpression('thinking');
-        setTimeout(() => {
-            const response = "Estou processando sua dúvida... Deseja falar com um especialista?";
-            setMessages(prev => [...prev, { role: 'bot', text: response }]);
+
+        try {
+            // Send history excluding the last user message just added
+            const responseText = await getGeminiResponse(userMsg, messages);
+            
+            setMessages(prev => [...prev, { role: 'bot', text: responseText }]);
             setExpression('happy');
             setIsTalking(true);
-            setTalkingText(response);
-            setTimeout(() => setIsTalking(false), 3000);
-        }, 1500);
+            setTalkingText(responseText);
+            setTimeout(() => setIsTalking(false), 4000);
+        } catch (error) {
+            const fallback = "Tive um probleminha técnico. Pode me chamar no WhatsApp?";
+            setMessages(prev => [...prev, { role: 'bot', text: fallback }]);
+            setExpression('sad');
+        }
     };
 
     return (
