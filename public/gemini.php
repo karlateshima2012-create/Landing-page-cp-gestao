@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $apiKey = 'AIzaSyBdZ4Z436BTCuijPIFGW3dUs08MlvWe1bs';
 
 if ($apiKey === 'GEMINI_API_KEY_PLACEHOLDER' || empty($apiKey)) {
-    echo json_encode(['text' => 'Erro: Chave de API não configurada no servidor.']);
+    echo json_encode(['text' => 'Erro: Chave de API não configurada no servidor (v194).']);
     exit;
 }
 
