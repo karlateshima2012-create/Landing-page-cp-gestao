@@ -58,8 +58,12 @@ if (curl_errno($ch)) {
     echo json_encode(['error' => curl_error($ch)]);
 } else {
     $data = json_decode($response, true);
-    $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? 'Desculpe, tive um erro técnico.';
-    echo json_encode(['text' => $text]);
+    if (isset($data['error'])) {
+        echo json_encode(['text' => 'Erro do Google: ' . ($data['error']['message'] ?? 'Erro desconhecido')]);
+    } else {
+        $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? 'Desculpe, não consegui gerar uma resposta agora.';
+        echo json_encode(['text' => $text]);
+    }
 }
 
 curl_close($ch);
