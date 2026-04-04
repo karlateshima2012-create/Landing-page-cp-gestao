@@ -14,16 +14,16 @@ export const Footer = () => {
             <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-brand-blue/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
             
             <div className="max-w-7xl mx-auto flex flex-col items-start gap-8">
-                {/* Branding & Back to Top Line */}
-                <div className="w-full flex items-center justify-between gap-4">
+                {/* Branding & Back to Top Line - Reinforced mobile visibility */}
+                <div className="w-full flex items-center justify-between gap-4 px-4 md:px-0">
                     <Logo className="scale-[0.5] md:scale-[0.65] origin-left" title="CREATIVE PRINT" subtitle="TECNOLOGIA E IMPRESSÃO 3D" />
                     
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="flex items-center gap-2 bg-brand-blue/10 backdrop-blur-md hover:bg-brand-blue/20 border border-brand-blue/20 px-4 py-2 rounded-full transition-all group shrink-0"
+                        className="flex items-center gap-2 bg-brand-blue/10 backdrop-blur-md hover:bg-brand-blue/20 border border-brand-blue/20 px-3 py-1.5 md:px-4 md:py-2 rounded-full transition-all group shrink-0 scale-90 md:scale-100"
                     >
-                        <ArrowUp className="w-4 h-4 text-brand-blue transition-transform group-hover:-translate-y-0.5" />
-                        <span className="text-[10px] font-black uppercase tracking-[0.1em] text-brand-blue/80 group-hover:text-brand-blue">topo</span>
+                        <ArrowUp className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-blue transition-transform group-hover:-translate-y-0.5" />
+                        <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.1em] text-brand-blue/80 group-hover:text-brand-blue">topo</span>
                     </button>
                 </div>
 
