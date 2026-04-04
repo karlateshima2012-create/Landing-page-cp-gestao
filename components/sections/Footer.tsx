@@ -9,9 +9,9 @@ export const Footer = () => {
 
     return (
         <footer className="py-12 px-6 relative border-t border-white/5 bg-slate-950 overflow-hidden">
-            {/* Blue Horizon Glow (WCAG Compliant) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-brand-blue/40 to-transparent"></div>
-            <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-brand-blue/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+            {/* Intensified Blue Horizon Glow (WCAG Compliant) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[2px] bg-gradient-to-r from-transparent via-brand-blue/80 to-transparent"></div>
+            <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-brand-blue/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
             
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-10">
                 {/* Main Content Row */}
