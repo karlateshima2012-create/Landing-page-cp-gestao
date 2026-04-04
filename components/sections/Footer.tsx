@@ -27,9 +27,24 @@ export const Footer = () => {
                     </button>
                 </div>
 
-                {/* Main Content & Socials Row */}
-                <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                    {/* Socials - Left aligned on mobile */}
+                {/* Navigation & Socials Column/Row */}
+                <div className="w-full flex flex-col md:flex-row justify-between items-start gap-8">
+                    {/* Navigation - Stacked vertically on mobile after logo */}
+                    <ul className="flex flex-col md:flex-row gap-4 md:gap-x-8 text-brand-gray text-[10px] font-black uppercase tracking-[0.2em] w-full md:w-auto">
+                        <li><a href="#solucoes" className="hover:text-white transition-colors">Solução</a></li>
+                        <li><a href="#features" className="hover:text-white transition-colors">Funcionalidades</a></li>
+                        <li><a href="#pricing" className="hover:text-white transition-colors">Planos</a></li>
+                        <li>
+                            <button
+                                onClick={() => setIsLegalOpen(true)}
+                                className="hover:text-white transition-colors text-left uppercase"
+                            >
+                                Políticas
+                            </button>
+                        </li>
+                    </ul>
+
+                    {/* Socials - Below the menu on mobile */}
                     <div className="flex items-center gap-4">
                         <div className="flex gap-5">
                             <a href="https://www.instagram.com/creativeprint.jp/" target="_blank" rel="noopener noreferrer" className="text-brand-gray/80 hover:text-brand-pink transition-all hover:scale-110">
@@ -43,21 +58,6 @@ export const Footer = () => {
                             </a>
                         </div>
                     </div>
-
-                    {/* Navigation - Right aligned on desktop, left on mobile */}
-                    <ul className="flex flex-wrap justify-start md:justify-end gap-x-5 md:gap-x-8 gap-y-3 text-brand-gray text-[10px] font-black uppercase tracking-[0.2em] w-full md:w-auto">
-                        <li><a href="#solucoes" className="hover:text-white transition-colors">Solução</a></li>
-                        <li><a href="#features" className="hover:text-white transition-colors">Funcionalidades</a></li>
-                        <li><a href="#pricing" className="hover:text-white transition-colors">Planos</a></li>
-                        <li>
-                            <button
-                                onClick={() => setIsLegalOpen(true)}
-                                className="hover:text-white transition-colors text-left uppercase"
-                            >
-                                Políticas
-                            </button>
-                        </li>
-                    </ul>
                 </div>
 
                 {/* Copyright - Single line on mobile */}
