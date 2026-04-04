@@ -91,11 +91,13 @@ export const FAQ = () => {
                 </div>
 
                 {/* Final Help Note */}
-                <div className="mt-16 text-center text-brand-gray flex items-center justify-center gap-3">
-                    <HelpCircle className="w-5 h-5 text-brand-blue/60" />
-                    <p className="text-lg md:text-2xl font-light">
-                        Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-white underline underline-offset-8 transition-all duration-300">Fale com a gente</a>
-                    </p>
+                <div className="mt-12 text-right">
+                    <div className="inline-flex items-center gap-3">
+                        <HelpCircle className="w-5 h-5 text-brand-blue/40" />
+                        <p className="text-[15px] md:text-[17px] font-medium text-brand-gray/90 leading-relaxed">
+                            Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-white underline underline-offset-4 transition-all duration-300">Fale com a gente</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
