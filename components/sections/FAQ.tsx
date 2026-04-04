@@ -37,9 +37,9 @@ export const FAQ = () => {
     ];
 
     return (
-        <section id="faq" className="py-24 bg-slate-950 relative overflow-hidden">
+        <section id="faq" className="py-24 relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950">
             {/* Ambient Background Glows */}
-            <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] -z-10 opacity-60"></div>
             
             <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
