@@ -44,7 +44,7 @@ export const Pricing = () => {
 
                         <div className="mb-6">
                             <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight">PLANO PRO</h3>
-                            <p className="text-brand-gray/80 text-sm font-light leading-relaxed">
+                            <p className="text-slate-200 text-[15px] md:text-[17px] font-medium leading-relaxed">
                                 Toda a organização que seu negócio precisa para crescer com ordem e controle total sobre cada cliente.
                             </p>
                         </div>
@@ -52,7 +52,7 @@ export const Pricing = () => {
                         <div className="mb-10">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-5xl font-black tracking-tighter">¥2.480</span>
-                                <span className="text-brand-gray/40 text-sm font-bold uppercase">/mês</span>
+                                <span className="text-slate-300 text-sm font-bold uppercase">/mês</span>
                             </div>
                         </div>
 
@@ -103,7 +103,7 @@ export const Pricing = () => {
 
                         <div className="mb-6">
                             <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Elite</h3>
-                            <p className="text-brand-gray/80 text-sm font-light leading-relaxed">
+                            <p className="text-slate-200 text-[15px] md:text-[17px] font-medium leading-relaxed">
                                 A solução definitiva para escalar suas vendas e fidelizar clientes no automático, sem esforço manual.
                             </p>
                         </div>
@@ -111,7 +111,7 @@ export const Pricing = () => {
                         <div className="mb-10">
                             <div className="flex items-baseline gap-2">
                                 <span className="text-white text-5xl font-black tracking-tighter">¥3.980</span>
-                                <span className="text-brand-gray/40 text-sm font-bold uppercase">/mês</span>
+                                <span className="text-slate-300 text-sm font-bold uppercase">/mês</span>
                             </div>
                         </div>
 

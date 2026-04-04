@@ -24,7 +24,7 @@ export const Footer = () => {
                                 className="flex items-center gap-2 bg-brand-blue/10 backdrop-blur-md hover:bg-brand-blue/20 border border-brand-blue/20 px-3 py-1.5 rounded-full transition-all group scale-90 md:scale-100"
                             >
                                 <ArrowUp className="w-3.5 h-3.5 text-brand-blue transition-transform group-hover:-translate-y-0.5" />
-                                <span className="text-[9px] font-black uppercase tracking-[0.1em] text-brand-blue/80 group-hover:text-brand-blue underline underline-offset-4 decoration-brand-blue/30">voltar ao topo</span>
+                                <span className="text-[9px] font-black uppercase tracking-[0.1em] text-brand-blue/80 group-hover:text-brand-blue">voltar ao topo</span>
                             </button>
                         </div>
                         
