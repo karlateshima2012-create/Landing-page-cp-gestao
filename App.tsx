@@ -40,10 +40,10 @@ export default function App() {
       <Footer />
       <FloatingCTA />
 
-      {/* Ambient Orbs */}
+      {/* Ambient Orbs - Optimized blur for mobile performance */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-20 overflow-hidden">
-        <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-brand-pink/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-[10%] left-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-blue/5 rounded-full blur-[60px] md:blur-[120px]"></div>
+        <div className="absolute bottom-[20%] right-[-10%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-brand-pink/5 rounded-full blur-[60px] md:blur-[120px]"></div>
       </div>
 
       {/* Decorative Grid */}

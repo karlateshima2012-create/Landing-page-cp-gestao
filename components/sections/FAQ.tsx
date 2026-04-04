@@ -51,11 +51,11 @@ export const FAQ = () => {
     return (
         <section id="faq" className="pt-6 pb-20 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900/30">
             {/* Ambient Background Glows */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] -z-10 opacity-60"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[500px] bg-brand-blue/5 rounded-full blur-[80px] md:blur-[120px] -z-10 opacity-60"></div>
             
             <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
+                    <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-tight md:leading-[1.1]">
                         Dúvidas Frequentes
                     </h2>
                     <p className="text-[15px] md:text-[17px] text-brand-gray/90 font-medium max-w-2xl mx-auto leading-relaxed">
