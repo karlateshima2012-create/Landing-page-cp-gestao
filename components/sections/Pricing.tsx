@@ -51,7 +51,7 @@ export const Pricing = () => {
 
                         <div className="mb-10">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-5xl font-black tracking-tighter">¥2.480</span>
+                                <span className="text-white text-5xl md:text-6xl font-black tracking-tighter">¥2.480</span>
                                 <span className="text-brand-gray/60 text-sm font-bold uppercase">/mês</span>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ export const Pricing = () => {
 
                         <div className="mb-10">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-white text-5xl font-black tracking-tighter">¥3.980</span>
+                                <span className="text-white text-5xl md:text-6xl font-black tracking-tighter">¥3.980</span>
                                 <span className="text-brand-gray/60 text-sm font-bold uppercase">/mês</span>
                             </div>
                         </div>
