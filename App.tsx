@@ -9,7 +9,7 @@ import { Pricing } from './components/sections/Pricing';
 
 import { FinalCTA } from './components/sections/FinalCTA';
 import { Footer } from './components/sections/Footer';
-import { CPBot } from './components/CPBot';
+import { FloatingCTA } from './components/sections/FloatingCTA';
 
 export default function App() {
   return (
@@ -37,7 +37,7 @@ export default function App() {
 
 
       <Footer />
-      <CPBot />
+      <FloatingCTA />
 
       {/* Ambient Orbs */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-20 overflow-hidden">
