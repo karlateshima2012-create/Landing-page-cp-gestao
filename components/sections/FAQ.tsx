@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Badge } from '../Badge';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 
 export const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -13,11 +12,15 @@ export const FAQ = () => {
         },
         {
             q: "Como recebo o Totem 3D com QR Code?",
-            a: "Após a ativação, nossa equipe de design entrará em contato para personalizar o totem com sua logo. Assim que você aprovar o design, ele é impresso em 3D de alta qualidade e enviado via correio para o seu endereço comercial."
+            a: "Após a ativação, entraremos em contato para personalizar o totem com sua logo. Assim que você aprovar o design, ele é impresso em 3D de alta qualidade e enviado via correio para o seu endereço comercial."
         },
         {
             q: "Qual a diferença real entre o Plano PRO e o ELITE?",
-            a: "O Plano PRO foca em organização e controle manual de pontos (ideal para até 4.000 clientes). O Plano ELITE é focado em escala: ele automatiza 100% da validação de pontos, possui maior capacidade (até 6.000 clientes) e relatórios mais avançados."
+            a: "O Plano PRO conta com aprovação de pontos manual via dashboard ou por notificações no Telegram, funcionando perfeitamente no PC e Celular. No Plano ELITE, a aprovação de pontos é automática e validada via senha dinâmica que muda a cada 24 horas, garantindo segurança total e autonomia para o seu negócio."
+        },
+        {
+            q: "E se eu precisar de mais limites de contatos cadastrados?",
+            a: "Sem problemas! Se o seu negócio crescer além do limite do seu plano, temos disponíveis packs de limites extras que podem ser contratados de forma rápida e eficiente para que você nunca pare de escalar."
         },
         {
             q: "O pagamento é mensal ou anual?",
@@ -29,7 +32,7 @@ export const FAQ = () => {
         },
         {
             q: "Posso fazer upgrade de plano depois?",
-            a: "Com certeza! Se o seu negócio crescer e você precisar de automação total ou mais espaço para clientes, basta solicitar o upgrade para o Plano ELITE a qualquer momento através do nosso suporte via WhatsApp."
+            a: "Com certeza! Se o seu negócio precisar de automação total ou maior capacidade, basta solicitar o upgrade para o Plano ELITE a qualquer momento através do nosso suporte via WhatsApp."
         }
     ];
 
@@ -69,7 +72,7 @@ export const FAQ = () => {
                                 <div className={`flex-shrink-0 ml-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
                                     activeIndex === index ? 'bg-brand-blue border-brand-blue text-slate-950' : 'border-white/10 text-white/40'
                                 }`}>
-                                    {activeIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                                    {activeIndex === index ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                                 </div>
                             </button>
                             
@@ -92,7 +95,7 @@ export const FAQ = () => {
                 <div className="mt-16 text-center text-brand-gray/60 flex items-center justify-center gap-3">
                     <HelpCircle className="w-5 h-5 text-brand-blue" />
                     <p className="text-sm font-medium uppercase tracking-[0.1em]">
-                        Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:text-brand-blue/80 underline underline-offset-4 font-black transition-colors">Fale com um especialista</a>
+                        Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:text-brand-blue/80 underline underline-offset-4 font-black transition-colors">Fale com a gente</a>
                     </p>
                 </div>
             </div>
