@@ -260,11 +260,11 @@ export const CPBot = () => {
         scrollToBottom();
     }, [messages, isLoading]);
 
-    const sendMessage = async (e?: React.FormEvent) => {
+    const sendMessage = async (e?: React.FormEvent, customText?: string) => {
         e?.preventDefault();
-        if (!input.trim() || isLoading) return;
+        const userMsg = customText || input;
+        if (!userMsg.trim() || isLoading) return;
 
-        const userMsg = input;
         setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
         setInput('');
         setIsLoading(true);
@@ -367,6 +367,18 @@ export const CPBot = () => {
                                         </div>
                                     )}
                                     <div ref={messagesEndRef} />
+                                </div>
+
+                                <div className="p-3 bg-white border-t border-slate-50 overflow-x-auto flex gap-2 scrollbar-hide no-scrollbar">
+                                    {['O que é a CP?', 'Ver Planos', 'Como funciona?', 'Benefícios', 'Kit Ativação'].map((suggestion) => (
+                                        <button 
+                                            key={suggestion}
+                                            onClick={() => sendMessage(undefined, suggestion)}
+                                            className="whitespace-nowrap px-4 py-2 bg-slate-50 hover:bg-[#22D3EE]/10 border border-slate-100 rounded-full text-[12px] font-bold text-slate-600 hover:text-[#22D3EE] transition-all hover:scale-105 active:scale-95 shadow-sm"
+                                        >
+                                            {suggestion}
+                                        </button>
+                                    ))}
                                 </div>
 
                                 <form onSubmit={sendMessage} className="p-5 bg-white border-t border-slate-100 flex gap-2">
