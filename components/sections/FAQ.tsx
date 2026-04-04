@@ -32,12 +32,24 @@ export const FAQ = () => {
         },
         {
             q: "Posso fazer upgrade de plano depois?",
-            a: "Com certeza! Se o seu negócio precisar de automação total ou maior capacidade, basta solicitar o upgrade para o Plano ELITE a qualquer momento através do nosso suporte via WhatsApp."
+            a: (
+                <div className="space-y-4">
+                    <p>
+                        Com certeza! Se o seu negócio precisar de automação total ou maior capacidade, basta solicitar o upgrade para o Plano ELITE a qualquer momento através do nosso suporte via WhatsApp.
+                    </p>
+                    <div className="pt-4 border-t border-white/5 flex items-center gap-3 text-brand-blue/60 italic">
+                        <HelpCircle className="w-4 h-4" />
+                        <p className="text-sm font-medium">
+                            Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-white underline underline-offset-4 transition-all duration-300 not-italic">Fale com a gente</a>
+                        </p>
+                    </div>
+                </div>
+            )
         }
     ];
 
     return (
-        <section id="faq" className="py-24 relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950">
+        <section id="faq" className="py-24 relative overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900/30">
             {/* Ambient Background Glows */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] -z-10 opacity-60"></div>
             
@@ -77,27 +89,17 @@ export const FAQ = () => {
                             
                             <div 
                                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                                    activeIndex === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
+                                    activeIndex === index ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
                                 }`}
                             >
                                 <div className="p-6 md:p-8 pt-0 border-t border-white/5">
-                                    <p className="text-brand-gray text-lg font-light leading-relaxed">
+                                    <div className="text-brand-gray text-lg font-light leading-relaxed">
                                         {item.a}
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     ))}
-                </div>
-
-                {/* Final Help Note */}
-                <div className="mt-12 text-right">
-                    <div className="inline-flex items-center gap-3">
-                        <HelpCircle className="w-5 h-5 text-brand-blue/40" />
-                        <p className="text-[15px] md:text-[17px] font-medium text-brand-gray/90 leading-relaxed">
-                            Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-white underline underline-offset-4 transition-all duration-300">Fale com a gente</a>
-                        </p>
-                    </div>
                 </div>
             </div>
         </section>
