@@ -45,7 +45,7 @@ export const Pricing = () => {
                         <div className="mb-6">
                             <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight">PLANO PRO</h3>
                             <p className="text-brand-gray/90 text-[15px] md:text-[17px] font-medium leading-relaxed">
-                                Toda a organização que seu negócio precisa para crescer com ordem e controle total sobre cada cliente.
+                                Organização profissional e controle de fidelidade manual. Ideal para gerir até 4.000 clientes com ordem total.
                             </p>
                         </div>
 
@@ -104,7 +104,7 @@ export const Pricing = () => {
                         <div className="mb-6">
                             <h3 className="text-4xl font-black text-white mb-3 uppercase tracking-tight leading-tight">Plano Elite</h3>
                             <p className="text-brand-gray/90 text-[15px] md:text-[17px] font-medium leading-relaxed">
-                                A solução definitiva para escalar suas vendas e fidelizar clientes no automático, sem esforço manual.
+                                Automação 100% inteligente de pontos e maior escala. Ideal para vender no automático para até 6.000 clientes.
                             </p>
                         </div>
 
