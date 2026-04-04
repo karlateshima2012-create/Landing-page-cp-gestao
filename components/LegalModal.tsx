@@ -51,8 +51,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                                 <p>O serviço é cobrado de forma recorrente, com pagamentos mensais automáticos via Stripe. A assinatura permanece ativa e será renovada automaticamente até que o cliente solicite o cancelamento, respeitando o período mínimo contratado.</p>
                                 <p className="italic underline">Valores Vigentes (Plano Anual):</p>
                                 <ul className="list-disc pl-5 space-y-1">
-                                    <li>Plano PRO: ¥3.150/mês</li>
-                                    <li>Plano ELITE: ¥5.850/mês</li>
+                                    <li>Plano PRO: ¥2.480/mês</li>
+                                    <li>Plano ELITE: ¥3.980/mês</li>
                                 </ul>
                             </div>
 
