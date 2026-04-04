@@ -14,13 +14,15 @@ export const Footer = () => {
             <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-brand-blue/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
             
             <div className="max-w-7xl mx-auto px-6 flex flex-col items-start gap-8">
-                {/* Branding & Back to Top Line - Mirroring Navbar Geometry */}
+                {/* Branding & Back to Top Line - Safe Width Container */}
                 <div className="w-full flex items-center justify-between">
-                    <Logo 
-                        title="CREATIVE PRINT" 
-                        subtitle="TECNOLOGIA E IMPRESSÃO 3D" 
-                        className="scale-[0.5] md:scale-[0.65] origin-left flex-shrink-0" 
-                    />
+                    <div className="w-[160px] md:w-[210px] shrink-0">
+                        <Logo 
+                            title="CREATIVE PRINT" 
+                            subtitle="TECNOLOGIA E IMPRESSÃO 3D" 
+                            className="scale-[0.5] md:scale-[0.65] origin-left" 
+                        />
+                    </div>
                     
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
