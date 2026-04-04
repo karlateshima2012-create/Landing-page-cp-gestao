@@ -14,7 +14,7 @@ export const FinalCTA = () => (
 
             <div className="relative z-10">
                 <h2 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter">
-                    Chega de adiar o <br /><span className="text-brand-pink drop-shadow-[0_0_20px_rgba(229,21,122,0.7)]">seu crescimento.</span>
+                    Chega de adiar o <br /><span className="bg-gradient-to-r from-brand-blue to-brand-pink bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(56,182,255,0.3)] inline-block">seu crescimento.</span>
                 </h2>
                 <p className="text-lg md:text-2xl text-brand-gray/90 font-light leading-relaxed max-w-3xl mx-auto mb-12">
                     Sua gestão profissional hoje significa <span className="text-white font-bold">escala e liberdade</span> amanhã. O futuro do seu negócio começa aqui.
