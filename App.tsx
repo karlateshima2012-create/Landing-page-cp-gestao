@@ -6,7 +6,7 @@ import { QuickFeatures } from './components/sections/QuickFeatures';
 import { FeaturesShowcase } from './components/sections/Features';
 import { TargetAudience } from './components/sections/TargetAudience';
 import { Pricing } from './components/sections/Pricing';
-
+import { FAQ } from './components/sections/FAQ';
 import { FinalCTA } from './components/sections/FinalCTA';
 import { Footer } from './components/sections/Footer';
 import { FloatingCTA } from './components/sections/FloatingCTA';
@@ -28,7 +28,8 @@ export default function App() {
       </div>
 
       <Pricing />
-
+      
+      <FAQ />
 
       <div className="relative bg-slate-950 overflow-hidden">
         <FinalCTA />
