@@ -265,7 +265,11 @@ export const CPBot = () => {
         setExpression('thinking');
 
         try {
-            const responseText = await getGeminiResponse(userMsg, messages);
+            // BACKEND IA DESATIVADO (QUOTA EXCEEDED)
+            // Aguardando script personalizado do usuário
+            await new Promise(r => setTimeout(r, 600)); 
+            
+            const responseText = "Entendido! Estou aguardando o novo script para poder te responder com precisão. Por enquanto, se quiser adiantar, clique no botão para falarmos no WhatsApp!";
             
             setMessages(prev => [...prev, { role: 'bot', text: responseText }]);
             setExpression('happy');
@@ -273,13 +277,13 @@ export const CPBot = () => {
             setTalkingText(responseText);
             setTimeout(() => setIsTalking(false), 4000);
         } catch (error) {
-            const fallback = "Tive um probleminha técnico. Pode me chamar no WhatsApp?";
-            setMessages(prev => [...prev, { role: 'bot', text: fallback }]);
             setExpression('sad');
         } finally {
             setIsLoading(false);
         }
-    };    const getWhatsAppLink = () => {
+    };
+
+    const getWhatsAppLink = () => {
         // Find the last niche mentioned (after a bot question about "ramo" or "atuação")
         let niche = "";
         for (let i = messages.length - 1; i >= 1; i--) {
