@@ -38,7 +38,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
                         <div className="space-y-6 text-sm">
                             <div className="space-y-2">
                                 <p className="font-bold text-white">1. Objeto</p>
-                                <p>A CONTRATADA (Creative Print) disponibiliza ao CONTRATANTE acesso ao sistema CP Gestão, incluindo funcionalidades de fidelidade, CRM, gestão de clientes e integração com dispositivos NFC/QR Code.</p>
+                                <p>A CONTRATADA (Creative Print) disponibiliza ao CONTRATANTE acesso ao sistema CP Gestão, incluindo funcionalidades de fidelidade, CRM, gestão de clientes e integração com dispositivos QR Code.</p>
                             </div>
 
                             <div className="space-y-2">
@@ -75,21 +75,16 @@ export const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose }) => {
 
                             <div className="space-y-2">
                                 <p className="font-bold text-white">6. Ativação do Serviço</p>
-                                <p>Após a confirmação do pagamento, a Creative Print realizará a configuração inicial do sistema. O prazo de ativação pode variar conforme a complexidade da configuração personalizada.</p>
+                                <p>Após a contratação do plano, a ativação é online e o uso do sistema poderá ser iniciado imediatamente via QR Code digital. A Creative Print fará a personalização do QR Code impresso em 3D e enviará pelo correio assim que o cliente aprovar o design.</p>
                             </div>
 
                             <div className="space-y-2">
                                 <p className="font-bold text-white">7. Responsabilidade do Cliente</p>
-                                <p>O CONTRATANTE é responsável pelo uso correto da plataforma, gestão de seus clientes e dados, e operação dos dispositivos NFC/QR Code vinculados ao sistema.</p>
+                                <p>O CONTRATANTE é responsável pelo uso correto da plataforma, gestão de seus clientes e dados, e operação dos dispositivos QR Code vinculados ao sistema.</p>
                             </div>
 
                             <div className="space-y-2">
-                                <p className="font-bold text-white">8. Limitação de Responsabilidade</p>
-                                <p>A CONTRATADA não se responsabiliza por perda de vendas por mau uso do sistema ou falhas externas (internet, dispositivos de terceiros).</p>
-                            </div>
-
-                            <div className="space-y-2">
-                                <p className="font-bold text-white italic">9. Aceite</p>
+                                <p className="font-bold text-white italic">8. Aceite</p>
                                 <p>Ao realizar o pagamento, o CONTRATANTE declara estar de acordo com todos os termos deste contrato.</p>
                             </div>
                         </div>
