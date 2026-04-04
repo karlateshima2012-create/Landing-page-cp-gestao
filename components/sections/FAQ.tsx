@@ -43,11 +43,10 @@ export const FAQ = () => {
             
             <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <Badge variant="blue" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">CENTRAL DE DÚVIDAS</Badge>
                     <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
                         Dúvidas Frequentes
                     </h2>
-                    <p className="text-brand-gray text-lg font-light max-w-2xl mx-auto">
+                    <p className="text-lg md:text-2xl text-brand-gray font-light max-w-2xl mx-auto leading-relaxed">
                         Tudo o que você precisa saber para começar a escalar sua fidelidade hoje.
                     </p>
                 </div>
@@ -92,10 +91,10 @@ export const FAQ = () => {
                 </div>
 
                 {/* Final Help Note */}
-                <div className="mt-16 text-center text-brand-gray/60 flex items-center justify-center gap-3">
-                    <HelpCircle className="w-5 h-5 text-brand-blue" />
-                    <p className="text-sm font-medium uppercase tracking-[0.1em]">
-                        Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:text-brand-blue/80 underline underline-offset-4 font-black transition-colors">Fale com a gente</a>
+                <div className="mt-16 text-center text-brand-gray flex items-center justify-center gap-3">
+                    <HelpCircle className="w-5 h-5 text-brand-blue/60" />
+                    <p className="text-lg md:text-2xl font-light">
+                        Não encontrou sua dúvida? <a href="https://wa.me/8109011886491" target="_blank" rel="noopener noreferrer" className="text-brand-gray hover:text-white underline underline-offset-8 transition-all duration-300">Fale com a gente</a>
                     </p>
                 </div>
             </div>
