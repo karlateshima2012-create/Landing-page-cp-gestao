@@ -145,62 +145,56 @@ export const Pricing = () => {
                 </div>
             </div>
 
-                {/* KIT ESTRATÉGICO DE ATIVAÇÃO */}
-                <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16 pt-16 border-t border-white/5">
-                    <div className="text-center mb-16">
-                        <Badge variant="blue" className="mb-6 uppercase tracking-[0.3em] font-black text-[10px] py-1 px-5">KIT ESTRATÉGICO DE ATIVAÇÃO</Badge>
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-[1.1] max-w-4xl mx-auto">
-                            Totem com QR Code em 3D incluso na contratação
-                        </h2>
-                        <p className="text-brand-gray text-lg md:text-2xl font-light max-w-3xl mx-auto leading-relaxed">
-                            Seu cliente acessa o sistema de fidelidade em segundos, apenas escaneando com o celular.
-                        </p>
-                    </div>
-
-                    <div className="w-full bg-slate-900/50 border border-white/5 rounded-[2rem] p-10 md:p-16 mb-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                            <div>
-                                 <h3 className="text-2xl font-black text-white mb-10 tracking-tight">
-                                    Digital + Físico: a combinação completa
-                                 </h3>
-                                 <ul className="space-y-8">
-                                    <li className="flex items-start gap-5">
-                                        <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
-                                            <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
-                                        </div>
-                                        <span className="text-brand-gray text-lg md:text-xl font-light">QR Code digital liberado desde o primeiro dia</span>
-                                    </li>
-                                    <li className="flex items-start gap-5">
-                                        <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
-                                            <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
-                                        </div>
-                                        <span className="text-brand-gray text-lg md:text-xl font-light">Totem físico no balcão, caixa ou área principal</span>
-                                    </li>
-                                    <li className="flex items-start gap-5">
-                                        <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
-                                            <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
-                                        </div>
-                                        <span className="text-brand-gray text-lg md:text-xl font-light">Ideal para captar clientes e registrar pontos</span>
-                                    </li>
-                                 </ul>
-                                 <div className="mt-12">
-                                     <a href="https://wa.me/8109011886491?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-brand-blue hover:bg-slate-100 hover:text-slate-950 text-slate-950 font-black text-[11px] h-14 px-10 rounded-xl inline-flex items-center justify-center transition-all shadow-xl active:scale-95 uppercase tracking-widest group/btn overflow-hidden">
-                                         <span className="relative z-10 px-4 text-center">Começar agora pelo WhatsApp</span>
-                                         <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
-                                     </a>
-                                 </div>
+            {/* Profissionalismo & Segurança */}
+            <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16 pt-16 border-t border-white/5">
+                <div className="w-full bg-slate-900/50 border border-white/5 rounded-[2rem] p-10 md:p-16 mb-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                             <h3 className="text-3xl font-black text-white mb-10 tracking-tight uppercase">
+                                Profissionalismo & Segurança
+                             </h3>
+                             <ul className="space-y-8">
+                                <li className="flex items-start gap-5">
+                                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                        <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                    </div>
+                                    <span className="text-brand-gray text-lg md:text-xl font-light">Implementação profissional inclusa</span>
+                                </li>
+                                <li className="flex items-start gap-5">
+                                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                        <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                    </div>
+                                    <span className="text-brand-gray text-lg md:text-xl font-light">Sem taxa de instalação</span>
+                                </li>
+                                <li className="flex items-start gap-5">
+                                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                        <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                    </div>
+                                    <span className="text-brand-gray text-lg md:text-xl font-light">Suporte assistido no primeiro acesso</span>
+                                </li>
+                                <li className="flex items-start gap-5">
+                                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
+                                        <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
+                                    </div>
+                                    <span className="text-brand-gray text-lg md:text-xl font-light">Configuração inicial da sua agenda</span>
+                                </li>
+                             </ul>
+                             <div className="mt-12">
+                                 <a href="https://wa.me/8109011886491?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-brand-blue hover:bg-slate-100 hover:text-slate-950 text-slate-950 font-black text-[11px] h-14 px-10 rounded-xl inline-flex items-center justify-center transition-all shadow-xl active:scale-95 uppercase tracking-widest group/btn overflow-hidden">
+                                     <span className="relative z-10 px-4 text-center">Começar agora pelo WhatsApp</span>
+                                     <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300"></div>
+                                 </a>
                              </div>
-                            <div className="flex justify-center">
-                                 <div className="relative group">
-                                    <div className="absolute inset-0 bg-brand-blue/20 blur-[80px] rounded-full group-hover:bg-brand-blue/30 transition-all duration-1000"></div>
-                                    <ShieldCheck className="w-32 h-32 md:w-56 md:h-56 text-brand-blue/40 relative z-10 transition-all duration-700 group-hover:text-brand-blue/60 group-hover:scale-110" strokeWidth={0.5} />
-                                 </div>
-                            </div>
+                         </div>
+                        <div className="flex justify-center">
+                             <div className="relative group">
+                                <div className="absolute inset-0 bg-brand-blue/20 blur-[80px] rounded-full group-hover:bg-brand-blue/30 transition-all duration-1000"></div>
+                                <ShieldCheck className="w-32 h-32 md:w-56 md:h-56 text-brand-blue/40 relative z-10 transition-all duration-700 group-hover:text-brand-blue/60 group-hover:scale-110" strokeWidth={0.5} />
+                             </div>
                         </div>
                     </div>
-
-
                 </div>
+            </div>
         </section>
     );
 };

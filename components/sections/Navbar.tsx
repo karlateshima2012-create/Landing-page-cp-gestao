@@ -23,12 +23,12 @@ export const Navbar = () => {
 
                 <div className="hidden lg:block">
                     <a
-                        href="https://wa.me/8109011886491?text=Olá! Gostaria de saber mais sobre o CP Gestão."
+                        href="https://cpgestao.creativeprintjp.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center relative bg-brand-blue hover:bg-brand-blue/90 text-slate-950 text-[10px] sm:text-xs font-black uppercase tracking-wider px-6 md:px-8 h-12 rounded-lg transition-all active:scale-95 shadow-lg shadow-brand-blue/20 group overflow-hidden"
                     >
-                        <span className="relative z-10">Atendimento personalizado</span>
+                        <span className="relative z-10">LOGIN</span>
                         <div className="absolute inset-x-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     </a>
                 </div>
@@ -49,11 +49,13 @@ export const Navbar = () => {
                     <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-blue">Funcionalidades</a>
                     <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-sm font-black uppercase tracking-widest text-white/70 hover:text-brand-yellow">Planos</a>
                     <a
-                        href="https://wa.me/8109011886491?text=Olá! Gostaria de saber mais sobre o CP Gestão."
+                        href="https://cpgestao.creativeprintjp.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setIsMenuOpen(false)}
                         className="w-full bg-brand-blue text-slate-950 text-xs font-black uppercase tracking-wider h-14 rounded-xl flex items-center justify-center active:scale-95 shadow-lg shadow-brand-blue/20"
                     >
-                        Atendimento personalizado
+                        LOGIN
                     </a>
                 </div>
             )}

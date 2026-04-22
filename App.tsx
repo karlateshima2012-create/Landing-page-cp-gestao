@@ -2,7 +2,6 @@
 import React from 'react';
 import { Navbar } from './components/sections/Navbar';
 import { Hero } from './components/sections/Hero';
-import { QuickFeatures } from './components/sections/QuickFeatures';
 import { FeaturesShowcase } from './components/sections/Features';
 import { TargetAudience } from './components/sections/TargetAudience';
 import { Pricing } from './components/sections/Pricing';
@@ -17,9 +16,7 @@ export default function App() {
       <Navbar />
       <Hero />
 
-      <div className="relative z-20">
-        <QuickFeatures />
-      </div>
+
 
       <TargetAudience />
 
