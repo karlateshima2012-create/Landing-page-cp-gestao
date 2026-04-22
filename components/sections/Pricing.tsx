@@ -147,7 +147,7 @@ export const Pricing = () => {
 
             {/* Profissionalismo & Segurança */}
             <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 mb-16 pt-16 border-t border-white/5">
-                <div className="w-full bg-slate-900/50 border border-white/5 rounded-[2rem] p-10 md:p-16 mb-16">
+                <div className="w-full bg-brand-blue/10 border border-brand-blue/30 rounded-[2rem] p-10 md:p-16 mb-16 backdrop-blur-md shadow-[0_0_50px_rgba(56,182,255,0.1)]">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
                              <h3 className="text-3xl font-black text-white mb-10 tracking-tight uppercase">
