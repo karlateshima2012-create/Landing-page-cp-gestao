@@ -172,12 +172,7 @@ export const Pricing = () => {
                                     </div>
                                     <span className="text-brand-gray text-lg md:text-xl font-light">Suporte assistido no primeiro acesso</span>
                                 </li>
-                                <li className="flex items-start gap-5">
-                                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center flex-shrink-0 mt-1">
-                                        <Check className="w-4 h-4 text-slate-950" strokeWidth={4} />
-                                    </div>
-                                    <span className="text-brand-gray text-lg md:text-xl font-light">Configuração inicial da sua agenda</span>
-                                </li>
+
                              </ul>
                              <div className="mt-12">
                                  <a href="https://wa.me/8109011886491?text=Olá! Quero começar agora com o CP Gestão pelo WhatsApp. Pode me orientar sobre o próximo passo?" className="relative bg-brand-blue hover:bg-slate-100 hover:text-slate-950 text-slate-950 font-black text-[11px] h-14 px-10 rounded-xl inline-flex items-center justify-center transition-all shadow-xl active:scale-95 uppercase tracking-widest group/btn overflow-hidden">
